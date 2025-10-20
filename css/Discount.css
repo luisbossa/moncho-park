@@ -1,0 +1,171 @@
+.discount-section {
+  padding: 8rem 0;
+  background-image: url(/images/bg-texture.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top: 2px solid #c5c4c0;
+}
+
+.discount-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.discount-container h2 {
+  font-family: "anton";
+  color: #151515;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 50px;
+  margin: 0;
+  max-width: 687px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.discount-form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  max-width: 786px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.discount-form input {
+  font-family: ui-sans-serif, system-ui, -apple-system;
+  flex: 1 1 300px;
+  background: transparent;
+  border: none;
+  color: #1b667f;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 25px;
+  padding: 10px 0;
+  border-bottom: 2px solid #1b667f;
+}
+
+.discount-form input::placeholder {
+  color: #1b667f;
+  opacity: 0.8;
+}
+
+.discount-form input:focus {
+  outline: none;
+}
+
+.color-span {
+  color: #1b667f;
+}
+
+.custome-btn {
+  border: 0;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: #1b667f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border: 2px solid #151515;
+  gap: 10px;
+}
+
+.custome-btn > svg {
+  width: 30px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.custome-btn:hover svg {
+  transform: translateX(5px);
+}
+
+.custome-btn:active {
+  transform: scale(0.95);
+}
+
+/* Tablets */
+@media (max-width: 1200px) {
+  .custome-btn {
+    font-size: 18px;
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 800px) {
+  .discount-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .discount-container h2 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .discount-form {
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin: 3rem 0;
+    gap: 4rem;
+  }
+
+  .discount-form input {
+    flex: 0;
+    width: 70%;
+    text-align: start;
+    font-size: 18px;
+    padding: 12px;
+    border-bottom: 2px solid #1b667f;
+  }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .discount-section {
+    padding: 4rem 1rem;
+  }
+
+  .discount-container h2 {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  .discount-form {
+    gap: 15px;
+    align-items: stretch;
+  }
+
+  .discount-form input {
+    border: 1px solid #1b667f;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 1.1rem;
+  }
+
+  .custome-btn {
+    justify-content: center;
+    background: #1b667f;
+    color: #fff;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    width: 100%;
+  }
+
+  .custome-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+}

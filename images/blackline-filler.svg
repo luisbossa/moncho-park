@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.5 28" preserveAspectRatio="none">
+  <g fill="none" stroke="#151515" stroke-width="1">
+    <path d="M0,15 L40,14"/>
+    <path d="M40,14 L80,15"/>
+    <path d="M80,15 L120,14"/>
+    <path d="M120,14 L160,15"/>
+    <path d="M160,15 L200,14"/>
+    <path d="M200,14 L240,15"/>
+    <path d="M240,15 L283.5,14"/>
+  </g>
+</svg>

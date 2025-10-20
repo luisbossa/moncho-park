@@ -1,0 +1,30 @@
+.custome-a {
+  font-family: ui-sans-serif, system-ui, -apple-system;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  padding: 8px 20px;
+  border-radius: 100px;
+  color: #ffffff;
+  background: #1b667f;
+  border: 2px solid #151515;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.custome-a > svg {
+  width: 30px;
+  margin-left: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.custome-a:hover svg {
+  transform: translateX(5px);
+}
+
+.custome-a:active {
+  transform: scale(0.95);
+}

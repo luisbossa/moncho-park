@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polideportivo Skatepark</title>
+    <link rel="icon" href="/favicon.ico">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Estilos globales -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/global.css">
+
+    <!-- Componentes -->
+    <link rel="stylesheet" href="/css/Header.css">
+    <link rel="stylesheet" href="/css/Hero.css">
+    <link rel="stylesheet" href="/css/About.css">
+    <link rel="stylesheet" href="/css/Park-map.css">
+    <link rel="stylesheet" href="/css/Shop.css">
+    <link rel="stylesheet" href="/css/Slider.css">
+    <link rel="stylesheet" href="/css/Section.css">
+    <link rel="stylesheet" href="/css/Best-sellers.css">
+    <link rel="stylesheet" href="/css/Discount.css">
+    <link rel="stylesheet" href="/css/Brands.css">
+    <link rel="stylesheet" href="/css/ui-btn.css">
+    <link rel="stylesheet" href="/css/ui-btn2.css">
+    <link rel="stylesheet" href="/css/Footer.css">
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/frontend.min.js"></script>
+</head>
+
+<body>
+    <section id="hero" class="hero-section">
+
+        <header class="main-header">
+            <div class="header-container">
+                <!-- Botón hamburguesa -->
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="#about">Acerca de</a></li>
+                        <li><a href="#shop">Tienda</a></li>
+                        <li><a href="#team">Equipo</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </nav>
+
+                <a href="/" class="logo">
+                    <img src="images/logo.png" alt="Skate Logo">
+                </a>
+
+                <div class="user-nav">
+
+                    <div class="nav-wrapper">
+                        <a href="#">Cuenta</a>
+                        <a href="#" class="cart-link">
+                            <img src="images/cart.svg" alt="Cart Icon">
+                            <span>Carrito</span>
+                        </a>
+                    </div>
+
+                    <a href="#" class="custome-a">
+                        <span>Contactar</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" height="34" width="34">
+                            <circle stroke-width="4" stroke="white" r="35.5" cy="37" cx="37"></circle>
+                            <path fill="white" stroke="white" stroke-width="3"
+                                d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <div class="hero-bg-video-wrapper">
+            <video autoplay muted playsinline class="hero-bg-video" id="video1"></video>
+            <video autoplay muted playsinline class="hero-bg-video" id="video2"></video>
+        </div>
+
+
+        <div class="container hero-content-container">
+            <div class="hero-title">
+                <span>Moncho Park</span>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="about" class="about-section">
+        <div class="hero-filler"></div>
+        <div class="container">
+            <div class="about-content">
+                <div class="about-title-wrapper">
+                    <h2 class="general-title-bg">Esto es</h2>
+                    <h3 class="general-title-fg">Moncho</h3>
+                    <h3 class="general-title-fg">Skatepark</h3>
+                </div>
+                <div class="about-text">
+                    <p>Es el primer espacio urbano dedicado al skate y BMX en San
+                        Ramón, Alajuela. Diseñado para todos los niveles, cuenta con rampas, rieles y zonas técnicas que
+                        invitan a la creatividad y la adrenalina sobre ruedas.</p>
+                    <p>Más que un skatepark, es un punto de encuentro. Un lugar donde la comunidad se une, el talento
+                        local florece y la cultura urbana se vive con fuerza. Aquí empieza el movimiento que está
+                        transformando San Ramón.</p>
+                    <button class="btn-23">
+                        <span class="text">Explorar</span>
+                        <span aria-hidden="" class="marquee">Explorar</span>
+                    </button>
+                </div>
+            </div>
+            <div class="about-images">
+                <div class="about-image-item">
+                    <img src="/images/bg-1.jpg" alt="Skater in action">
+                </div>
+                <div class="about-image-item">
+                    <img src="/images/bg-2.jpg" alt="Skater in a skate park">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="park" class="park-section">
+        <div class="park-title-wrapper">
+            <h2 class="general-title">Explora el Parque</h2>
+            <p class="skatepark-hours">
+                <span><strong>Ubicación:</strong> Este skatepark está ubicado en el Polideportivo, San Ramón de
+                    Alajuela.</span>
+                <span><strong>Horario:</strong> Todos los días de 7:00 AM – 7:30 PM.</span>
+            </p>
+        </div>
+
+        <!-- Mapa interactivo -->
+        <div class="park-map-wrapper">
+            <div id="image-map-pro-6308"></div>
+        </div>
+
+        <!-- Imagen alternativa para móviles -->
+        <img src="images/skatepark-mobile.png" alt="Mapa del Skatepark" class="park-map-image">
+    </section>
+
+
+
+
+
+
+
+    <section id="shop" class="shop-section">
+        <div class="container shop-teaser-container">
+            <div class="shop-teaser-content">
+                <div class="shop-title-wrapper">
+                    <h2 class="general-title-bg">Skate Moncho</h2>
+                    <h3 class="general-title-fg">Magazine</h3>
+                </div>
+                <p>
+                    Lo mejor del skate en fotos y videos en tiempo real. Los skaters más top, sus trucos y momentos
+                    únicos, todo aquí. ¿Listo para ser parte del movimiento?
+                </p>
+                <a href="#" class="btn-23">
+                    <span class="text">Explorar</span>
+                    <span aria-hidden="" class="marquee">Explorar</span>
+                </a>
+            </div>
+            <!--merged image-->
+            <div class="shop-teaser-image">
+                <div class="page-content">
+                    <div class="elementor elementor-16">
+                        <div class="e-con-inner">
+                            <div class="elementor-element elementor-widget-image" data-id="7d9a943"
+                                data-element_type="widget"
+                                data-settings="{&quot;motion_fx_motion_fx_scrolling&quot;:&quot;yes&quot;,&quot;motion_fx_translateX_effect&quot;:&quot;yes&quot;,&quot;motion_fx_devices&quot;:[&quot;desktop&quot;],&quot;motion_fx_translateX_direction&quot;:&quot;negative&quot;,&quot;motion_fx_motion_fx_mouse&quot;:&quot;yes&quot;,&quot;motion_fx_mouseTrack_effect&quot;:&quot;yes&quot;,&quot;motion_fx_mouseTrack_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0.2,&quot;sizes&quot;:[]},&quot;motion_fx_translateX_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:4,&quot;sizes&quot;:[]},&quot;motion_fx_translateX_affectedRange&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:{&quot;start&quot;:0,&quot;end&quot;:100}}}"
+                                data-widget_type="image.default">
+                                <div class="elementor-widget-container">
+                                    <img fetchpriority="high" decoding="async" width="765" height="860"
+                                        src="/images/skater.png" class="skater" alt="Skater jumping"
+                                        sizes="(max-width: 765px) 100vw, 765px" />
+                                </div>
+                                <!-- <img src="images/long-rail.png" alt="Skater stuff" class="long-rail"> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="shop-products-wrapper">
+            <div class="products-container">
+
+                <div class="product-gallery-info">
+                    <h2 id="product-title">Nombre del producto</h2>
+                    <p id="product-description">Descripcion</p>
+                    <a href="#" class="btn-23">
+                        <span class="text">Comprar</span>
+                        <span aria-hidden="true" class="marquee">Comprar</span>
+                    </a>
+                </div>
+
+
+                <div class="product-gallery">
+                    <div class="product-gallery-inner" id="product-gallery-inner">
+                        <div class="product-card"><img src="images/item-1.png" alt="Skateboard 01" /></div>
+                        <div class="product-card"><img src="images/item-2.png" alt="Skateboard 02" /></div>
+                        <div class="product-card"><img src="images/item-3.png" alt="Skateboard 03" /></div>
+                        <div class="product-card"><img src="images/item-4.png" alt="Skateboard 04" /></div>
+                        <div class="product-card"><img src="images/item-1.png" alt="Skateboard 01" /></div>
+                        <div class="product-card"><img src="images/item-2.png" alt="Skateboard 02" /></div>
+                        <div class="product-card"><img src="images/item-3.png" alt="Skateboard 03" /></div>
+                        <div class="product-card"><img src="images/item-4.png" alt="Skateboard 04" /></div>
+                    </div>
+
+                    <div class="product-nav-arrows">
+                        <button class="arrow-btn" id="prev-btn">
+                            <img src="images/left-arrow.png" alt="Anterior" />
+                        </button>
+                        <button class="arrow-btn" id="next-btn">
+                            <img src="images/right-arrow.svg" alt="Siguiente" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="instagram" class="instagram-section">
+        <div class="container instagram-container">
+            <div class="instagram-image-col">
+                <div class="insta-logo-overlay">
+                    <img src="images/cart.png" alt="Skateboarding logo">
+                    <div>
+                        <p class="logo-text-main">Skateboarding</p>
+                        <p class="logo-text-sub">Extreme sport team</p>
+                    </div>
+                </div>
+            </div>
+            <div class="instagram-content-col">
+                <div class="instagram-title-wrapper">
+                    <h2 class="general-title-bg">Síguenos en</h2>
+                    <h3 class="general-title-fg">Instagram</h3>
+                </div>
+                <p>
+                    Dale un vistazo a lo que pasa detrás de escena: nuevos productos, sesiones épicas, y toda la vibra
+                    del skate en un solo feed. Únete a la comunidad y sé parte del movimiento.
+                </p>
+                <a href="#" class="btn-23">
+                    <span class="text">Síguenos</span>
+                    <span aria-hidden="true" class="marquee">Síguenos</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="bestsellers" class="bestsellers-section">
+        <div class="blackline-filler-down"></div>
+        <div class="container">
+            <h2 class="general-title">Lo más vendido</h2>
+            <div class="bestsellers-grid">
+                <div class="product-item">
+                    <img src="images/deck-1.png" alt="Grand Gopher Cruiser">
+                    <div class="product-info">
+                        <h3>Grand Gopher Cruiser</h3>
+                        <p>8” x 28”- Stroke /Kicktail</p>
+                        <a href="#" class="btn-23">
+                            <span class="text">Comprar</span>
+                            <span aria-hidden="" class="marquee">Comprar</span></a>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="images/deck-2.png" alt="Hamboards Burst">
+                    <div class="product-info">
+                        <h3>Hamboards Burst</h3>
+                        <p>Surfskate Florida 32”</p>
+                        <a href="#" class="btn-23">
+                            <span class="text">Comprar</span>
+                            <span aria-hidden="" class="marquee">Comprar</span></a>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="images/deck-3.png" alt="Hearty Skateboard">
+                    <div class="product-info">
+                        <h3>Hearty Skateboard</h3>
+                        <p>Complete Line B & W 7.375” To 8.25”</p>
+                        <a href="#" class="btn-23">
+                            <span class="text">Comprar</span>
+                            <span aria-hidden="" class="marquee">Comprar</span></a>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="images/deck-4.png" alt="Grand Gopher Cruiser">
+                    <div class="product-info">
+                        <h3>Grand Gopher Cruiser</h3>
+                        <p>8” x 28”- Stroke /Kicktail</p>
+                        <a href="#" class="btn-23">
+                            <span class="text">Comprar</span>
+                            <span aria-hidden="" class="marquee">Comprar</span></a>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="images/deck-5.png" alt="Hamboards Burst">
+                    <div class="product-info">
+                        <h3>Hamboards Burst</h3>
+                        <p>Surfskate Florida 32”</p>
+                        <a href="#" class="btn-23">
+                            <span class="text">Comprar</span>
+                            <span aria-hidden="" class="marquee">Comprar</span></a>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="images/deck-6.png" alt="Hearty Skateboard">
+                    <div class="product-info">
+                        <h3>Hearty Skateboard</h3>
+                        <p>Complete Line B & W 7.375” To 8.25”</p>
+                        <a href="#" class="btn-23">
+                            <span class="text">Comprar</span>
+                            <span aria-hidden="" class="marquee">Comprar</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="discount" class="discount-section">
+        <div class="container discount-container">
+            <h2><span class="color-span">15%</span> DE DESCUENTO EN TU PRIMERA COMPRA ONLINE</h2>
+
+            <form class="discount-form">
+                <input type="email" placeholder="Introducir Email">
+
+                <button type="submit" class="custome-btn">
+                    <span>Suscribir</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" height="34" width="34">
+                        <circle stroke-width="4" stroke="white" r="35.5" cy="37" cx="37"></circle>
+                        <path fill="white" stroke="white" stroke-width="3"
+                            d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z">
+                        </path>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <section id="brands" class="brands-wrapper">
+        <div class="brands-title-wrapper">
+            <h2 class="general-title-bg">Nuestros</h2>
+            <h3 class="general-title-fg">Socios</h3>
+        </div>
+
+        <div class="brands-div">
+            <img class="brand-img" src="/images/brands.png" alt="Complete skateboard parts">
+        </div>
+    </section>
+
+
+    <footer id="footer">
+        <div class="brxe-div fr-footer-kilo">
+            <div class="footer-filler"></div>
+            <div class="brxe-container fr-footer-kilo__inner">
+                <div class="brxe-div fr-footer-kilo__logo-wrapper">
+                    <figure class="brxe-image fr-logo fr-footer-kilo__logo">
+                        <img width="1000" height="545" src="/images/footer-logo.png" class="css-filter size-full"
+                            alt="Camp Hillcrest Logo" decoding="async" loading="lazy"
+                            sizes="(max-width: 1000px) 100vw, 1000px" />
+                    </figure>
+                </div>
+                <div class="brxe-block fr-footer-kilo__content-block">
+                    <div class="brxe-div fr-footer-kilo__contact-wrapper">
+                        <h2 class="brxe-heading fr-contact-section-bravo__heading">Contact Details</h2>
+
+                        <div class="brxe-div fr-contact-info-bravo">
+                            <div class="brxe-div fr-contact-info-bravo__info-wrapper">
+                                <div class="brxe-div fr-contact-info-bravo__content-wrapper">
+                                    <a class="brxe-text-basic fr-contact-info-bravo__details"
+                                        href="https://www.google.com/maps/place/Camp+Hillcrest/" target="_blank">
+                                        Calle 1, Barrio San Juan
+                                        San Ramón, Alajuela
+                                        Costa Rica
+                                    </a>
+                                </div>
+                                <div class="brxe-div fr-contact-info-bravo__icon-wrapper">
+                                    <i class="ion-ios-pin brxe-icon fr-contact-info-bravo__icon"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="brxe-div fr-contact-info-bravo">
+                            <div class="brxe-div fr-contact-info-bravo__info-wrapper">
+                                <div class="brxe-div fr-contact-info-bravo__content-wrapper">
+                                    <a class="brxe-text-basic fr-contact-info-bravo__details"
+                                        href="mailto:info@camphillcrest.co.uk">
+                                        poliskate@gmail.com
+                                    </a>
+                                </div>
+                                <div class="brxe-div fr-contact-info-bravo__icon-wrapper">
+                                    <i class="fas fa-envelope brxe-icon fr-contact-info-bravo__icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="brxe-div fr-footer-kilo__content-wrapper">
+                        <nav class="brxe-div fr-footer-kilo__nav-wrapper">
+                            <div class="brxe-div fr-footer-kilo__nav-column">
+
+                                <h2 class="brxe-heading fr-footer-kilo__heading">Explore</h2>
+
+                                <ul class="brxe-div fr-footer-kilo__list">
+                                    <li class="brxe-div fr-footer-kilo__list-item">
+                                        <a class="brxe-text-link fr-footer-kilo__link" href="/">Home
+                                        </a>
+                                    </li>
+                                    <li class="brxe-div fr-footer-kilo__list-item">
+                                        <a class="brxe-text-link fr-footer-kilo__link" href="/accommodation/">Book Your
+                                            Stay
+                                        </a>
+                                    </li>
+                                    <li class="brxe-div fr-footer-kilo__list-item">
+                                        <a class="brxe-text-link fr-footer-kilo__link" href="/activities/">Activities
+                                        </a>
+                                    </li>
+                                    <li class="brxe-div fr-footer-kilo__list-item">
+                                        <a class="brxe-text-link fr-footer-kilo__link" href="/contact/">Contact Us
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Stay -->
+                            <div class="brxe-div fr-footer-kilo__nav-column">
+                                <h2 class="brxe-heading fr-footer-kilo__heading">
+                                    Stay
+                                </h2>
+                                <ul class="brxe-div fr-footer-kilo__list">
+                                    <li class="brxe-div fr-footer-kilo__list-item">
+                                        <a class="brxe-text-link fr-footer-kilo__link" href="#">Bunkhouse
+                                        </a>
+                                    </li>
+                                    <li class="brxe-div fr-footer-kilo__list-item">
+                                        <a class="brxe-text-link fr-footer-kilo__link" href="#">Horsebox
+                                        </a>
+                                    </li>
+                                    <li class="brxe-div fr-footer-kilo__list-item">
+                                        <a class="brxe-text-link fr-footer-kilo__link" href="#">Terms & Conditions
+                                        </a>
+                                    </li>
+                                    <li class="brxe-div fr-footer-kilo__list-item">
+                                        <a class="brxe-text-link fr-footer-kilo__link" href="#" target="_blank">Skate
+                                            Form
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Do -->
+                            <div class="brxe-div fr-footer-kilo__nav-column">
+                                <h2 class="brxe-heading fr-footer-kilo__heading">DO</h2>
+                                <ul class="brxe-div fr-footer-kilo__list">
+                                    <li class="brxe-div fr-footer-kilo__list-item">
+                                        <a class="brxe-text-link fr-footer-kilo__link" href="#">Canoe Trips</a>
+                                    </li>
+                                    <li class="brxe-div fr-footer-kilo__list-item">
+                                        <a class="brxe-text-link fr-footer-kilo__link" href="#s">Skateboard Lessons</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+
+                        <div class="footer-social-wrapper">
+                            <h2 class="brxe-heading">Follow us</h2>
+                            <ul class="fr-social-alpha">
+                                <li class="fr-social-alpha__list-item">
+                                    <a href="#" target="_blank" class="brxe-div social-icon-wrapper">
+                                        <img src="/images/facebook.svg" alt="Facebook icon">
+                                        <span class="brxe-text-basic hidden-accessible--footer">Follow us on
+                                            Facebook
+                                        </span>
+                                    </a>
+                                </li>
+
+                                <li class="fr-social-alpha__list-item">
+                                    <a href="#" target="_blank" class="brxe-div social-icon-wrapper">
+                                       <img src="/images/instagram.svg" alt="Instagram icon">
+                                        <span class="brxe-text-basic hidden-accessible--footer">Follow us on
+                                            Instagram
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="/js/data.js"></script>
+    <script src="/js/header.js" defer></script>
+    <script src="/js/videos.js" defer></script>
+    <script src="/js/footer.js" defer></script>
+    <script src="/js/slider.js" defer></script>
+
+    <script src="/js/move.js" defer></script>
+    <script src="/js/webpack.js" defer></script>
+    <script type="text/javascript" src="/js/image-map-pro.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+.brands-wrapper {
+  background-image: url(/images/bg-texture.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 0 13rem 0;
+  overflow: hidden;
+}
+
+.brands-title-wrapper {
+  display: block;
+  text-align: center;
+  line-height: 1;
+  z-index: 20;
+}
+
+.brands-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+  gap: 5rem;
+}
+
+.brands-div img {
+  display: block;
+  margin: auto;
+  max-width: 60%; 
+  height: auto;
+}
+
+/* 🔹 Tablets */
+@media (max-width: 1024px) {
+  .brands-wrapper h2 {
+    font-size: 3.5rem;
+  }
+}
+
+/* 🔹 Móviles medianos */
+@media (max-width: 768px) {
+  .brands-wrapper {
+    padding: 6rem 0 8rem 0;
+  }
+
+  .brands-wrapper h2 {
+    font-size: 2.8rem;
+  }
+
+  .general-title-fg {
+    font-size: 80px;
+  }
+}
+
+/* 🔹 Móviles pequeños */
+@media (max-width: 480px) {
+  .brands-wrapper {
+    padding: 4rem 0 6rem 0;
+  }
+
+  .brands-wrapper h2 {
+    font-size: 2rem;
+  }
+}
