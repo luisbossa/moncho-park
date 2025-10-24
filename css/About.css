@@ -51,6 +51,18 @@
   display: block;
 }
 
+.about-title-fg {
+  width: 100%;
+  color: #1b667f;
+  font-family: "obviously";
+  font-weight: 500;
+  letter-spacing: -8px;
+  font-size: clamp(2rem, 6vw, 10rem);
+  text-transform: uppercase;
+  text-shadow: 0.13rem 0.13rem 0 #151515, -0.13rem 0.13rem 0 #151515,
+    0.13rem -0.13rem 0 #151515, -0.13rem -0.13rem 0 #151515;
+}
+
 /* 📱 Tablets */
 @media (max-width: 1024px) {
   .about-section {
@@ -76,11 +88,6 @@
     font-size: 100px;
   }
 
-  .general-title-fg {
-    font-size: 60px;
-    line-height: 1.2;
-  }
-
   .about-images {
     flex-direction: column;
     gap: 20px;
@@ -97,11 +104,6 @@
     font-size: 60px;
   }
 
-  .general-title-fg {
-    font-size: 36px;
-    top: 110%;
-  }
-
   .about-text p {
     font-size: 14px;
     line-height: 22px;
@@ -116,11 +118,6 @@
 
   .general-title-bg {
     font-size: 42px;
-  }
-
-  .general-title-fg {
-    font-size: 28px;
-    top: 105%;
   }
 
   .about-text p {

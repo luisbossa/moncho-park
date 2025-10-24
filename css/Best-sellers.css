@@ -43,16 +43,16 @@
 
 /* ===== MEDIA QUERIES ===== */
 @media (max-width: 1600px) {
+  .bestsellers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .bestsellers-title {
     font-size: 12vw;
   }
 }
 
 @media (max-width: 1200px) {
-  .bestsellers-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .bestsellers-title {
     font-size: 10vw;
   }
