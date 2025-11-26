@@ -27,7 +27,6 @@
   opacity: 0;
 }
 
-/* Contenedor de contenido */
 .hero-content-container {
   position: relative;
   height: 100%;
@@ -38,7 +37,6 @@
   z-index: 7;
 }
 
-/* Título vertical */
 .hero-title {
   font-family: "obviously", sans-serif;
   position: absolute;

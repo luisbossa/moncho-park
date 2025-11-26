@@ -28,9 +28,8 @@
   text-transform: uppercase;
   margin-bottom: 30px;
   max-width: 500px;
-  letter-spacing: 2px;
-  text-shadow: 0.13rem 0.13rem 0 #151515, -0.13rem 0.13rem 0 #151515,
-    0.13rem -0.13rem 0 #151515, -0.13rem -0.13rem 0 #151515;
+  letter-spacing: -1px;
+  -webkit-text-stroke: 0.5px #151515;
 }
 
 .product-gallery-info p {

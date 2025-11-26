@@ -609,3 +609,8 @@
     transform: rotate(360deg);
   }
 }
+
+.social-icon-wrapper:hover img {
+  filter: invert(58%) sepia(86%) saturate(900%) hue-rotate(-10deg)
+    brightness(102%) contrast(102%);
+}

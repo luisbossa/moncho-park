@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="/css/Park-map.css">
     <link rel="stylesheet" href="/css/Shop.css">
     <link rel="stylesheet" href="/css/Slider.css">
-    <link rel="stylesheet" href="/css/Section.css">
     <link rel="stylesheet" href="/css/Best-sellers.css">
     <link rel="stylesheet" href="/css/Discount.css">
     <link rel="stylesheet" href="/css/Brands.css">
@@ -63,7 +62,6 @@
 
                     <div class="nav-wrapper">
                         <a href="#">Cuenta</a>
-                        <a href="#">Login</a>
                     </div>
 
                     <a href="#" class="custome-a">
@@ -218,36 +216,7 @@
         </div>
     </section>
 
-    <section id="instagram" class="instagram-section">
-        <div class="container instagram-container">
-            <div class="instagram-image-col">
-                <div class="insta-logo-overlay">
-                    <img src="images/instagram.png" width="60" height="60" alt="Instagram logo">
-                    <div>
-                        <p class="logo-text-sub">Nos puedes encontrar como:</p>
-                        <p class="logo-text-main">@moncho_park</p>
-                    </div>
-                </div>
-            </div>
-            <div class="instagram-content-col">
-                <div class="instagram-title-wrapper">
-                    <h2 class="general-title-bg">Síguenos en</h2>
-                    <h3 class="general-title-fg">Instagram</h3>
-                </div>
-                <p>
-                    Dale un vistazo a lo que pasa detrás de escena: nuevos productos, sesiones épicas, y toda la vibra
-                    del skate en un solo feed. Únete a la comunidad y sé parte del movimiento.
-                </p>
-                <a href="#" class="btn-23">
-                    <span class="text">Síguenos</span>
-                    <span aria-hidden="true" class="marquee">Síguenos</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
     <section id="bestsellers" class="bestsellers-section">
-        <div class="blackline-filler-down"></div>
         <div class="container">
             <h2 class="general-title">Lo más vendido</h2>
             <div class="bestsellers-grid">
@@ -321,7 +290,8 @@
             <h2><span class="color-span">15%</span> DE DESCUENTO EN TU PRIMERA COMPRA ONLINE</h2>
 
             <form class="discount-form">
-                <input type="email" placeholder="Introducir Email">
+                <input type="email" name="email" id="email" placeholder="Introducir Email" autocomplete="email"
+                    required>
 
                 <button type="submit" class="custome-btn">
                     <span>Suscribir</span>
@@ -462,7 +432,6 @@
             </div>
         </div>
     </footer>
-
 
     <script src="/js/data.js"></script>
     <script src="/js/header.js" defer></script>
