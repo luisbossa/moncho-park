@@ -19,7 +19,6 @@
   font-size: 15px;
   font-weight: 800;
   line-height: 1.5;
-  -webkit-mask-image: -webkit-radial-gradient(#151515, #fff);
   padding-top: 16px !important;
   padding-bottom: 16px !important;
   text-transform: uppercase;
@@ -54,10 +53,9 @@
 }
 
 .btn-23 span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
   inset: 0;
+  place-items: center;
   position: absolute;
   transition: opacity 0.2s ease;
 }
