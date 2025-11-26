@@ -50,6 +50,7 @@
   overflow: hidden;
   padding: 0.8rem 3rem;
   position: relative;
+  isolation: isolate;
 }
 
 .btn-23 span {
