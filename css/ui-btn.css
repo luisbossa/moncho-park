@@ -54,9 +54,10 @@
 }
 
 .btn-23 span {
-  display: grid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   inset: 0;
-  place-items: center;
   position: absolute;
   transition: opacity 0.2s ease;
 }
