@@ -1,3 +1,4 @@
+/* RESET GENERAL DEL BOTÓN */
 .btn-23,
 .btn-23 *,
 .btn-23 :after,
@@ -8,12 +9,12 @@
   box-sizing: border-box;
 }
 
+/* BOTÓN BASE */
 .btn-23 {
   font-family: ui-sans-serif, system-ui, -apple-system;
   -webkit-tap-highlight-color: transparent;
   -webkit-appearance: button;
   background-color: #151515;
-  background-image: none;
   color: #fff;
   cursor: pointer;
   font-size: 15px;
@@ -24,16 +25,21 @@
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 1.5px;
+
+  /* CRÍTICO PARA SAFARI */
+  border-radius: 99rem;
+  border-width: 2px;
+  overflow: hidden;
+  contain: paint; /* evita desbordes durante transform */
+  position: relative;
+  isolation: isolate;
 }
 
 .btn-23:disabled {
   cursor: default;
 }
 
-.btn-23:-moz-focusring {
-  outline: auto;
-}
-
+/* ESTILOS INTERNOS */
 .btn-23 svg {
   display: block;
   vertical-align: middle;
@@ -43,48 +49,42 @@
   display: none;
 }
 
-.btn-23 {
-  border-radius: 99rem;
-  border-width: 2px;
-  overflow: hidden;
-  padding: 0.8rem 3rem;
-  position: relative;
-  isolation: isolate;
-}
-
+/* SPANS INTERNOS (texto principal + marquee) */
 .btn-23 span {
-  display: grid;
-  inset: 0;
-  place-items: center;
+  display: flex; /* FIX SAFARI */
+  align-items: center;
+  justify-content: center;
   position: absolute;
+  inset: 0;
   transition: opacity 0.2s ease;
-}
 
-.btn-23 .marquee {
-  --spacing: 7em;
-  --start: 0em;
-  --end: 7em;
-  -webkit-animation: marquee 1.4s linear infinite;
-  animation: marquee 1.4s linear infinite;
-  -webkit-animation-play-state: paused;
-  animation-play-state: paused;
-  opacity: 0;
-  position: relative;
-  text-shadow: #fff var(--spacing) 0, #fff calc(var(--spacing) * -1) 0,
-    #fff calc(var(--spacing) * -2) 0;
-}
-
-.btn-23 span,
-.btn-23 .marquee {
+  /* FIXES IMPORTANTES */
+  line-height: 1;
+  white-space: nowrap; /* evita desbordes verticales */
   backface-visibility: hidden;
   transform: translateZ(0);
   -webkit-font-smoothing: antialiased;
   will-change: transform, opacity;
-  line-height: 1;
 }
 
+/* MARQUEE */
+.btn-23 .marquee {
+  --spacing: 7em;
+  --start: 0em;
+  --end: 7em;
+  animation: marquee 1.4s linear infinite;
+  animation-play-state: paused;
+  opacity: 0;
+
+  /* text-shadow = problema en móvil, luego lo ajustamos */
+  text-shadow: #fff var(--spacing) 0, #fff calc(var(--spacing) * -1) 0,
+    #fff calc(var(--spacing) * -2) 0;
+
+  position: relative;
+}
+
+/* HOVER */
 .btn-23:hover .marquee {
-  -webkit-animation-play-state: running;
   animation-play-state: running;
   opacity: 1;
 }
@@ -93,26 +93,17 @@
   opacity: 0;
 }
 
-@-webkit-keyframes marquee {
-  0% {
-    transform: translateX(var(--start));
-  }
-
-  to {
-    transform: translateX(var(--end));
-  }
-}
-
+/* ANIMACIÓN */
 @keyframes marquee {
   0% {
     transform: translateX(var(--start));
   }
-
-  to {
+  100% {
     transform: translateX(var(--end));
   }
 }
 
+/* MÓVIL — FIX extra para Safari iOS */
 @media (max-width: 480px) {
   .btn-23 {
     font-size: 12px;
@@ -123,5 +114,6 @@
   .btn-23 .marquee {
     --spacing: 5em;
     --end: 5em;
+    text-shadow: none; /* AVISO: ESSENCIAL PARA SAFARI */
   }
 }
