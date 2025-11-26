@@ -21,7 +21,7 @@
   border-radius: 99rem;
 
   cursor: pointer;
-  line-height: 1 !important; /* FIX SAFARI */
+  line-height: 1 !important;
   white-space: nowrap;
 
   -webkit-font-smoothing: antialiased;
@@ -29,45 +29,64 @@
   transform: translateZ(0);
 }
 
-/* Desactivar cualquier estilo heredado interno */
 .btn-23 * {
   all: unset;
   box-sizing: border-box;
   pointer-events: none;
-  line-height: 1 !important; /* FIX SAFARI */
+  line-height: 1 !important;
   white-space: nowrap;
 }
 
-/* SPANS INTERNOS */
+.btn-23:disabled {
+  cursor: default;
+}
+
+.btn-23:-moz-focusring {
+  outline: auto;
+}
+
+.btn-23 svg {
+  display: block;
+  vertical-align: middle;
+}
+
+.btn-23 [hidden] {
+  display: none;
+}
+
 .btn-23 span {
-  position: absolute;
+  display: grid;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  place-items: center;
+  position: absolute;
   transition: opacity 0.2s ease;
 }
 
-/* MARQUEE */
 .btn-23 .marquee {
   --spacing: 7em;
   --start: 0em;
   --end: 7em;
-
-  animation: marquee 1.4s linear infinite paused;
+  -webkit-animation: marquee 1.4s linear infinite;
+  animation: marquee 1.4s linear infinite;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
   opacity: 0;
-
-  text-shadow:
-    #fff var(--spacing) 0,
-    #fff calc(var(--spacing) * -1) 0,
+  position: relative;
+  text-shadow: #fff var(--spacing) 0, #fff calc(var(--spacing) * -1) 0,
     #fff calc(var(--spacing) * -2) 0;
-
-  backface-visibility: hidden;
-  transform: translateZ(0);
 }
 
-/* HOVER */
+.btn-23 span,
+.btn-23 .marquee {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+  will-change: transform, opacity;
+  line-height: 1;
+}
+
 .btn-23:hover .marquee {
+  -webkit-animation-play-state: running;
   animation-play-state: running;
   opacity: 1;
 }
@@ -76,17 +95,26 @@
   opacity: 0;
 }
 
-/* KEYFRAMES */
-@keyframes marquee {
+@-webkit-keyframes marquee {
   0% {
     transform: translateX(var(--start));
   }
-  100% {
+
+  to {
     transform: translateX(var(--end));
   }
 }
 
-/* RESPONSIVE FIX SAFARI */
+@keyframes marquee {
+  0% {
+    transform: translateX(var(--start));
+  }
+
+  to {
+    transform: translateX(var(--end));
+  }
+}
+
 @media (max-width: 480px) {
   .btn-23 {
     font-size: 12px;
