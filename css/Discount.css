@@ -93,7 +93,6 @@
   transform: scale(0.95);
 }
 
-/* Tablets */
 @media (max-width: 1200px) {
   .custome-btn {
     font-size: 18px;
@@ -131,7 +130,12 @@
   }
 }
 
-/* Móviles */
+@media (max-width: 768px) {
+  .discount-section {
+    border-top: none;
+  }
+}
+
 @media (max-width: 480px) {
   .discount-section {
     padding: 4rem 1rem;
@@ -143,29 +147,21 @@
   }
 
   .discount-form {
-    gap: 15px;
-    align-items: stretch;
-  }
-
-  .discount-form input {
-    border: 1px solid #1b667f;
-    border-radius: 6px;
-    padding: 12px;
-    font-size: 1.1rem;
+    gap: 30px;
   }
 
   .custome-btn {
-    justify-content: center;
-    background: #1b667f;
-    color: #fff;
-    padding: 12px;
-    border-radius: 6px;
-    font-size: 1.1rem;
-    width: 100%;
+    font-size: 13px;
+    padding: 13px 14px;
+    border-radius: 80px;
   }
 
   .custome-btn svg {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .discount-section {
+    border-top: none;
   }
 }

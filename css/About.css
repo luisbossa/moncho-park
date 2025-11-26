@@ -82,25 +82,20 @@
     text-align: center;
   }
 
-  .general-title-bg {
-    font-size: 100px;
-  }
-
   .about-images {
     flex-direction: column;
     gap: 20px;
   }
 }
 
-/* 📱 Smartphones */
 @media (max-width: 768px) {
   .about-section {
     padding: 80px 20px;
   }
 
-  .general-title-bg {
-    font-size: 60px;
-  }
+  .about-title-fg {
+  font-size: 2.5rem;
+}
 
   .about-text p {
     font-size: 14px;
@@ -108,18 +103,13 @@
   }
 }
 
-/* 📱 Teléfonos muy pequeños */
 @media (max-width: 480px) {
   .about-section {
     padding: 60px 15px;
   }
 
-  .general-title-bg {
-    font-size: 42px;
-  }
-
   .about-text p {
-    font-size: 13px;
+    font-size: 15px;
     line-height: 20px;
   }
 }

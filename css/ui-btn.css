@@ -103,3 +103,17 @@
     transform: translateX(var(--end));
   }
 }
+
+@media (max-width: 480px) {
+  .btn-23 {
+    font-size: 12px;         
+    padding: 0.5rem 1.8rem;   
+    border-width: 1.5px;    
+  }
+  
+  .btn-23 .marquee {
+    --spacing: 5em;          
+    --end: 5em;
+  }
+}
+

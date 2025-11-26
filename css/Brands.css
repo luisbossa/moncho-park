@@ -30,18 +30,20 @@
 .brands-div img {
   display: block;
   margin: auto;
-  max-width: 60%; 
+  max-width: 80%;
   height: auto;
 }
 
-/* 🔹 Tablets */
+.general-title-fg {
+  font-size: clamp(2rem, 6vw, 10rem);
+}
+
 @media (max-width: 1024px) {
   .brands-wrapper h2 {
     font-size: 3.5rem;
   }
 }
 
-/* 🔹 Móviles medianos */
 @media (max-width: 768px) {
   .brands-wrapper {
     padding: 6rem 0 8rem 0;
@@ -50,13 +52,8 @@
   .brands-wrapper h2 {
     font-size: 2.8rem;
   }
-
-  .general-title-fg {
-    font-size: 80px;
-  }
 }
 
-/* 🔹 Móviles pequeños */
 @media (max-width: 480px) {
   .brands-wrapper {
     padding: 4rem 0 6rem 0;

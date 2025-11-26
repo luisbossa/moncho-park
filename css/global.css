@@ -68,6 +68,7 @@ body {
   letter-spacing: 0.02rem;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  user-select: none;
 }
 
 body::-webkit-scrollbar {
@@ -94,28 +95,24 @@ body::-webkit-scrollbar-thumb {
   position: relative;
 }
 
-/* Tablets grandes */
 @media (max-width: 1200px) {
   .container {
     padding: 0 60px;
   }
 }
 
-/* Tablets / móviles medianos */
 @media (max-width: 992px) {
   .container {
     padding: 0 30px;
   }
 }
 
-/* Móviles pequeños */
 @media (max-width: 576px) {
   .container {
     padding: 0 15px;
   }
 }
 
-/* Font Awesome - Base */
 .fa {
   display: inline-block;
   font-style: normal;
@@ -128,7 +125,6 @@ body::-webkit-scrollbar-thumb {
   font-weight: 900;
 }
 
-/* Font Awesome Solid */
 @font-face {
   font-family: "Font Awesome 5 Free";
   font-style: normal;
@@ -142,7 +138,6 @@ body::-webkit-scrollbar-thumb {
   font-display: block;
 }
 
-/* Íconos específicos necesarios */
 .fa-map-marker:before {
   content: "\f041";
 }

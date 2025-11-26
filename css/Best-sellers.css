@@ -1,8 +1,8 @@
 .bestsellers-section {
   position: relative;
-  padding: 10rem 2rem; /* padding flexible para móviles */
+  padding: 10rem 2rem;
   background: url("/images/ramp.png") no-repeat center center;
-  background-size: cover; /* mejor para responsive */
+  background-size: cover;
 }
 
 .bestsellers-grid {
@@ -41,7 +41,6 @@
   margin: 0 0 1rem 0;
 }
 
-/* ===== MEDIA QUERIES ===== */
 @media (max-width: 1600px) {
   .bestsellers-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -71,6 +70,10 @@
     flex-direction: column;
     text-align: center;
   }
+
+  .product-item img {
+    max-height: 350px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -82,6 +85,10 @@
   .bestsellers-title {
     font-size: 15vw;
     margin-bottom: 3rem;
+  }
+
+  .bestsellers-section {
+    background: none;
   }
 }
 
