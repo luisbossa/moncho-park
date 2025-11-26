@@ -193,3 +193,9 @@
     height: 20px;
   }
 }
+
+@supports (-webkit-touch-callout: none) {
+  .menu-toggle {
+    display: flex !important;
+  }
+}
