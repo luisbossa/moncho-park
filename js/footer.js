@@ -5,17 +5,15 @@ document.addEventListener("DOMContentLoaded", function () {
     (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Agregar la clase que hace girar el logo
           logo.classList.add("spin-on-scroll");
-          observer.unobserve(entry.target); // Dejar de observar una vez que el logo aparece
+          observer.unobserve(entry.target); 
         }
       });
     },
     {
-      threshold: 0.5, // El logo debe estar al menos al 50% en la vista
+      threshold: 0.5, 
     }
   );
 
-  // Comienza a observar el logo
   observer.observe(logo);
 });

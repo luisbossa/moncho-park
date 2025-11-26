@@ -15,8 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       name: "Tornillos Ogre",
-      description:
-        "Juego de tornillos de alta resistencia, con ajuste seguro.",
+      description: "Juego de tornillos de alta resistencia, con ajuste seguro.",
     },
     {
       name: "Trucks Thunder",
@@ -52,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
       card.classList.toggle("active", index === currentIndex);
     });
 
-    // Actualizar título y descripción
     const titleEl = document.getElementById("product-title");
     const descEl = document.getElementById("product-description");
 
@@ -80,5 +78,5 @@ document.addEventListener("DOMContentLoaded", () => {
   prevBtn.addEventListener("click", prevSlide);
   nextBtn.addEventListener("click", nextSlide);
 
-  updateSlider(); // Inicializa al cargar
+  updateSlider();
 });
