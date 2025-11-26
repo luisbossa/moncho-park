@@ -1,70 +1,51 @@
-/* RESET GENERAL DEL BOTÓN */
-.btn-23,
-.btn-23 *,
-.btn-23 :after,
-.btn-23 :before,
-.btn-23:after,
-.btn-23:before {
-  border: 0;
-  box-sizing: border-box;
-}
-
-/* BOTÓN BASE */
 .btn-23 {
-  font-family: ui-sans-serif, system-ui, -apple-system;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-appearance: button;
-  background-color: #151515;
-  color: #fff;
-  cursor: pointer;
-  font-size: 15px;
-  font-weight: 800;
-  line-height: 1.5;
-  padding-top: 16px !important;
-  padding-bottom: 16px !important;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 1.5px;
-
-  /* CRÍTICO PARA SAFARI */
-  border-radius: 99rem;
-  border-width: 2px;
-  overflow: hidden;
-  contain: paint; /* evita desbordes durante transform */
-  position: relative;
-  isolation: isolate;
-}
-
-.btn-23:disabled {
-  cursor: default;
-}
-
-/* ESTILOS INTERNOS */
-.btn-23 svg {
-  display: block;
-  vertical-align: middle;
-}
-
-.btn-23 [hidden] {
-  display: none;
-}
-
-/* SPANS INTERNOS (texto principal + marquee) */
-.btn-23 span {
-  display: flex; /* FIX SAFARI */
+  all: unset;
+  display: inline-flex !important;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  inset: 0;
-  transition: opacity 0.2s ease;
 
-  /* FIXES IMPORTANTES */
-  line-height: 1;
-  white-space: nowrap; /* evita desbordes verticales */
+  box-sizing: border-box;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  font-family: ui-sans-serif, system-ui, -apple-system;
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #fff;
+  background-color: #151515;
+
+  padding: 0.8rem 3rem;
+  border-radius: 99rem;
+
+  cursor: pointer;
+  line-height: 1 !important; /* FIX SAFARI */
+  white-space: nowrap;
+
+  -webkit-font-smoothing: antialiased;
   backface-visibility: hidden;
   transform: translateZ(0);
-  -webkit-font-smoothing: antialiased;
-  will-change: transform, opacity;
+}
+
+/* Desactivar cualquier estilo heredado interno */
+.btn-23 * {
+  all: unset;
+  box-sizing: border-box;
+  pointer-events: none;
+  line-height: 1 !important; /* FIX SAFARI */
+  white-space: nowrap;
+}
+
+/* SPANS INTERNOS */
+.btn-23 span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
 }
 
 /* MARQUEE */
@@ -72,15 +53,17 @@
   --spacing: 7em;
   --start: 0em;
   --end: 7em;
-  animation: marquee 1.4s linear infinite;
-  animation-play-state: paused;
+
+  animation: marquee 1.4s linear infinite paused;
   opacity: 0;
 
-  /* text-shadow = problema en móvil, luego lo ajustamos */
-  text-shadow: #fff var(--spacing) 0, #fff calc(var(--spacing) * -1) 0,
+  text-shadow:
+    #fff var(--spacing) 0,
+    #fff calc(var(--spacing) * -1) 0,
     #fff calc(var(--spacing) * -2) 0;
 
-  position: relative;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 /* HOVER */
@@ -93,7 +76,7 @@
   opacity: 0;
 }
 
-/* ANIMACIÓN */
+/* KEYFRAMES */
 @keyframes marquee {
   0% {
     transform: translateX(var(--start));
@@ -103,7 +86,7 @@
   }
 }
 
-/* MÓVIL — FIX extra para Safari iOS */
+/* RESPONSIVE FIX SAFARI */
 @media (max-width: 480px) {
   .btn-23 {
     font-size: 12px;
@@ -114,6 +97,5 @@
   .btn-23 .marquee {
     --spacing: 5em;
     --end: 5em;
-    text-shadow: none; /* AVISO: ESSENCIAL PARA SAFARI */
   }
 }
