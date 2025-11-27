@@ -31,12 +31,11 @@
   display: flex;
   align-items: center;
   max-width: 786px;
-  gap: 20px;
   flex-wrap: wrap;
+  gap: 30px;
 }
 
 .discount-form input {
-  font-family: ui-sans-serif, system-ui, -apple-system;
   flex: 1 1 300px;
   background: transparent;
   border: none;
@@ -46,11 +45,10 @@
   line-height: 25px;
   padding: 10px 0;
   border-bottom: 2px solid #1b667f;
-  
   -webkit-appearance: none;
   appearance: none;
   border-radius: 0;
-  box-shadow: none;
+  font-family: ui-sans-serif, system-ui, -apple-system;
 }
 
 .discount-form input::placeholder {
@@ -109,7 +107,7 @@
   .discount-container {
     flex-direction: column;
     text-align: center;
-    gap: 30px;
+    gap: 0;
   }
 
   .discount-container h2 {

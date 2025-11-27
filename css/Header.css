@@ -81,7 +81,7 @@
 }
 
 .menu-toggle {
-  display: flex !important;
+  display: none;
   position: relative;
   z-index: 100 !important;
 
@@ -203,7 +203,7 @@
   .main-nav a,
   .user-nav a {
     font-size: 13px;
-    padding: 10px 11px;
+    padding: 10px 12px;
     border-radius: 80px;
   }
 

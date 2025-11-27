@@ -3,12 +3,10 @@
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
-
   box-sizing: border-box;
   position: relative;
   isolation: isolate;
   overflow: hidden;
-
   font-family: ui-sans-serif, system-ui, -apple-system;
   font-size: 15px;
   font-weight: 800;
@@ -16,14 +14,11 @@
   letter-spacing: 1.5px;
   color: #fff;
   background-color: #151515;
-
-  padding: 0.8rem 3rem;
+  padding: 1.2rem 3rem;
   border-radius: 99rem;
-
   cursor: pointer;
   line-height: 1 !important;
   white-space: nowrap;
-
   -webkit-font-smoothing: antialiased;
   backface-visibility: hidden;
   transform: translateZ(0);
