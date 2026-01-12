@@ -6,37 +6,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const productData = [
     {
-      name: "Deck Heart",
+      name: "Tabla Mexican",
       description: "Tabla clásica ideal para principiantes.",
     },
     {
-      name: "Deck Ogre",
+      name: "Tabla Girl",
       description: "Modelo profesional con diseño avanzado.",
-    },
-    {
-      name: "Tornillos Ogre",
-      description: "Juego de tornillos de alta resistencia, con ajuste seguro.",
     },
     {
       name: "Trucks Thunder",
-      description: "Trucks de alto rendimiento para todo tipo de terrenos.",
+      description: "Par de trucks de alta resistencia, con ajuste seguro.",
     },
     {
-      name: "Deck Heart",
-      description: "Tabla clásica ideal para principiantes.",
+      name: "Gorro Powell",
+      description: "Gorro oscuro, 100% algodon",
     },
     {
-      name: "Deck Piston",
-      description: "Modelo profesional con diseño avanzado.",
+      name: "Tabla Girl",
+      description: "Tabla con tono de colores muy visuales.",
     },
     {
-      name: "Gomas Ogre",
+      name: "Tabla Stereo",
+      description: "Modelo ecológico con diseño abstracto.",
+    },
+    {
+      name: "Ruedas Speed Fire",
       description:
-        "Juego de gomas para trucks, absorción de impactos mejorada.",
+        "Llantas luminosas, con absorción de impacto mejorada.",
     },
     {
-      name: "Trucks Thunder",
-      description: "Trucks de alto rendimiento para todo tipo de terrenos.",
+      name: "Tabla Element",
+      description: "Hecha 100% de madera de maple.",
+    },
+
+    {
+      name: "Tabla Empire",
+      description: "Tabla corta clásica.",
+    },
+    {
+      name: "Rollers Redz",
+      description: "Rollers clásicos, de alta velocidad.",
+    },
+    {
+      name: "Rollers Rush",
+      description:
+        "Juego de rollers para llantas. son 8 en total.",
+    },
+    {
+      name: "Anillo Deathwish",
+      description: "Anillo de plata, con acabado lujoso.",
     },
   ];
 
