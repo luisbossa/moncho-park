@@ -7,6 +7,8 @@
 .shop-teaser-container {
   width: 63%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
   background-image: url(/images/bg-fly.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -33,21 +35,20 @@
   margin: 0 0 1.5rem 0;
 }
 
-.shop-teaser-image {
-  flex: 1 1 55%;
-  position: relative;
-  max-width: 100%;
-  height: auto;
+.empty-div {
+  height: 400px;
 }
 
 .shop-teaser-image img {
+  max-width: 100%;
   position: relative;
+  flex: 1 1 55%;
 }
 
 .skater {
-  position: absolute;
-  top: -19rem;
-  left: 3rem;
+  width: 55%;
+  top: -29rem;
+  left: 10rem;
   z-index: 2;
 }
 
@@ -75,9 +76,14 @@
     max-width: 100%;
   }
 
+  .empty-div {
+    height: 100%;
+  }
+
   .skater {
-    top: -13rem;
-    left: -6rem;
+    width: 60%;
+    top: -16rem;
+    left: 6rem;
   }
 
   .general-title-fg {
