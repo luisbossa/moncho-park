@@ -92,6 +92,7 @@
 @media (max-width: 768px) {
   .about-section {
     padding: 80px 20px;
+    scroll-margin-top: -8rem;
   }
 
   .about-title-fg {
