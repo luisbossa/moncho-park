@@ -1,8 +1,13 @@
-const menuToggle = document.querySelector(".menu-toggle");
-const mainNav = document.querySelector(".main-nav");
-const userNav = document.querySelector(".user-nav");
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle =
+    document.querySelector(".mobile-menu-toggle") ||
+    document.querySelector(".menu-toggle");
 
-menuToggle.addEventListener("click", () => {
-  mainNav.classList.toggle("active");
-  userNav.classList.toggle("active");
+  const menu = document.querySelector(".mobile-menu");
+
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  }
 });

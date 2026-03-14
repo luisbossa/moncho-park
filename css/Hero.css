@@ -49,8 +49,19 @@
   display: block;
   line-height: 0.85;
   text-transform: uppercase;
-  text-shadow: 0.13rem 0.13rem 0 #151515, -0.13rem 0.13rem 0 #151515,
-    0.13rem -0.13rem 0 #151515, -0.13rem -0.13rem 0 #151515;
+  text-shadow:
+    0.13rem 0.13rem 0 #151515,
+    -0.13rem 0.13rem 0 #151515,
+    0.13rem -0.13rem 0 #151515,
+    -0.13rem -0.13rem 0 #151515;
+}
+
+@media (max-width: 1100px) {
+  .hero-title {
+    left: 5%;
+    top: 43%;
+    font-size: 12vh;
+  }
 }
 
 @media (max-width: 768px) {
