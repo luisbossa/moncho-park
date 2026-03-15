@@ -72,11 +72,9 @@
 }
 .product-card img {
   width: 230px;
-  transition: transform 0.3s ease;
 }
 .product-card.active img {
   width: 260px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 .product-nav-arrows {
   position: absolute;
@@ -136,7 +134,7 @@
     object-fit: contain;
   }
 
-  .product-gallery-info {     
+  .product-gallery-info {
     width: 100%;
     display: flex;
     flex-direction: column;
