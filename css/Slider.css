@@ -103,10 +103,11 @@
     gap: 7rem;
   }
   .shop-products-wrapper {
-    height: 900px;
+    min-height: 900px;
     padding-top: 2rem;
   }
   .product-gallery {
+    min-height: 0;
     overflow: visible;
   }
   .product-gallery-info h2 {
