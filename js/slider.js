@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       name: "Speed Fire",
       description:
-        "Llantas luminosas, con absorción de impacto mejorada.",
+        "Llantas luminosas, con absorción de impacto.",
     },
     {
       name: "Tabla Element",

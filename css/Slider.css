@@ -97,11 +97,11 @@
   .products-container {
     flex-direction: column;
     align-items: start;
-    gap: 5.6rem;
+    gap: 5rem;
   }
 
   .shop-products-wrapper {
-    min-height: 850px;
+    min-height: 840px;
     padding: 4rem 0 0 2rem;
   }
 
