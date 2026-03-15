@@ -4,7 +4,20 @@ const videos = [
   "videos/video-3.mp4",
 ];
 
+const bgAudio = document.getElementById("bg-audio");
+
+function startAudio() {
+  bgAudio.muted = false;
+  bgAudio.volume = 0.6;
+  bgAudio.play().catch(() => {});
+}
+
+window.addEventListener("click", startAudio, { once: true });
+window.addEventListener("scroll", startAudio, { once: true });
+window.addEventListener("touchstart", startAudio, { once: true });
+
 let currentIndex = 0;
+
 let activeVideo = document.getElementById("video1");
 let nextVideo = document.getElementById("video2");
 
@@ -32,9 +45,10 @@ function switchVideo() {
         const temp = activeVideo;
         activeVideo = nextVideo;
         nextVideo = temp;
+
         activeVideo.addEventListener("ended", switchVideo, { once: true });
-      }, 400); 
+      }, 400);
     },
-    { once: true }
+    { once: true },
   );
 }
