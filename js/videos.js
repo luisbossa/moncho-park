@@ -52,3 +52,28 @@ function switchVideo() {
     { once: true },
   );
 }
+
+const audioToggle = document.getElementById("audio-toggle");
+const iconOn = document.getElementById("icon-sound-on");
+const iconOff = document.getElementById("icon-sound-off");
+
+function updateAudioIcon() {
+  if (bgAudio.paused) {
+    iconOn.style.display = "none";
+    iconOff.style.display = "block";
+  } else {
+    iconOn.style.display = "block";
+    iconOff.style.display = "none";
+  }
+}
+
+audioToggle.addEventListener("click", () => {
+  if (bgAudio.paused) {
+    bgAudio.play();
+  } else {
+    bgAudio.pause();
+  }
+});
+
+bgAudio.addEventListener("play", updateAudioIcon);
+bgAudio.addEventListener("pause", updateAudioIcon);
