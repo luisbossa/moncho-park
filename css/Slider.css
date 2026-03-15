@@ -123,12 +123,13 @@
     height: 380px;
     padding: 2rem;
     overflow: visible;
+    box-sizing: border-box;
   }
 
   .product-card img,
   .product-card.active img {
     width: 100%;
-    max-width: 180px;
+    max-width: 150px;
     height: auto;
     object-fit: contain;
   }
