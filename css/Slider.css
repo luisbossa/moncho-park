@@ -129,8 +129,8 @@
   .product-card img,
   .product-card.active img {
     width: 100%;
-    max-width: 150px;
     height: auto;
+    max-width: 160px;
     object-fit: contain;
   }
 
