@@ -1,6 +1,6 @@
 .shop-products-wrapper {
   position: relative;
-  padding: 5rem 0 5rem 3rem;
+  padding: 1rem 0 1rem 3rem;
   background-color: #1b667f;
   overflow: hidden;
 }
@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  scroll-margin-top: -1.8rem;
   gap: 40px;
 }
 .product-gallery-info {
@@ -77,8 +78,8 @@
 }
 .product-nav-arrows {
   position: absolute;
-  right: 80px;
-  bottom: 2rem;
+  right: 40px;
+  bottom: 5rem;
   display: flex;
   gap: 20px;
   z-index: 10;
@@ -97,6 +98,7 @@
   .products-container {
     flex-direction: column;
     align-items: start;
+    scroll-margin-top: 10rem;
     gap: 6rem;
   }
 

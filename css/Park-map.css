@@ -83,6 +83,7 @@
   .park-title-wrapper {
     margin-bottom: 2rem;
     padding: 0 17px;
+    scroll-margin-top: 5rem;
   }
 
   .general-title {
