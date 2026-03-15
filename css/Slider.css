@@ -1,11 +1,11 @@
 .shop-products-wrapper {
+  position: relative;
   margin-top: 10rem;
   padding: 5rem 0 5rem 3rem;
   background-color: #1b667f;
   overflow: hidden;
 }
 .products-container {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -148,8 +148,8 @@
   .product-nav-arrows {
     width: 160px;
     position: absolute;
-    left: 0;
-    bottom: -10rem;
+    left: 1rem;
+    bottom: 1rem;
     padding: 1rem;
     justify-content: space-between;
   }
