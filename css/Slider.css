@@ -97,17 +97,21 @@
   .products-container {
     flex-direction: column;
     align-items: start;
-    gap: 6rem;
+    gap: 5.5rem;
   }
 
   .shop-products-wrapper {
-    min-height: 850px;
+    min-height: 845px;
     padding: 5rem 0 0 1.5rem;
   }
 
   .product-gallery {
     min-height: 0;
     overflow: visible;
+  }
+
+  .product-gallery-inner {
+    gap: 21px;
   }
 
   .product-gallery-info h2 {
