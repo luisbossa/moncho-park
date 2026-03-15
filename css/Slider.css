@@ -114,21 +114,22 @@
   }
   .product-card,
   .product-card.active {
-    display: block;
     width: 83vw;
     height: 400px;
     padding: 2rem;
     min-height: 400px;
-    max-height: none;
+    max-height: 400px;
     overflow: visible;
     display: -webkit-flex;
     display: flex;
   }
   .product-card img,
   .product-card.active img {
+    display: block;
     width: 100%;
-    max-width: 180px;
     height: auto;
+    max-width: 180px;
+    max-height: none;
     object-fit: contain;
   }
   .product-gallery-info {
