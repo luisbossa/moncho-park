@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
       description: "Modelo ecológico con diseño abstracto.",
     },
     {
-      name: "Ruedas Speed Fire",
+      name: "Speed Fire",
       description:
         "Llantas luminosas, con absorción de impacto mejorada.",
     },
