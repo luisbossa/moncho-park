@@ -102,7 +102,7 @@
 
   .shop-products-wrapper {
     min-height: 850px;
-    padding: 5rem 0 0 2.2rem;
+    padding: 5rem 0 0 1.5rem;
   }
 
   .product-gallery {
@@ -116,7 +116,7 @@
 
   .product-card,
   .product-card.active {
-    width: 85vw;
+    width: 90vw;
     height: 300px;
     overflow: visible;
     position: relative;
