@@ -77,6 +77,12 @@
 }
 
 @media (max-width: 768px) {
+  .bestsellers-section {
+    background-image: url(/images/bg-texture.png);
+    background-repeat: repeat-y;
+    background-size: 100% 100%;
+  }
+
   .bestsellers-grid {
     grid-template-columns: 1fr;
     gap: 2rem 0;
@@ -85,11 +91,6 @@
   .bestsellers-title {
     font-size: 15vw;
     margin-bottom: 3rem;
-  }
-
-  .bestsellers-section {
-    background-image: url(/images/bg-texture.png);
-    background-repeat: no-repeat;
   }
 }
 
