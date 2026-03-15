@@ -33,3 +33,13 @@
     display: none;
   }
 }
+
+.div-filler {
+  height: 8rem;
+}
+
+@media (max-width: 992px) {
+  .div-filler {
+    height: 0;
+  }
+}
