@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Juego de rollers para llantas. son 8 en total.",
     },
     {
-      name: "Anillo Deathwish",
+      name: "Anillo D",
       description: "Anillo de plata, con acabado lujoso.",
     },
   ];
