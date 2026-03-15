@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       name: "Trucks Thunder",
-      description: "Par de trucks de alta resistencia, con ajuste seguro.",
+      description: "Par de trucks de alta resistencia y ajuste seguro.",
     },
     {
       name: "Gorro Powell",
