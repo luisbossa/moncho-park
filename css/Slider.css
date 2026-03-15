@@ -96,44 +96,33 @@
   opacity: 0.3;
   pointer-events: none;
 }
+
 @media (max-width: 1024px) {
   .products-container {
     flex-direction: column;
     align-items: start;
     gap: 7rem;
   }
+
   .shop-products-wrapper {
-    min-height: 900px;
+    min-height: auto;
     padding-top: 2rem;
   }
+
   .product-gallery {
-    min-height: 0;
-    overflow: visible;
-  }
-  .product-gallery-info h2 {
-    margin-bottom: 10px;
-  }
-  .product-card,
-  .product-card.active {
-    width: 83vw;
-    height: 400px;
-    padding: 2rem;
-    min-height: 400px;
-    max-height: 400px;
-    overflow: visible;
-    display: flex;
-    position: relative;
-  }
-  .product-card img,
-  .product-card.active img {
-    width: 160px;
     height: auto;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    object-fit: contain;
+    overflow: visible;
+    width: 100%;
   }
+
+  .product-gallery-inner {
+    display: flex;
+    gap: 22px;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding-bottom: 3rem;
+  }
+
   .product-gallery-info {
     width: 100%;
     display: flex;
@@ -142,14 +131,47 @@
     justify-content: center;
     text-align: center;
   }
-  .product-nav-arrows {
-    width: 160px;
-    left: 0;
-    bottom: -9rem;
-    padding: 1rem;
-    justify-content: space-between;
+
+  .product-gallery-info h2 {
+    margin-bottom: 10px;
   }
+
+  .product-card,
+  .product-card.active {
+    width: 83vw;
+    height: 400px;
+    min-height: 400px;
+    max-height: 400px;
+    padding: 2rem;
+    box-sizing: border-box;
+    position: relative;
+    flex-shrink: 0;
+    overflow: visible;
+  }
+
+  .product-card img,
+  .product-card.active img {
+    width: 160px;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    pointer-events: none;
+  }
+
   .product-card.active:nth-child(2) {
     margin-left: 0;
+  }
+
+  .product-nav-arrows {
+    position: relative;
+    width: 160px;
+    left: 0;
+    bottom: 0;
+    margin-top: 2rem;
+    padding: 1rem;
+    justify-content: space-between;
   }
 }
