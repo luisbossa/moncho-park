@@ -88,7 +88,8 @@
   }
 
   .bestsellers-section {
-    background: none;
+    background-image: url(/images/bg-texture.png);
+    background-repeat: no-repeat;
   }
 }
 

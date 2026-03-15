@@ -145,7 +145,7 @@
 
 @media (max-width: 1314px) {
   .header-container {
-    padding: 0 7px;
+    padding: 0 15px;
     gap: 10px;
   }
 
@@ -154,7 +154,7 @@
   }
 }
 
-@media (max-width: 1038px) {
+@media (max-width: 850px) {
   .mobile-header-container {
     display: flex;
   }
