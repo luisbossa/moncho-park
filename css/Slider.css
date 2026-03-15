@@ -122,6 +122,9 @@
     overflow: visible;
     display: -webkit-flex;
     display: flex;
+
+    align-self: flex-start;
+    flex: 0 0 auto;
   }
   .product-card img,
   .product-card.active img {
@@ -131,6 +134,8 @@
     max-width: 180px;
     max-height: none;
     object-fit: contain;
+
+    flex-shrink: 0;
   }
   .product-gallery-info {
     width: 100%;
