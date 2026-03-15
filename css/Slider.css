@@ -152,22 +152,5 @@
   .product-card.active:nth-child(2) {
     margin-left: 0;
   }
-
-  .product-card.active {
-    display: flex;
-  }
-
-  .product-gallery-inner {
-    height: 400px;
-  }
 }
-@media (max-width: 480px) {
-  .product-card,
-  .product-card.active {
-    height: 490px;
-  }
-  .product-card img,
-  .product-card.active img {
-    max-width: 120px;
-  }
-}
+
