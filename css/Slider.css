@@ -102,7 +102,7 @@
 
   .shop-products-wrapper {
     min-height: 840px;
-    padding: 4rem 0 0 2rem;
+    padding: 5rem 0 0 2.5rem;
   }
 
   .product-gallery {
@@ -140,6 +140,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding-right: 3.5rem;
   }
 
   .product-nav-arrows {
