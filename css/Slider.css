@@ -114,11 +114,12 @@
   }
   .product-card,
   .product-card.active {
+    display: block;
     width: 83vw;
     height: 400px;
     padding: 2rem;
     min-height: 400px;
-    max-height: 400px;
+    max-height: none;
     overflow: visible;
     display: -webkit-flex;
     display: flex;
