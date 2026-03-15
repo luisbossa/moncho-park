@@ -120,22 +120,18 @@
     min-height: 400px;
     max-height: 400px;
     overflow: visible;
-    display: -webkit-flex;
     display: flex;
-
-    align-self: flex-start;
-    flex: 0 0 auto;
+    position: relative;
   }
   .product-card img,
   .product-card.active img {
-    display: block;
-    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
     height: auto;
-    max-width: 180px;
-    max-height: none;
     object-fit: contain;
-
-    flex-shrink: 0;
   }
   .product-gallery-info {
     width: 100%;
