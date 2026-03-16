@@ -63,6 +63,240 @@
   -webkit-text-stroke: 2px #151515;
 }
 
+.about-hero {
+  padding: 230px 0 230px;
+  background-image: url(/images/about/about-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 100% 58%;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.about-details-section {
+  position: relative;
+  padding: 168px 0;
+  background-image: url(/images/bg-texture.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about-details-container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 6vw, 130px);
+}
+
+/* HEADER */
+
+.about-details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  margin-bottom: 100px;
+}
+
+.about-details-title {
+  flex: 1 1 45%;
+}
+
+.about-details-title h2 {
+  font-family: "obviously";
+  font-weight: 500;
+  letter-spacing: -1px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+}
+
+.about-details-description {
+  flex-basis: 50%;
+  max-width: 650px;
+}
+
+.about-details-description p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  color: #333333;
+}
+
+.about-details-lead {
+  color: #161616;
+}
+
+/* MAIN IMAGE */
+
+.about-details-main-image {
+  margin-bottom: 120px;
+}
+
+.about-details-main-image img {
+  width: 100%;
+  border-radius: 28px;
+  display: block;
+}
+
+/* FEATURES */
+
+.about-details-features {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 120px;
+}
+
+.about-details-feature {
+  flex: 1;
+}
+
+.about-details-feature h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.about-details-feature p {
+  color: #333333;
+  line-height: 1.7;
+}
+
+/* BOTTOM */
+
+.about-details-bottom {
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+/* FAQ */
+
+.about-details-faq {
+  flex: 1;
+}
+
+.about-details-faq h2 {
+  font-family: "obviously";
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+/* FAQ ITEM */
+
+.about-details-faq-item {
+  border: 1px solid #333;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+/* BOTON */
+
+.about-details-faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #161616;
+  text-align: left;
+  padding: 18px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ANSWER */
+
+.about-details-faq-answer {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+
+  padding: 0 20px;
+
+  color: #333333;
+  font-size: 14px;
+  line-height: 1.7;
+
+  transition:
+    max-height 0.30s ease,
+    opacity 0.25s ease,
+    padding 0.25s ease;
+}
+
+/* ACTIVE */
+
+.about-details-faq-item.active .about-details-faq-answer {
+  max-height: 200px;
+  opacity: 1;
+  padding: 0 20px 20px 20px;
+}
+
+/* SIDE IMAGE */
+
+.about-details-side-image {
+  flex: 1;
+}
+
+.about-details-side-image img {
+  width: 100%;
+  border-radius: 28px;
+  display: block;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1024px) {
+  .about-details-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-details-description {
+    max-width: 100%;
+  }
+
+  .about-details-features {
+    flex-direction: column;
+  }
+
+  .about-details-bottom {
+    flex-direction: column;
+    gap: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-details-section {
+    padding: 80px 20px;
+  }
+
+  .about-details-faq h2 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-details-section {
+    padding: 60px 15px;
+  }
+
+  .about-details-title h2 {
+    font-size: 2rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .about-section {
     padding: 100px 0;
@@ -86,6 +320,13 @@
   .about-images {
     flex-direction: column;
     gap: 20px;
+  }
+}
+
+@media (max-width: 850px) {
+  .about-hero {
+    min-height: 400px;
+    overflow: hidden;
   }
 }
 
@@ -115,5 +356,3 @@
     line-height: 20px;
   }
 }
-
-
