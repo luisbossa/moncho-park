@@ -1,0 +1,263 @@
+<section id="hero" class="hero-section">
+
+    <%- include("partials/header") %>
+
+    <div class="hero-bg-video-wrapper">
+        <video autoplay muted playsinline class="hero-bg-video" id="video1"></video>
+        <video autoplay muted playsinline class="hero-bg-video" id="video2"></video>
+    </div>
+
+    <audio id="bg-audio" autoplay muted loop>
+        <source src="/audio/song-1.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <div class="container hero-content-container">
+        <div class="hero-title">
+            <span>Moncho Park</span>
+        </div>
+    </div>
+
+
+    <button id="audio-toggle" class="audio-btn" aria-label="Toggle sound">
+
+        <!-- sonido activado -->
+        <img id="icon-sound-on" src="/images/sounOn.svg" alt="Sound on icon">
+
+        <!-- sonido apagado -->
+        <img id="icon-sound-off" src="/images/soundOff.svg" alt="Sound of icon">
+
+    </button>
+</section>
+
+<section id="about" class="about-section">
+    <div class="hero-filler"></div>
+    <div class="container">
+        <div class="about-content">
+            <div class="about-title-wrapper">
+                <h2 class="general-title-bg">Esto es</h2>
+                <h3 class="about-title-fg">Moncho</h3>
+                <h3 class="about-title-fg">Skatepark</h3>
+            </div>
+            <div class="about-text">
+                <p>Es el primer espacio urbano dedicado al skate y BMX en San
+                    Ramón, Alajuela. Diseñado para todos los niveles, cuenta con rampas, rieles y zonas técnicas que
+                    invitan a la creatividad y la adrenalina sobre ruedas.</p>
+                <p>Más que un skatepark, es un punto de encuentro. Un lugar donde la comunidad se une, el talento
+                    local florece y la cultura urbana se vive con fuerza. Aquí empieza el movimiento que está
+                    transformando San Ramón.</p>
+                <a href="#park" class="btn-23">
+                    <span class="text">Explorar</span>
+                    <span aria-hidden="" class="marquee">Explorar</span>
+                </a>
+            </div>
+        </div>
+        <div class="about-images">
+            <div class="about-image-item">
+                <img src="/images/bg-1.png" alt="Skater in action">
+            </div>
+            <div class="about-image-item">
+                <img src="/images/bg-2.png" alt="Skater in a skate park">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="park-section">
+    <div id="park" class="park-title-wrapper">
+        <h2 class="general-title">Explora el Parque</h2>
+        <p class="skatepark-hours">
+            <span><strong>Ubicación:</strong> Este skatepark está ubicado en el Polideportivo, San Ramón de
+                Alajuela.</span>
+            <span><strong>Horario:</strong> Todos los días de 7:00 AM – 7:30 PM.</span>
+        </p>
+    </div>
+
+    <div class="park-map-wrapper">
+        <div id="image-map-pro-6308"></div>
+    </div>
+
+    <img src="images/skatepark-mobile.png" alt="Mapa del Skatepark" class="park-map-image">
+</section>
+
+<section class="shop-section">
+    <div id="magazine" class="shop-teaser-container">
+        <div class="shop-teaser-content">
+            <div class="shop-title-wrapper">
+                <h2 class="general-title-bg">Skate Moncho</h2>
+                <h3 class="general-title-fg">Magazine</h3>
+            </div>
+            <p>
+                Lo mejor del skate en fotos y videos en tiempo real. ¿Listo para ser parte del movimiento?
+            </p>
+            <a href="#" class="btn-23">
+                <span class="text">Explorar</span>
+                <span aria-hidden="" class="marquee">Explorar</span>
+            </a>
+        </div>
+
+        <div class="empty-div"></div>
+
+        <div class="shop-teaser-image">
+            <div class="elementor elementor-16">
+                <div class="e-con-inner">
+                    <div class="elementor-element elementor-widget-image" data-id="7d9a943" data-element_type="widget"
+                        data-settings="{&quot;motion_fx_motion_fx_scrolling&quot;:&quot;yes&quot;,&quot;motion_fx_translateX_effect&quot;:&quot;yes&quot;,&quot;motion_fx_devices&quot;:[&quot;desktop&quot;],&quot;motion_fx_translateX_direction&quot;:&quot;negative&quot;,&quot;motion_fx_motion_fx_mouse&quot;:&quot;yes&quot;,&quot;motion_fx_mouseTrack_effect&quot;:&quot;yes&quot;,&quot;motion_fx_mouseTrack_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0.2,&quot;sizes&quot;:[]},&quot;motion_fx_translateX_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:4,&quot;sizes&quot;:[]},&quot;motion_fx_translateX_affectedRange&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:{&quot;start&quot;:0,&quot;end&quot;:100}}}"
+                        data-widget_type="image.default">
+
+                        <img fetchpriority="high" decoding="async" src="/images/skater.png" class="skater"
+                            alt="Skater jumping" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="div-filler"></div>
+
+    <div class="shop-products-wrapper">
+        <div id="shop" class="products-container">
+
+            <div class="product-gallery-info">
+                <h2 id="product-title"></h2>
+                <p id="product-description"></p>
+                <a href="#" class="btn-23">
+                    <span class="text">Comprar</span>
+                    <span aria-hidden="true" class="marquee">Comprar</span>
+                </a>
+            </div>
+
+            <div class="product-gallery">
+                <div class="product-gallery-inner" id="product-gallery-inner">
+                    <div class="product-card"><img src="images/item-1.png" alt="Skateboard 01" /></div>
+                    <div class="product-card"><img src="images/item-2.png" alt="Skateboard 02" /></div>
+                    <div class="product-card"><img src="images/item-3.png" alt="Skateboard 03" /></div>
+                    <div class="product-card"><img src="images/item-4.png" alt="Skateboard 04" /></div>
+                    <div class="product-card"><img src="images/item-5.png" alt="Skateboard 01" /></div>
+                    <div class="product-card"><img src="images/item-6.png" alt="Skateboard 02" /></div>
+                    <div class="product-card"><img src="images/item-7.png" alt="Skateboard 03" /></div>
+                    <div class="product-card"><img src="images/item-8.png" alt="Skateboard 04" /></div>
+                    <div class="product-card"><img src="images/item-9.png" alt="Skateboard 01" /></div>
+                    <div class="product-card"><img src="images/item-10.png" alt="Skateboard 02" /></div>
+                    <div class="product-card"><img src="images/item-11.png" alt="Skateboard 03" /></div>
+                    <div class="product-card"><img src="images/item-12.png" alt="Skateboard 04" /></div>
+                </div>
+
+                <div class="product-nav-arrows">
+                    <button class="arrow-btn" id="prev-btn">
+                        <img src="images/left-arrow.png" alt="Anterior" />
+                    </button>
+                    <button class="arrow-btn" id="next-btn">
+                        <img src="images/right-arrow.svg" alt="Siguiente" />
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="bestsellers" class="bestsellers-section">
+    <div class="container">
+        <h2 class="general-title">Lo más vendido</h2>
+        <div class="bestsellers-grid">
+            <div class="product-item">
+                <img src="images/deck-1.png" alt="Grand Gopher Cruiser">
+                <div class="product-info">
+                    <h3>Fanning Falcon</h3>
+                    <p>8” x 28”- Stroke /Kicktail</p>
+                    <a href="#" class="btn-23">
+                        <span class="text">Comprar</span>
+                        <span aria-hidden="" class="marquee">Comprar</span>
+                    </a>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/deck-2.png" alt="Hamboards Burst">
+                <div class="product-info">
+                    <h3>Ogre Burst</h3>
+                    <p>Surfskate Florida 32”</p>
+                    <a href="#" class="btn-23">
+                        <span class="text">Comprar</span>
+                        <span aria-hidden="" class="marquee">Comprar</span>
+                    </a>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/deck-3.png" alt="Hearty Skateboard">
+                <div class="product-info">
+                    <h3>Ogre Skateboard</h3>
+                    <p>Complete Line B & W 7.375” To 8.25”</p>
+                    <a href="#" class="btn-23">
+                        <span class="text">Comprar</span>
+                        <span aria-hidden="" class="marquee">Comprar</span>
+                    </a>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/deck-4.png" alt="Grand Gopher Cruiser">
+                <div class="product-info">
+                    <h3>Santa Cruz</h3>
+                    <p>8” x 28”- Stroke /Kicktail</p>
+                    <a href="#" class="btn-23">
+                        <span class="text">Comprar</span>
+                        <span aria-hidden="" class="marquee">Comprar</span>
+                    </a>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/deck-5.png" alt="Hamboards Burst">
+                <div class="product-info">
+                    <h3>Ogre Skateboard</h3>
+                    <p>Surfskate Florida 32”</p>
+                    <a href="#" class="btn-23">
+                        <span class="text">Comprar</span>
+                        <span aria-hidden="" class="marquee">Comprar</span>
+                    </a>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/deck-6.png" alt="Hearty Skateboard">
+                <div class="product-info">
+                    <h3>Ogre Skateboard</h3>
+                    <p>Complete Line B & W 7.375” To 8.25”</p>
+                    <a href="#" class="btn-23">
+                        <span class="text">Comprar</span>
+                        <span aria-hidden="" class="marquee">Comprar</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="discount" class="discount-section">
+    <div class="container discount-container">
+        <h2><span class="color-span">15%</span> DE DESCUENTO EN TU PRIMERA COMPRA ONLINE</h2>
+
+        <form class="discount-form">
+            <input type="email" name="email" id="email" placeholder="Introducir Email" autocomplete="email" required>
+
+            <button type="submit" class="custome-btn">
+                <span>Suscribir</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" height="34" width="34">
+                    <circle stroke-width="4" stroke="white" r="35.5" cy="37" cx="37"></circle>
+                    <path fill="white" stroke="white" stroke-width="3"
+                        d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z">
+                    </path>
+                </svg>
+            </button>
+        </form>
+    </div>
+</section>
+
+<section id="brands" class="brands-wrapper">
+    <div class="brands-title-wrapper">
+        <h2 class="general-title-bg">Nuestros</h2>
+        <h3 class="general-title-fg">Socios</h3>
+    </div>
+
+    <div class="brands-div">
+        <img class="brand-img" src="/images/brands.png" alt="Complete skateboard parts">
+    </div>
+</section>

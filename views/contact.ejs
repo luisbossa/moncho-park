@@ -1,67 +1,24 @@
-<!DOCTYPE html>
-<html lang="es">
+<%- include("partials/header") %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Contacto | MonchoPark</title>
-
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/contact.css">
-
-</head>
-
-<body>
-
-    <!-- HERO -->
-
-    <section class="contact-hero">
-
+<section class="contact-hero">
         <div class="contact-container">
-
-            <div class="hero-content">
-
-                <h1 class="hero-title">
+            <div class="contact-hero-content">
+                <h1 class="contact-hero-title">
                     Contáctanos
                 </h1>
-
-                <p class="hero-text">
+                <p class="contact-hero-text">
                     ¿Tienes preguntas, quieres organizar un evento o aprender skate?
                     Escríbenos y sé parte de la comunidad de MonchoPark.
                 </p>
-
             </div>
-
-            <div class="hero-images">
-
-                <img src="/images/contact/skateImg-1.jpeg" alt="Skatepark">
-                <img src="/images/contact/skateImg-2.jpg" alt="Skatepark">
-                <img src="/images/contact/skateImg-3.jpeg" alt="Skatepark">
-
-            </div>
-
         </div>
-
     </section>
 
-
-    <!-- CONTACT -->
-
     <section class="contact-section">
-
+        <div class="hero-filler"></div>
         <div class="contact-container">
-
             <div class="contact-content">
-
-                <!-- INFO -->
-
                 <div class="contact-info">
-
-                    <div class="contact-logo">
-                        <img src="/images/logo.png" width="120" height="120" alt="MonchoPark logo">
-                    </div>
 
                     <h2 class="contact-title">
                         MonchoPark
@@ -72,9 +29,7 @@
                         Organizamos eventos, clases y actividades para todos los niveles.
                     </p>
 
-
                     <div class="contact-details">
-
                         <div class="contact-item">
                             <h4>Ubicación</h4>
                             <p>San Ramón, Alajuela, Costa Rica</p>
@@ -94,20 +49,15 @@
                             <h4>Instagram</h4>
                             <p>@monchopark</p>
                         </div>
-
                     </div>
-
                 </div>
 
 
                 <!-- FORM -->
 
                 <div class="contact-form-wrapper">
-
                     <form class="contact-form" id="contact-form">
-
                         <div class="form-row">
-
                             <div class="form-group">
                                 <label>Nombre</label>
                                 <input type="text" id="first-name" required>
@@ -117,11 +67,9 @@
                                 <label>Apellido</label>
                                 <input type="text" id="last-name" required>
                             </div>
-
                         </div>
 
                         <div class="form-row">
-
                             <div class="form-group">
                                 <label>Email</label>
                                 <input type="email" id="email" required>
@@ -131,37 +79,22 @@
                                 <label>Confirmar Email</label>
                                 <input type="email" id="confirm-email" required>
                             </div>
-
                         </div>
 
                         <div class="form-group">
-
                             <label>Mensaje</label>
-
                             <textarea id="message" maxlength="600" required></textarea>
-
                             <span class="char-count">0 / 600</span>
-
                         </div>
 
                         <button class="submit-btn">
                             Enviar mensaje
                         </button>
-
                         <p class="form-message" id="form-message"></p>
-
                     </form>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
     <script src="/js/contact.js"></script>
-
-</body>
-
-</html>

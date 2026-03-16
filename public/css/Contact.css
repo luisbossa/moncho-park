@@ -6,48 +6,74 @@
   position: relative;
 }
 
-/* HERO */
+/* CONTACT HERO */
 
 .contact-hero {
-  padding: 120px 0 80px;
-  background: #f7f7f7;
+  padding: 150px 0 290px;
+  background-image: url(/images/contact/contact-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 100% 50%;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
 }
 
-.hero-content {
-  max-width: 600px;
-  margin-bottom: 40px;
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0)
+  );
 }
 
-.hero-title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  margin-bottom: 10px;
+/* contenido */
+
+.contact-hero-content {
+  max-width: 520px;
+  position: relative;
+  z-index: 2;
 }
 
-.hero-text {
+/* texto */
+
+.contact-hero-title {
+  font-size: clamp(2.5rem, 5vw, 3.2rem);
+  margin-bottom: 14px;
+  color: white;
+}
+
+.contact-hero-text {
   font-size: 16px;
-  color: #555;
-}
-
-.hero-images {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.hero-images img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
 }
 
 /* CONTACT SECTION */
 
-.contact-section,
-.contact-hero {
+.contact-section {
+  position: relative;
   padding: clamp(80px, 10vw, 160px) 0;
   background-image: url(/images/bg-texture.png);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.hero-filler {
+  width: 100%;
+  height: 66px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -4rem;
+  background-image: url(/images/white-filler.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 5;
 }
 
 .contact-content {
@@ -63,10 +89,6 @@
 .contact-info {
   flex: 1 1 420px;
   min-width: 280px;
-}
-
-.contact-logo {
-  margin-bottom: 20px;
 }
 
 .contact-title {
@@ -155,8 +177,6 @@ textarea {
   background: #144d5f;
 }
 
-/* TABLET */
-
 @media (max-width: 1024px) {
   .contact-content {
     flex-direction: column;
@@ -164,35 +184,14 @@ textarea {
     text-align: center;
   }
 
-  .hero-images {
-    grid-template-columns: 1fr;
-  }
-
   .form-row {
     flex-direction: column;
   }
 }
 
-/* MOBILE */
-
 @media (max-width: 768px) {
   .contact-hero {
-    padding: 80px 0;
-  }
-
-  .hero-images img {
-    height: 180px;
+    padding: 120px 0;
   }
 }
 
-/* SMALL MOBILE */
-
-@media (max-width: 480px) {
-  .hero-images img {
-    height: 150px;
-  }
-
-  .contact-logo img {
-    width: 90px;
-  }
-}
