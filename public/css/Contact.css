@@ -1,7 +1,7 @@
 .contact-container {
   max-width: 1920px;
   margin: 0 auto;
-  padding: 0 clamp(20px, 6vw, 130px);
+  padding: 0 clamp(20px, 6vw, 180px);
   box-sizing: border-box;
   position: relative;
 }
@@ -9,8 +9,8 @@
 /* CONTACT HERO */
 
 .contact-hero {
-  padding: 150px 0 290px;
-  background-image: url(/images/contact/contact-bg.png);
+  padding: 230px 0 230px;
+  background-image: url(/images/contact/contact-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 100% 50%;
@@ -42,9 +42,9 @@
 /* texto */
 
 .contact-hero-title {
-  font-size: clamp(2.5rem, 5vw, 3.2rem);
-  margin-bottom: 14px;
   color: white;
+  text-transform: uppercase;
+  font-size: clamp(2.5rem, 5vw, 3.2rem);
 }
 
 .contact-hero-text {
@@ -57,7 +57,7 @@
 
 .contact-section {
   position: relative;
-  padding: clamp(80px, 10vw, 160px) 0;
+  padding: clamp(80px, 13vw, 25rem) 0;
   background-image: url(/images/bg-texture.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -92,7 +92,12 @@
 }
 
 .contact-title {
-  font-size: 28px;
+  font-family: "anton";
+  color: #151515;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 50px;
+  text-transform: uppercase;
   margin-bottom: 15px;
 }
 
@@ -133,22 +138,45 @@
 }
 
 .form-group {
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
 .form-group label {
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 600;
   margin-bottom: 6px;
 }
 
 .form-group input,
 .form-group textarea {
-  padding: 12px;
-  border: 1px solid #ccc;
+  background: transparent;
+  border: none;
+  color: #1b667f;
   font-size: 14px;
-  background: #fff;
+  font-weight: 400;
+  line-height: 25px;
+  padding: 0 0 3px 6px;
+  border-bottom: 2px solid #1b667f;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system;
+  outline: none;
+}
+
+.form-group textarea {
+  padding: 8px;
+  border: 2px solid #1b667f;
+}
+
+.text-area-div {
+  margin-top: 2rem;
 }
 
 textarea {
@@ -160,21 +188,6 @@ textarea {
   font-size: 12px;
   color: #777;
   text-align: right;
-}
-
-.submit-btn {
-  margin-top: 10px;
-  padding: 14px;
-  background: #1b667f;
-  color: white;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.submit-btn:hover {
-  background: #144d5f;
 }
 
 @media (max-width: 1024px) {
@@ -194,4 +207,3 @@ textarea {
     padding: 120px 0;
   }
 }
-

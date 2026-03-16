@@ -48,7 +48,10 @@
   -webkit-appearance: none;
   appearance: none;
   border-radius: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system;
 }
 
 .discount-form input::placeholder {
@@ -65,6 +68,7 @@
 }
 
 .custome-btn {
+  width: fit-content;
   border: 0;
   color: white;
   font-size: 15px;
