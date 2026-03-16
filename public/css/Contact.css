@@ -13,7 +13,7 @@
   background-image: url(/images/contact/contact-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 100% 50%;
+  background-position: 100% 47%;
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -44,20 +44,14 @@
 .contact-hero-title {
   color: white;
   text-transform: uppercase;
-  font-size: clamp(2.5rem, 5vw, 3.2rem);
-}
-
-.contact-hero-text {
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.6;
+  font-size: clamp(2.1rem, 5vw, 3.2rem);
 }
 
 /* CONTACT SECTION */
 
 .contact-section {
   position: relative;
-  padding: clamp(80px, 13vw, 25rem) 0;
+  padding: clamp(120px, 13vw, 25rem) 0;
   background-image: url(/images/bg-texture.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -199,6 +193,22 @@ textarea {
 
   .form-row {
     flex-direction: column;
+  }
+
+  .contact-info {
+    margin-bottom: 50px;
+  }
+
+  .form-group label {
+    text-align: left;
+    margin-left: 4px;
+  }
+}
+
+@media (max-width: 850px) {
+  .contact-hero {
+    min-height: 400px;
+    overflow: hidden;
   }
 }
 
