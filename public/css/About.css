@@ -88,7 +88,7 @@
 
 .about-details-section {
   position: relative;
-  padding: 168px 0;
+  padding: clamp(120px, 13vw, 25rem) 0;
   background-image: url(/images/bg-texture.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -106,8 +106,8 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  margin-bottom: 50px;
   gap: 60px;
-  margin-bottom: 100px;
 }
 
 .about-details-title {
@@ -141,12 +141,11 @@
 /* MAIN IMAGE */
 
 .about-details-main-image {
-  margin-bottom: 120px;
+  margin-bottom: 80px;
 }
 
 .about-details-main-image img {
   width: 100%;
-  border-radius: 28px;
   display: block;
 }
 
@@ -154,8 +153,8 @@
 
 .about-details-features {
   display: flex;
-  gap: 60px;
-  margin-bottom: 120px;
+  margin-bottom: 80px;
+  gap: 30px;
 }
 
 .about-details-feature {
@@ -230,7 +229,7 @@
   line-height: 1.7;
 
   transition:
-    max-height 0.30s ease,
+    max-height 0.3s ease,
     opacity 0.25s ease,
     padding 0.25s ease;
 }
@@ -251,50 +250,7 @@
 
 .about-details-side-image img {
   width: 100%;
-  border-radius: 28px;
   display: block;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 1024px) {
-  .about-details-header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-details-description {
-    max-width: 100%;
-  }
-
-  .about-details-features {
-    flex-direction: column;
-  }
-
-  .about-details-bottom {
-    flex-direction: column;
-    gap: 60px;
-  }
-}
-
-@media (max-width: 768px) {
-  .about-details-section {
-    padding: 80px 20px;
-  }
-
-  .about-details-faq h2 {
-    font-size: 26px;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-details-section {
-    padding: 60px 15px;
-  }
-
-  .about-details-title h2 {
-    font-size: 2rem;
-  }
 }
 
 @media (max-width: 1024px) {
@@ -321,6 +277,29 @@
     flex-direction: column;
     gap: 20px;
   }
+
+  .about-details-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .about-details-description {
+    max-width: 100%;
+  }
+
+  .about-details-features {
+    flex-direction: column;
+  }
+
+  .about-details-bottom {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .about-details-feature h3 {
+    margin-bottom: 3px;
+  }
 }
 
 @media (max-width: 850px) {
@@ -344,6 +323,10 @@
     font-size: 14px;
     line-height: 22px;
   }
+
+  .about-details-faq h2 {
+    font-size: 26px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -354,5 +337,9 @@
   .about-text p {
     font-size: 15px;
     line-height: 20px;
+  }
+
+  .about-details-title h2 {
+    font-size: 2rem;
   }
 }
