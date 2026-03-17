@@ -48,7 +48,7 @@
   font-weight: 500;
   letter-spacing: -1px;
   text-transform: uppercase;
-  -webkit-text-stroke: 2px #151515;
+  -webkit-text-stroke: 2px #202020;
   font-family: "obviously", sans-serif;
   font-size: clamp(2.1rem, 5vw, 3.2rem);
 }
@@ -94,7 +94,7 @@
 
 .contact-title {
   font-family: "anton";
-  color: #151515;
+  color: #202020;
   font-size: 40px;
   font-weight: 700;
   line-height: 50px;
@@ -114,7 +114,7 @@
 }
 
 .contact-item h4 {
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 5px;
   color: #1b667f;
 }
@@ -191,6 +191,48 @@ textarea {
   text-align: right;
 }
 
+.error-message {
+  height: 12px;
+  font-size: 12px;
+  color: #e74c3c;
+  margin-top: 4px;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+.form-group.error input,
+.form-group.error textarea {
+  border-color: #e74c3c;
+}
+
+.form-group.success input,
+.form-group.success textarea {
+  border-color: #2ecc71;
+}
+
+.form-group.error .error-message {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-group.success .error-message {
+  opacity: 0;
+}
+
+/* transición en inputs */
+.form-group input,
+.form-group textarea {
+  transition:
+    border-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  transform: scale(1.02);
+}
+
 @media (max-width: 1024px) {
   .contact-content {
     flex-direction: column;
@@ -222,5 +264,9 @@ textarea {
 @media (max-width: 768px) {
   .contact-hero {
     padding: 120px 0;
+  }
+
+  .contact-details {
+    text-align: left;
   }
 }

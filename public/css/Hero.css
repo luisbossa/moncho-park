@@ -50,10 +50,10 @@
   line-height: 0.85;
   text-transform: uppercase;
   text-shadow:
-    0.13rem 0.13rem 0 #151515,
-    -0.13rem 0.13rem 0 #151515,
-    0.13rem -0.13rem 0 #151515,
-    -0.13rem -0.13rem 0 #151515;
+    0.13rem 0.13rem 0 #202020,
+    -0.13rem 0.13rem 0 #202020,
+    0.13rem -0.13rem 0 #202020,
+    -0.13rem -0.13rem 0 #202020;
 }
 
 .hero-filler {

@@ -69,7 +69,6 @@ if (form) {
 
     if (!isValid) return;
 
-    // 🔄 loading
     btn.textContent = "Enviando...";
 
     setTimeout(() => {

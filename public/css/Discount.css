@@ -16,7 +16,7 @@
 
 .discount-container h2 {
   font-family: "anton";
-  color: #151515;
+  color: #202020;
   font-size: 40px;
   font-weight: 700;
   line-height: 50px;
@@ -84,7 +84,7 @@
   text-transform: uppercase;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  border: 2px solid #151515;
+  border: 2px solid #202020;
   gap: 10px;
 }
 
