@@ -45,6 +45,11 @@
   vertical-align: middle;
 }
 
+.btn-23 img {
+  width: 16px;
+  margin-left: 5px;
+}
+
 .btn-23 [hidden] {
   display: none;
 }

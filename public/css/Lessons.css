@@ -286,6 +286,18 @@
   border-bottom: none;
 }
 
+.lessons-extra-list .item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lessons-extra-list img {
+  width: 23px;
+  height: 23px;
+  object-fit: contain;
+}
+
 /* PRICE */
 
 .lessons-extra-list strong {
@@ -412,8 +424,7 @@
 /* CHECKBOX GROUP */
 
 .lessons-checkbox-group {
-  margin-top: 15px;
-  margin-left: 14px;
+  padding: 15px 14px;
 }
 
 .lessons-checkbox-group p {
@@ -488,6 +499,52 @@
   align-self: center;
   width: fit-content;
   padding: 14px 40px;
+}
+
+.checked-icon {
+  width: 16px;      /* ajusta aquí (14px–18px queda bien) */
+  height: 16px;
+  object-fit: contain;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.lessons-form input,
+.lessons-form textarea {
+  position: relative;
+  border: 2px solid #fff;
+}
+
+.lessons-form input.error,
+.lessons-form textarea.error {
+  border: 2px solid #ff8b2b;
+}
+
+.lessons-checkbox-group {
+  position: relative;
+}
+
+/* borde falso */
+.lessons-checkbox-group.error::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  pointer-events: none;
+}
+
+/* animación */
+.lessons-checkbox-group.error {
+  animation: shake 0.3s ease;
+}
+
+/* ===== ANIMACIÓN GLOBAL ===== */
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
 }
 
 /* RESPONSIVE */
