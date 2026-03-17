@@ -25,7 +25,8 @@
   position: relative;
   padding: clamp(140px, 14vw, 240px) 0;
   background-image: url(/images/bg-texture.png);
-  background-size: cover;
+  background-repeat: repeat;
+  background-size: 400px;
 }
 
 .history-container {
@@ -77,6 +78,7 @@
 .history-image--center {
   max-width: 1200px;
   margin: 0 auto;
+  border: 2px solid #1b667f;
 }
 
 .history-features {

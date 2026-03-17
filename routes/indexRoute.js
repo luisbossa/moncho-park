@@ -13,4 +13,8 @@ router.get("/history", (req, res) => {
   res.render("history");
 });
 
+router.get("/lessons", (req, res) => {
+  res.render("lessons");
+});
+
 module.exports = router;
