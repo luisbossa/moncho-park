@@ -9,8 +9,8 @@ router.get("/contact", (req, res) => {
   res.render("contact");
 });
 
-router.get("/about", (req, res) => {
-  res.render("about");
+router.get("/history", (req, res) => {
+  res.render("history");
 });
 
 module.exports = router;
