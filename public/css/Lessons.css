@@ -362,7 +362,7 @@
   color: #fff;
   background: #1b667f;
   padding: clamp(100px, 10vw, 160px) 0;
-  scroll-margin-top: -7rem;
+  scroll-margin-top: -6.2rem;
 }
 
 .lessons-contact-grid {
@@ -470,9 +470,8 @@
 }
 
 .lessons-form button {
-  margin-top: 20px;
-  align-self: center;
   width: fit-content;
+  margin-top: 20px;
   padding: 14px 40px;
 }
 
@@ -535,27 +534,8 @@
   margin-top: 2rem;
 }
 
-.go-bottom {
-  width: fit-content;
-  align-items: center;
-  justify-content: center;
-  font-family:
-    ui-sans-serif,
-    system-ui,
-    -apple-system;
-  font-size: 15px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: #fff;
-  text-decoration: none;
-  background-color: #202020;
-  text-align: center;
-  padding: 1.1rem 2rem;
-  border-radius: 99rem;
-  cursor: pointer;
-  line-height: 1;
-  white-space: nowrap;
+.go-bottom-div a {
+    padding: 14px 40px;
 }
 
 @media (max-width: 1024px) {
