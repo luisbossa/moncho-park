@@ -41,16 +41,6 @@
   text-transform: uppercase;
 }
 
-.lessons-values .lessons-title-center {
-  width: 100%;
-  color: #1b667f;
-  font-weight: 500;
-  letter-spacing: -1px;
-  -webkit-text-stroke: 2px #202020;
-  font-family: "obviously", sans-serif;
-  font-size: clamp(2.1rem, 5vw, 3.2rem);
-}
-
 /* SECTION */
 
 .lessons-section {
@@ -369,9 +359,10 @@
 }
 
 .lessons-contact {
+  color: #fff;
   background: #1b667f;
   padding: clamp(100px, 10vw, 160px) 0;
-  color: #fff;
+  scroll-margin-top: -3rem;
 }
 
 .lessons-contact-grid {
@@ -412,6 +403,7 @@
 }
 
 .lessons-form textarea {
+  font-family: "catamaran";
   min-height: 140px;
 }
 
@@ -536,16 +528,34 @@
   }
 }
 
-.go-to-form {
-  padding: 7px 14px;
-  font-size: 14px;
-  text-decoration: none;
-  margin-top: 20px;
+.go-bottom-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
-.go-to-form > svg {
-  width: 25px;
-  transition: transform 0.3s ease-in-out;
+.go-bottom {
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system;
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #fff;
+  text-decoration: none;
+  background-color: #202020;
+  text-align: center;
+  padding: 1.1rem 2rem;
+  border-radius: 99rem;
+  cursor: pointer;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 @media (max-width: 1024px) {
