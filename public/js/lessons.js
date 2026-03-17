@@ -7,6 +7,6 @@ document.querySelector(".lessons-form")?.addEventListener("submit", e => {
   btn.textContent = "Enviando...";
 
   setTimeout(() => {
-    btn.textContent = "Enviado ✅";
+    btn.textContent = "Enviado";
   }, 1200);
 });

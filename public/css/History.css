@@ -23,10 +23,10 @@
 
 .history-section {
   position: relative;
-  padding: clamp(140px, 14vw, 240px) 0;
+  padding: clamp(80px, 14vw, 240px) 0;
   background-image: url(/images/bg-texture.png);
-  background-repeat: repeat;
-  background-size: 400px;
+  background-repeat: repeat-y;
+  background-size: center;
 }
 
 .history-container {
@@ -47,6 +47,7 @@
 
 .history-title h2 {
   font-family: "obviously";
+  text-transform: uppercase;
   font-size: clamp(2.8rem, 3.5vw, 4rem);
   line-height: 1.05;
 }

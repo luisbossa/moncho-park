@@ -11,7 +11,7 @@
   padding: 230px 0;
   background-image: url(/images/lessons/lessons-bg.jpeg);
   background-size: cover;
-  background-position: center;
+  background-position: 100% 29%;
   display: flex;
   align-items: flex-end;
   position: relative;
@@ -35,14 +35,18 @@
   font-size: clamp(2.1rem, 5vw, 3.2rem);
 }
 
+.lessons-title-center {
+  margin-bottom: 5px;
+}
+
 /* SECTION */
 
 .lessons-section {
-  padding: clamp(120px, 13vw, 240px) 0;
-  background-image: url(/images/bg-texture.png);
-  background-repeat: no-repeat;
-  background-size: cover;
   position: relative;
+  padding: clamp(80px, 13vw, 240px) 0;
+  background-image: url(/images/bg-texture.png);
+  background-repeat: repeat-y;
+  background-size: center;
 }
 
 .lessons-title {
@@ -379,45 +383,7 @@
   font-family: "obviously";
   text-transform: uppercase;
   font-size: clamp(2.5rem, 4vw, 3.5rem);
-  -webkit-text-stroke: 1px #151515;
-}
-
-/* INFO */
-
-.lessons-contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-
-.lessons-contact-item {
-  display: flex;
-  gap: 18px;
-  align-items: flex-start;
-}
-
-/* ICONS */
-
-.lessons-contact-item i {
-  font-size: 22px;
-  color: #ff8b2b;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-/* TEXT */
-
-.lessons-contact-item strong {
-  display: block;
-  font-size: 15px;
-  color: #ffffff;
-  font-weight: 600;
-}
-
-.lessons-contact-item p {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.7);
-  margin-top: 3px;
+  -webkit-text-stroke: 2px #151515;
 }
 
 /* FORM */
@@ -447,6 +413,7 @@
 
 .lessons-checkbox-group {
   margin-top: 15px;
+  margin-left: 14px;
 }
 
 .lessons-checkbox-group p {
@@ -473,20 +440,21 @@
   color: rgba(255, 255, 255, 0.85);
   cursor: pointer;
   position: relative;
+}
+
+/* ocultar input */
+.lessons-checkbox-group input {
+  display: none;
+}
+
+/* caja */
+.lessons-checkbox-group span {
+  position: relative;
   padding-left: 28px;
 }
 
-/* OCULTAR CHECKBOX NATIVO */
-
-.lessons-checkbox-group input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-
-/* CAJITA CUSTOM */
-
-.lessons-checkbox-group label::before {
+/* cuadrado */
+.lessons-checkbox-group span::before {
   content: "";
   position: absolute;
   left: 0;
@@ -499,28 +467,24 @@
   transition: 0.2s ease;
 }
 
-/* CHECK ACTIVO */
-
-.lessons-checkbox-group input:checked + *::before,
-.lessons-checkbox-group input:checked::before {
+/* checked */
+.lessons-checkbox-group input:checked + span::before {
   background: #ff8b2b;
 }
 
-/* CHECK ICON */
-
-.lessons-checkbox-group input:checked + label::after {
+/* check */
+.lessons-checkbox-group input:checked + span::after {
   content: "✓";
   position: absolute;
   left: 4px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 12px;
-  color: #151515;
+  font-size: 14px;
+  color: #161616;
 }
 
-/* HOVER */
-
-.lessons-checkbox-group label:hover::before {
+/* hover */
+.lessons-checkbox-group label:hover span::before {
   background: rgba(255, 139, 43, 0.2);
 }
 
@@ -536,20 +500,11 @@
 @media (max-width: 1024px) {
   .lessons-contact-grid {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 5px;
   }
 
   .lessons-contact-title {
     text-align: center;
-  }
-
-  .lessons-contact-info {
-    align-items: center;
-    text-align: center;
-  }
-
-  .lessons-contact-item {
-    justify-content: center;
   }
 
   .lessons-values-grid {

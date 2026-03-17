@@ -57,7 +57,7 @@
 
 .contact-section {
   position: relative;
-  padding: clamp(120px, 13vw, 25rem) 0;
+  padding: clamp(80px, 13vw, 25rem) 0;
   background-image: url(/images/bg-texture.png);
   background-repeat: no-repeat;
   background-size: cover;

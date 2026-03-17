@@ -119,7 +119,7 @@
   flex-direction: column;
   row-gap: var(--content-gap);
   grid-column: 1/3;
-  margin-right: 2rem;
+  margin-right: 4rem;
 }
 
 .footer-contact-div {

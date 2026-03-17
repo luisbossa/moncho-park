@@ -65,7 +65,7 @@
 
 @media (max-width: 1024px) {
   .about-section {
-    padding: 100px 0;
+    padding: 30px 0;
   }
 
   .about-content {
@@ -91,7 +91,7 @@
 
 @media (max-width: 768px) {
   .about-section {
-    padding: 80px 20px;
+    padding: 10px 20px;
     scroll-margin-top: -8rem;
   }
 
@@ -107,7 +107,7 @@
 
 @media (max-width: 480px) {
   .about-section {
-    padding: 60px 15px;
+    padding: 10px 15px;
   }
 
   .about-text p {
