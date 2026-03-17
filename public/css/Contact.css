@@ -225,12 +225,6 @@ textarea {
 .form-group textarea {
   transition:
     border-color 0.3s ease,
-    transform 0.2s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  transform: scale(1.02);
 }
 
 @media (max-width: 1024px) {

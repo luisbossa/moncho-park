@@ -148,6 +148,7 @@
 .history-split-content .history-lead {
   font-size: 1.3rem;
   margin-bottom: 20px;
+  color: #1b667f;
 }
 
 @media (max-width: 1200px) {
