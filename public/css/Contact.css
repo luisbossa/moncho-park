@@ -251,7 +251,6 @@ textarea {
 @media (max-width: 850px) {
   .contact-hero {
     min-height: 400px;
-    overflow: hidden;
   }
 }
 

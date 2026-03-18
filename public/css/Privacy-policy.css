@@ -1,0 +1,143 @@
+/* HERO */
+.privacy-policy-hero {
+  padding: 180px 0 100px;
+  background: var(--black);
+  color: #fff;
+  text-align: center;
+}
+
+.privacy-policy-title {
+  font-family: "obviously";
+  font-size: clamp(2.5rem, 3vw, 3.2rem);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* SECTION */
+.privacy-policy-section {
+  padding: clamp(80px, 12vw, 200px) 0;
+  background-image: url(/images/bg-texture.png);
+  background-repeat: repeat-y;
+  background-size: center;
+}
+
+/* CONTAINER */
+.privacy-policy-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* CONTENT */
+.privacy-policy-content {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+  gap: 60px;
+}
+
+/* BLOCK */
+.privacy-policy-block {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* HEADINGS */
+.privacy-policy-heading {
+  font-family: "anton";
+  font-size: 42px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #202020;
+}
+
+.privacy-policy-subheading {
+  font-family: "anton";
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #1b667f;
+}
+
+/* TEXT */
+.privacy-policy-content p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #2a2a2a;
+}
+
+/* LEAD */
+.privacy-policy-lead {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* HIGHLIGHT */
+.privacy-policy-highlight {
+  font-weight: 600;
+  color: #1b667f;
+}
+
+/* LIST */
+.privacy-policy-list {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.privacy-policy-list li {
+  margin-bottom: 12px;
+  line-height: 1.8;
+  position: relative;
+}
+
+/* FINAL BLOCK */
+.privacy-policy-block--final {
+  border-top: 1px solid #ddd;
+  padding-top: 30px;
+}
+
+.privacy-policy-signature {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #1b667f;
+}
+
+@media (max-width: 768px) {
+  .privacy-policy-hero {
+    padding: 140px 0 80px;
+  }
+
+  .privacy-policy-title {
+    font-size: 2rem;
+  }
+
+  .privacy-policy-heading {
+    font-size: 28px;
+  }
+
+  .privacy-policy-subheading {
+    font-size: 18px;
+  }
+
+  .privacy-policy-content {
+    gap: 40px;
+  }
+
+  .privacy-policy-content p,
+  .privacy-policy-list li {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-policy-content {
+    gap: 30px;
+  }
+
+  .privacy-policy-heading {
+    font-size: 24px;
+  }
+}
+

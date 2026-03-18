@@ -17,4 +17,16 @@ router.get("/lessons", (req, res) => {
   res.render("lessons");
 });
 
+router.get("/privacy-policy", (req, res) => {
+  res.render("privacy-policy");
+});
+
+router.get("/refund-policy", (req, res) => {
+  res.render("refund-policy");
+});
+
+router.get("/shipping-policy", (req, res) => {
+  res.render("shipping-policy");
+});
+
 module.exports = router;

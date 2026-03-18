@@ -580,7 +580,6 @@
 @media (max-width: 850px) {
   .lessons-hero {
     min-height: 400px;
-    overflow: hidden;
   }
 }
 
