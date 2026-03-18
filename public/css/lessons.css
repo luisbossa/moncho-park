@@ -48,7 +48,7 @@
   padding: clamp(80px, 13vw, 240px) 0;
   background-image: url(/images/bg-texture.png);
   background-repeat: repeat-y;
-  background-size: center;
+  background-size: 100% 70%;
 }
 
 .lessons-title {

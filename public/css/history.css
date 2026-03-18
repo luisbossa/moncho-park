@@ -26,7 +26,7 @@
   padding: clamp(80px, 14vw, 240px) 0;
   background-image: url(/images/bg-texture.png);
   background-repeat: repeat-y;
-  background-size: center;
+  background-size: 100% 20%;
 }
 
 .history-container {
