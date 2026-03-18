@@ -25,10 +25,6 @@
   padding: 0 clamp(20px, 6vw, 180px);
 }
 
-.prueba {
-  
-}
-
 .donate-hero-title {
   width: 100%;
   color: #1b667f;
@@ -60,7 +56,7 @@
   flex: 1 1 420px;
   background: white;
   border: 1px solid #eee;
-  padding: 30px;
+  padding: 30px 18px;
 }
 
 .donate-box-header h3 {
@@ -155,7 +151,7 @@
 }
 
 .donate-info {
-  flex: 1 1 360px;
+  flex: 1 1 380px;
   max-width: 520px;
 }
 
@@ -169,6 +165,12 @@
 .donate-info p {
   margin-bottom: 15px;
   line-height: 1.6;
+}
+
+.message-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .donate-message {
