@@ -84,6 +84,7 @@
   cursor: pointer;
   border-radius: 4px;
   font-weight: 600;
+  color: #202020;
   transition: all 0.25s ease;
 }
 
@@ -101,6 +102,7 @@
 
 .donate-amounts button {
   padding: 15px;
+  color: #202020;
   border: 2px solid #ddd;
   background: #fafafa;
   border-radius: 4px;
@@ -193,13 +195,6 @@
 .donate-img {
   width: 18px;
   height: 18px;
-}
-
-.donate-type-btn,
-.donate-amount-btn {
-  color: #202020; 
-  -webkit-appearance: none;
-  appearance: none;
 }
 
 @media (max-width: 900px) {
