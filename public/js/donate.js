@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!selectedAmount || selectedAmount <= 0) {
       message.textContent = "Ingresa una cantidad válida";
-      message.style.color = "#e74c3c";
+      message.style.color = "#ff8b2b";
       showMessage();
       return;
     }
