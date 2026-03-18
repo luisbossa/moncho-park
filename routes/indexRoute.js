@@ -29,4 +29,8 @@ router.get("/shipping-policy", (req, res) => {
   res.render("shipping-policy");
 });
 
+router.get("/donate", (req, res) => {
+  res.render("donate");
+});
+
 module.exports = router;
