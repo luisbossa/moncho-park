@@ -577,12 +577,6 @@
   }
 }
 
-@media (max-width: 850px) {
-  .lessons-hero {
-    min-height: 400px;
-  }
-}
-
 @media (max-width: 600px) {
   .lessons-values-grid {
     grid-template-columns: 1fr;

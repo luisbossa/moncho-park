@@ -117,10 +117,6 @@
 }
 
 @media (max-width: 850px) {
-  .hero-section {
-    min-height: 400px;
-  }
-
   .hero-content-container {
     flex-direction: column;
     justify-content: center;

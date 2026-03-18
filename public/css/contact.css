@@ -248,12 +248,6 @@ textarea {
   }
 }
 
-@media (max-width: 850px) {
-  .contact-hero {
-    min-height: 400px;
-  }
-}
-
 @media (max-width: 768px) {
   .contact-hero {
     padding: 120px 0;
