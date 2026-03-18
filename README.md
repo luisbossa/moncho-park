@@ -53,5 +53,5 @@ The platform focuses on **performance, minimalism, and user experience**, aligne
 Clone the repository:
 
 ```bash
-git clone https://github.com/luisbossa/skatemoncho.git
+git clone https://github.com/luisbossa/moncho-park 
 ```
