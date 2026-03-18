@@ -155,12 +155,12 @@
 .form-group textarea {
   background: transparent;
   border: none;
-  color: #1b667f;
+  color: #202020;
   font-size: 14px;
   font-weight: 400;
   line-height: 25px;
   padding: 0 0 3px 6px;
-  border-bottom: 2px solid #1b667f;
+  border-bottom: 2px solid #202020;
   -webkit-appearance: none;
   appearance: none;
   border-radius: 0;
@@ -173,7 +173,7 @@
 
 .form-group textarea {
   padding: 8px;
-  border: 2px solid #1b667f;
+  border: 2px solid #202020;
 }
 
 .text-area-div {
@@ -194,7 +194,7 @@ textarea {
 .error-message {
   height: 12px;
   font-size: 12px;
-  color: #e74c3c;
+  color: #ff8b2b;
   margin-top: 4px;
   opacity: 0;
   transform: translateY(-5px);
@@ -203,12 +203,12 @@ textarea {
 
 .form-group.error input,
 .form-group.error textarea {
-  border-color: #e74c3c;
+  border-color: #ff8b2b;
 }
 
 .form-group.success input,
 .form-group.success textarea {
-  border-color: #2ecc71;
+  border-color: #1b667f;
 }
 
 .form-group.error .error-message {

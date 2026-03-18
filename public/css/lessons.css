@@ -331,14 +331,14 @@
 .lessons-value-card {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(2px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.1);
   padding: 30px;
   transition: 0.3s ease;
 }
 
 .lessons-value-card:hover {
   background: rgba(255, 255, 255, 0.08);
-  border-color: #ff8b2b;
+  border-color: #1b667f;
 }
 
 .lessons-value-card i {
@@ -385,6 +385,10 @@
   -webkit-text-stroke: 2px #202020;
 }
 
+.lessons-color {
+  color: #1b667f;
+}
+
 .lessons-form {
   display: flex;
   flex-direction: column;
@@ -399,7 +403,6 @@
   background: rgba(255, 255, 255, 0.9);
   font-size: 14px;
   outline: none;
-  border-radius: 3px;
 }
 
 .lessons-form textarea {
@@ -451,7 +454,6 @@
   width: 18px;
   height: 18px;
   border: 2px solid #ff8b2b;
-  border-radius: 3px;
   transition: 0.2s ease;
 }
 
