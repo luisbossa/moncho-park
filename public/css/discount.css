@@ -39,12 +39,12 @@
   flex: 1 1 300px;
   background: transparent;
   border: none;
-  color: #1b667f;
+  color: #202020;
   font-size: 20px;
   font-weight: 400;
   line-height: 25px;
-  padding: 10px 0;
-  border-bottom: 2px solid #1b667f;
+  padding: 10px 4px;
+  border-bottom: 2px solid #202020;
   -webkit-appearance: none;
   appearance: none;
   border-radius: 0;

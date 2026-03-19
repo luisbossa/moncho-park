@@ -33,4 +33,8 @@ router.get("/donate", (req, res) => {
   res.render("donate");
 });
 
+router.get("/events", (req, res) => {
+  res.render("events");
+});
+
 module.exports = router;

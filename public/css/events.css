@@ -1,0 +1,143 @@
+.events-hero {
+  padding: 230px 0;
+  background-image: url(/images/events/events-bg.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 100% 62%;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.events-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.25),
+    transparent
+  );
+}
+
+.events-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 6vw, 180px);
+}
+
+.events-hero-title {
+  color: #1b667f;
+  font-weight: 500;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  -webkit-text-stroke: 2px #202020;
+  font-family: "obviously", sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+}
+
+/* SECTION */
+
+.events-section {
+  position: relative;
+  padding: clamp(80px, 13vw, 180px) 0;
+  background: #f5f5f5;
+}
+
+.events-header {
+  max-width: 600px;
+  margin-bottom: 60px;
+}
+
+.events-header h2 {
+  font-family: "anton";
+  font-size: 34px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.events-header p {
+  line-height: 1.6;
+}
+
+/* GRID */
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-bottom: 2rem;
+  gap: 30px;
+}
+
+/* CARD */
+
+.event-card {
+  background: white;
+  border: 1px solid #eee;
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+
+.event-image {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+
+.event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CONTENT */
+
+.event-content {
+  padding: 20px;
+}
+
+.event-content h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.event-date {
+  display: block;
+  font-size: 13px;
+  color: #1b667f;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.event-content p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1024px) {
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .events-header {
+    text-align: center;
+    margin: 0 auto 40px;
+  }
+
+  .events-hero {
+    padding: 140px 0 80px;
+  }
+}
