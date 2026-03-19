@@ -72,7 +72,7 @@
   }
 
   .product-item img {
-    max-height: 430px;
+    max-height: 410px;
   }
 }
 
@@ -85,7 +85,7 @@
 
   .bestsellers-grid {
     grid-template-columns: 1fr;
-    gap: 2rem 0;
+    gap: 3rem 0;
   }
 
   .bestsellers-title {
