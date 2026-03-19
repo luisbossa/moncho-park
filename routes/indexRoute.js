@@ -37,4 +37,8 @@ router.get("/events", (req, res) => {
   res.render("events");
 });
 
+router.get("/shop", (req, res) => {
+  res.render("shop");
+});
+
 module.exports = router;
