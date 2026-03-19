@@ -134,17 +134,29 @@
     text-align: center;
   }
 
+  .discount-container h2 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
   .discount-form {
     flex-direction: column;
     gap: 30px;
+  }
+
+  .discount-form-group {
+    align-items: center;
   }
 
   .discount-form input {
     width: 70%;
     font-size: 18px;
   }
+}
 
-  .discount-form-group {
-    align-items: center;
+@media (max-width: 475px) {
+  .discount-container h2 {
+    font-size: 22px;
+    line-height: 1.4;
   }
 }
