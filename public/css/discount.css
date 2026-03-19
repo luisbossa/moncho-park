@@ -11,7 +11,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 60px;
 }
 
 .discount-container h2 {
@@ -24,6 +24,10 @@
   max-width: 687px;
   text-align: center;
   text-transform: uppercase;
+}
+
+.color-span {
+  color: #1b667f;
 }
 
 .discount-form {
@@ -138,5 +142,9 @@
   .discount-form input {
     width: 70%;
     font-size: 18px;
+  }
+
+  .discount-form-group {
+    align-items: center;
   }
 }
