@@ -82,13 +82,13 @@
 }
 
 .shop-wall {
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  padding-top: 7%;
   padding-left: clamp(3rem, 14vw, 19%);
-  padding-bottom: 1.5rem;
   gap: 20px;
 }
 
@@ -123,7 +123,6 @@
   object-fit: contain;
   transition: all 0.3s ease;
   cursor: pointer;
-  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.6));
 }
 
 .deck-img:hover {
