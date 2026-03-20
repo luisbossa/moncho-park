@@ -228,7 +228,7 @@
 
   .shop-wall {
     padding-left: 8%;
-  }
+}
 }
 
 @media (max-width: 576px) {
@@ -241,8 +241,7 @@
   }
 
   .shop-detail-section {
-    min-height: 120vh;
-    min-height: 120svh;
+    background-image: url('/images/shop/shop-bg-mobile.png');
     background-position: 28% 10%;
   }
 
