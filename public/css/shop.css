@@ -231,13 +231,13 @@
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
   .shop-detail-section {
+    height: 1150px;
     background-image: url("/images/shop/shop-bg-mobile.png");
   }
 
   .shop-wall {
-    height: 1150px;
     justify-content: start;
   }
 }
