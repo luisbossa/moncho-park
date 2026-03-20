@@ -87,7 +87,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 9rem;
+  padding-top: 7.2rem;
   padding-left: clamp(3rem, 14vw, 19%);
   gap: 20px;
 }
@@ -241,7 +241,6 @@
   }
 
   .shop-detail-section {
-    height: 120vh;
     background-position: 28% 10%;
   }
 
