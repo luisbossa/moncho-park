@@ -187,6 +187,10 @@
 }
 
 @media (max-width: 500px) {
+  .main-header {
+    backdrop-filter: blur(0);
+  }
+
   .logo img {
     width: 80px;
   }
