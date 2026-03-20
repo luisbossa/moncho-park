@@ -234,8 +234,8 @@
     font-size: 15px;
   }
 
-  .shop-wall {
-    padding-bottom: 3rem;
+  .shop-detail-section {
+    min-height: 120vh;
   }
 
   .deck-row {
