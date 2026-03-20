@@ -241,7 +241,8 @@
   }
 
   .shop-detail-section {
-    min-height: 117vh;
+    height: 120vh;
+    background-position: 28% 10%;
   }
 
   .deck-row {
