@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const logo = document.querySelector(".fr-footer-kilo__logo img");
+  const logo = document.querySelector(".footer-logo img");
 
   const observer = new IntersectionObserver(
     (entries, observer) => {
