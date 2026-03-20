@@ -186,11 +186,13 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .main-header {
     backdrop-filter: blur(0);
   }
+}
 
+@media (max-width: 500px) {
   .logo img {
     width: 80px;
   }
