@@ -228,7 +228,18 @@
 
   .shop-wall {
     padding-left: 8%;
+  }
 }
+
+@media (max-width: 700px) {
+  .shop-detail-section {
+    background-image: url("/images/shop/shop-bg-mobile.png");
+  }
+
+  .shop-wall {
+    height: 1150px;
+    justify-content: start;
+  }
 }
 
 @media (max-width: 576px) {
@@ -238,11 +249,6 @@
 
   .shop-teaser-content p {
     font-size: 15px;
-  }
-
-  .shop-detail-section {
-    background-image: url('/images/shop/shop-bg-mobile.png');
-    background-position: 28% 10%;
   }
 
   .deck-row {
