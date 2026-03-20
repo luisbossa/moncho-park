@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   z-index: 10;
-  padding: 10px 0;
+  padding: 10px 0 0;
   backdrop-filter: blur(2px);
   display: flex;
   justify-content: center;
@@ -108,7 +108,7 @@
 }
 
 .mobile-menu {
-  width: 119px;
+  width: 112px;
   position: fixed;
   top: 0;
   right: 0;
@@ -141,12 +141,13 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 .mobile-menu a {
   color: white;
   font-weight: 600;
+  font-size: 15px;
   text-decoration: none;
   text-transform: uppercase;
 }
