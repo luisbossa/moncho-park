@@ -129,9 +129,7 @@ decks.forEach((deck) => {
 
     updatePopup(currentIndex);
     popup.classList.add("active");
-
-    // 🚫 BLOQUEAR SCROLL
-    document.body.style.overflow = "hidden";
+    document.body.classList.add("no-scroll");
   });
 });
 
@@ -139,9 +137,7 @@ decks.forEach((deck) => {
 document.querySelectorAll("#closePopup").forEach((btn) => {
   btn.onclick = () => {
     popup.classList.remove("active");
-
-    // ✅ RESTAURAR SCROLL
-    document.body.style.overflow = "auto";
+    document.body.classList.remove("no-scroll");
   };
 });
 
