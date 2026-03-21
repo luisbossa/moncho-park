@@ -63,7 +63,7 @@
 }
 
 .popup-deck img {
-  width: clamp(150px, 30vw, 230px);
+  width: clamp(120px, 30vw, 230px);
   transition: transform 0.2s ease;
   animation: floatDeck 3s ease-in-out infinite;
 }
