@@ -14,7 +14,7 @@ const products = [
   {
     name: "TOY MACHINE",
     price: "₡24,900",
-    desc: "Diseñada para trucos urbanos. Resistencia brutal y control total.",
+    desc: "Diseñada para trucos urbanos. Resistencia brutal.",
     img: "/images/shop/deck-8.png",
     size: "8.25",
     stock: "Disponible",
@@ -22,7 +22,7 @@ const products = [
   {
     name: "GIRL",
     price: "₡27,500",
-    desc: "Colores agresivos y grip premium para riders avanzados.",
+    desc: "Colores agresivos para riders avanzados.",
     img: "/images/slider/item-2.png",
     size: "8.14",
     stock: "Últimas unidades",
