@@ -75,12 +75,6 @@ body {
   user-select: none;
 }
 
-body.no-scroll {
-  overflow: hidden;
-  height: 100vh;
-  touch-action: none;
-}
-
 body::-webkit-scrollbar {
   width: 12px;
 }

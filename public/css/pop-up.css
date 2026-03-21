@@ -19,6 +19,12 @@
   pointer-events: all;
 }
 
+body.no-scroll {
+  height: 100vh;
+  overflow: hidden;
+  touch-action: none;
+}
+
 /* ===== CERRAR ===== */
 .popup-close {
   position: absolute;
