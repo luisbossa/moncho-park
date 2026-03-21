@@ -81,9 +81,16 @@
 }
 
 .popup-desc {
-  color: #aaa;
-  font-size: 14px;
+  color: #fff;
+  font-size: 1rem;
   line-height: 1.6;
+}
+
+.popup-options {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  gap: 1rem;
 }
 
 .popup-actions {

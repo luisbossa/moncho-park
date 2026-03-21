@@ -3,28 +3,26 @@
 
         <div class="shop-wall">
             <div class="deck-row">
-                <img src="/images/shop/deck-8.png" class="deck-img">
-                <img src="/images/slider/item-2.png" class="deck-img">
-                <img src="/images/shop/deck-7.png" class="deck-img">
-                <img src="/images/shop/deck-14.png" class="deck-img">
-                <img src="/images/shop/deck-11.png" class="deck-img">
-                <img src="/images/shop/deck-17.png" class="deck-img">
+                <img src="/images/shop/deck-8.png" class="deck-img" data-id="0">
+                <img src="/images/slider/item-2.png" class="deck-img" data-id="1">
+                <img src="/images/shop/deck-7.png" class="deck-img" data-id="2">
+                <img src="/images/shop/deck-14.png" class="deck-img" data-id="3">
+                <img src="/images/shop/deck-11.png" class="deck-img" data-id="4">
+                <img src="/images/shop/deck-17.png" class="deck-img" data-id="5">
             </div>
 
             <div class="deck-row">
-                <img src="/images/shop/deck-9.png" class="deck-img">
-                <img src="/images/shop/deck-10.png" class="deck-img">
-                <img src="/images/shop/deck-15.png" class="deck-img">
-                <img src="/images/shop/deck-12.png" class="deck-img">
-                <img src="/images/shop/deck-13.png" class="deck-img">
-                <img src="/images/shop/deck-16.png" class="deck-img">
+                <img src="/images/shop/deck-9.png" class="deck-img" data-id="6">
+                <img src="/images/shop/deck-10.png" class="deck-img" data-id="7">
+                <img src="/images/shop/deck-15.png" class="deck-img" data-id="8">
+                <img src="/images/shop/deck-12.png" class="deck-img" data-id="9">
+                <img src="/images/shop/deck-13.png" class="deck-img" data-id="10">
+                <img src="/images/shop/deck-16.png" class="deck-img" data-id="11">
             </div>
         </div>
         <div class="gradient-filler"></div>
 
         <div class="shop-popup" id="shopPopup">
-
-            <!-- CERRAR -->
             <button class="popup-close" id="closePopup">✕</button>
 
             <div class="popup-wrapper">
@@ -45,21 +43,20 @@
                 <!-- DERECHA (INFO) -->
                 <div class="popup-right">
 
-                    <h2 class="popup-title">MONCHO DECK PRO</h2>
+                    <h2 class="popup-title">DECK PRO</h2>
 
                     <p class="popup-price">₡24,900</p>
 
                     <p class="popup-desc">
-                        Tabla profesional diseñada para street skating.
-                        Alta resistencia y diseño exclusivo.
+                        Tabla profesional diseñada para street skating y diseño exclusivo.
                     </p>
 
                     <div class="popup-options">
-                        <span>Tamaño: 8.25</span>
-                        <span>Stock: Disponible</span>
+                        <span id="popupSize"></span>
+                        <span id="popupStock"></span>
                     </div>
 
-                    <div class="popup-right">
+                    <div class="">
                         <h2 class="popup-title"></h2>
                         <p class="popup-price"></p>
                         <p class="popup-desc"></p>
@@ -72,6 +69,7 @@
 
                 </div>
             </div>
+        </div>
 </section>
 
 
@@ -117,4 +115,4 @@
 
 </section>
 
-<script src="/js/shop.js" defer></script>
+<script src="/js/pop-up.js" defer></script>
