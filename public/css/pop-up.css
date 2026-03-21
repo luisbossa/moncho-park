@@ -42,7 +42,7 @@
 
 /* ===== IZQUIERDA ===== */
 .popup-left {
-  height: 580px;
+  height: 550px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -54,7 +54,7 @@
 }
 
 .popup-deck img {
-  width: clamp(180px, 30vw, 230px);
+  width: clamp(140px, 30vw, 230px);
   transition: transform 0.2s ease;
   animation: floatDeck 3s ease-in-out infinite;
 }
@@ -172,5 +172,11 @@
   }
   .arrow.right {
     right: 10px;
+  }
+}
+
+@media (max-width: 650px) {
+  .popup-wrapper {
+    gap: 40px;
   }
 }
