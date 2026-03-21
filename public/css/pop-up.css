@@ -11,7 +11,10 @@
   transition: 0.4s ease;
   z-index: 100;
   padding-top: 7rem;
+  
+  overflow: auto;
   overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .shop-popup.active {
@@ -19,10 +22,8 @@
   pointer-events: all;
 }
 
-body.no-scroll {
-  height: 100vh;
-  overflow: hidden;
-  touch-action: none;
+.shop-popup.active ~ * {
+  pointer-events: none;
 }
 
 /* ===== CERRAR ===== */

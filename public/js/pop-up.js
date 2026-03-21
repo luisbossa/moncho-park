@@ -129,7 +129,18 @@ decks.forEach((deck) => {
 
     updatePopup(currentIndex);
     popup.classList.add("active");
-    document.body.classList.add("no-scroll");
+
+    document.addEventListener(
+      "touchmove",
+      (e) => {
+        if (popup.classList.contains("active")) {
+          if (!popup.contains(e.target)) {
+            e.preventDefault();
+          }
+        }
+      },
+      { passive: false },
+    );
   });
 });
 
@@ -137,7 +148,13 @@ decks.forEach((deck) => {
 document.querySelectorAll("#closePopup").forEach((btn) => {
   btn.onclick = () => {
     popup.classList.remove("active");
-    document.body.classList.remove("no-scroll");
+    popup.addEventListener(
+      "touchmove",
+      (e) => {
+        e.stopPropagation();
+      },
+      { passive: false },
+    );
   };
 });
 
