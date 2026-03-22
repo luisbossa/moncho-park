@@ -1,7 +1,7 @@
 const relatedProducts = [
   {
     name: "TOY MACHINE",
-    price: "₡24,900",
+    price: "₡ 33,900",
     desc: "Diseñada para trucos urbanos.",
     img: "/images/shop/deck-18.png",
     size: "8.25",
@@ -9,7 +9,7 @@ const relatedProducts = [
   },
   {
     name: "TOY MACHINE",
-    price: "₡27,500",
+    price: "₡ 32,500",
     desc: "Colores agresivos.",
     img: "/images/shop/deck-19.png",
     size: "8.14",
@@ -17,7 +17,7 @@ const relatedProducts = [
   },
   {
     name: "HABITAT",
-    price: "₡22,000",
+    price: "₡ 29,000",
     desc: "Madera premium.",
     img: "/images/shop/deck-20.png",
     size: "8.00",
@@ -25,7 +25,7 @@ const relatedProducts = [
   },
   {
     name: "WORLD INDUSTRIES",
-    price: "₡29,900",
+    price: "₡ 30,900",
     desc: "Dominio total.",
     img: "/images/shop/deck-22.png",
     size: "8.15",
@@ -33,7 +33,7 @@ const relatedProducts = [
   },
   {
     name: "BLACKLABEL",
-    price: "₡34,900",
+    price: "₡ 32,900",
     desc: "Dominio total.",
     img: "/images/shop/deck-23.png",
     size: "8.15",

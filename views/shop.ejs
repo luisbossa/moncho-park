@@ -25,9 +25,25 @@
         <div class="shop-popup" id="shopPopup">
             <button class="popup-close" id="closePopup">✕</button>
 
-            <div class="popup-wrapper">
+            <div class="popup-hud">
+                <div class="hud-avatar">
+                    <img src="/images/logo.png" alt="Logo user">
+                </div>
 
-                <!-- IZQUIERDA (TABLA) -->
+                <div class="hud-info">
+                    <span class="hud-name">SkateMoncho</span>
+                    <span class="hud-level">Nivel 8</span>
+
+                    <div class="hud-bar">
+                        <div class="hud-bar-fill"></div>
+                    </div>
+                </div>
+
+                <div class="hud-money">₡ 120,000</div>
+            </div>
+
+            <div class="popup-wrapper">
+                <!-- TABLA -->
                 <div class="popup-left">
 
                     <button class="arrow left" id="prevDeck">‹</button>
@@ -45,7 +61,7 @@
 
                     <h2 class="popup-title">DECK PRO</h2>
 
-                    <p class="popup-price">₡24,900</p>
+                    <p class="popup-price">₡ 24,900</p>
 
                     <p class="popup-desc">
                         Tabla profesional diseñada para street skating y diseño exclusivo.
@@ -82,3 +98,4 @@
 
 <script src="/js/pop-up.js"></script>
 <script src="/js/related.js"></script>
+<script src="/js/hud.js"></script>

@@ -14,7 +14,7 @@ let currentList = [];
 const products = [
   {
     name: "TOY MACHINE",
-    price: "₡24,900",
+    price: "₡ 33,900",
     desc: "Diseñada para trucos urbanos. Resistencia brutal.",
     img: "/images/shop/deck-8.png",
     size: "8.25",
@@ -22,7 +22,7 @@ const products = [
   },
   {
     name: "GIRL",
-    price: "₡27,500",
+    price: "₡ 27,500",
     desc: "Colores agresivos para riders avanzados.",
     img: "/images/slider/item-2.png",
     size: "8.14",
@@ -30,7 +30,7 @@ const products = [
   },
   {
     name: "DGK",
-    price: "₡22,000",
+    price: "₡ 28,000",
     desc: "Estilo clásico con madera de alta calidad.",
     img: "/images/shop/deck-7.png",
     size: "8.00",
@@ -38,7 +38,7 @@ const products = [
   },
   {
     name: "CHOCOLATE",
-    price: "₡29,900",
+    price: "₡ 29,900",
     desc: "Perfecta para dominar la calle sin límites.",
     img: "/images/shop/deck-14.png",
     size: "8.15",
@@ -46,7 +46,7 @@ const products = [
   },
   {
     name: "TOY MACHINE",
-    price: "₡31,000",
+    price: "₡ 31,000",
     desc: "Edición limitada con diseño explosivo.",
     img: "/images/shop/deck-11.png",
     size: "8.20",
@@ -54,7 +54,7 @@ const products = [
   },
   {
     name: "ALLIEN WORKSHOP",
-    price: "₡34,900",
+    price: "₡ 34,900",
     desc: "Nivel profesional. Máxima estabilidad y control.",
     img: "/images/shop/deck-17.png",
     size: "8.24",
@@ -62,7 +62,7 @@ const products = [
   },
   {
     name: "SKATE MAFIA",
-    price: "₡26,900",
+    price: "₡ 31,900",
     desc: "Diseño oscuro para riders agresivos.",
     img: "/images/shop/deck-9.png",
     size: "8.21",
@@ -70,7 +70,7 @@ const products = [
   },
   {
     name: "ZOO YORK",
-    price: "₡28,500",
+    price: "₡ 34,000",
     desc: "Impacto visual con alto rendimiento.",
     img: "/images/shop/deck-10.png",
     size: "8.28",
@@ -78,7 +78,7 @@ const products = [
   },
   {
     name: "FUNDATION SKATEBOARDS",
-    price: "₡21,500",
+    price: "₡ 31,500",
     desc: "Inspirada en el skate old school.",
     img: "/images/shop/deck-15.png",
     size: "8.05",
@@ -86,7 +86,7 @@ const products = [
   },
   {
     name: "ANTI HERO SKATEBOARDS",
-    price: "₡30,500",
+    price: "₡ 30,500",
     desc: "Hecha para conquistar cualquier spot urbano.",
     img: "/images/shop/deck-12.png",
     size: "8.20",
@@ -94,7 +94,7 @@ const products = [
   },
   {
     name: "REAL SKATEBOARDS",
-    price: "₡32,000",
+    price: "₡ 32,000",
     desc: "Velocidad, control y estilo agresivo.",
     img: "/images/shop/deck-13.png",
     size: "8.23",
@@ -102,7 +102,7 @@ const products = [
   },
   {
     name: "ZOO YORK",
-    price: "₡36,900",
+    price: "₡ 33,900",
     desc: "Nivel élite Monchopark.",
     img: "/images/shop/deck-16.png",
     size: "8.25",

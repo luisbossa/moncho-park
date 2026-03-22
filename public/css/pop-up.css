@@ -9,7 +9,7 @@
   opacity: 0;
   pointer-events: none;
   transition: 0.4s ease;
-  padding: 1rem 0 4rem;
+  padding: 1rem 0 3.7rem;
   overflow-y: auto;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
@@ -85,7 +85,7 @@
 
 .popup-price {
   font-size: 22px;
-  color: #ffd83a;
+  color: #ffcc00;
   font-weight: bold;
 }
 
@@ -116,17 +116,16 @@
   text-transform: uppercase;
   background: #2a2a2a;
   color: #fff;
-
-  transition: 0.3s;
-}
-
-.btn:hover {
-  transform: scale(1.05);
+  transition: all 0.25s ease;
 }
 
 .btn.yes {
   background: #1b667f;
   color: #fff;
+}
+
+.btn.yes:hover {
+  background: #1f7a97; 
 }
 
 .btn.no {
@@ -166,6 +165,115 @@
   }
 }
 
+.popup-hud {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(145deg, #2b2b2b, #1a1a1a);
+  border-radius: 40px;
+  padding: 10px 16px 10px 10px;
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 255, 255, 0.08),
+    0 8px 20px rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+/* AVATAR */
+.hud-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #ffcc00;
+}
+
+.hud-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* INFO */
+.hud-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.hud-name {
+  font-weight: bold;
+  color: #fff;
+  font-size: 14px;
+}
+
+.hud-level {
+  font-size: 12px;
+  color: #ffcc00;
+  margin-top: 4px;
+}
+
+/* BARRA */
+.hud-bar {
+  width: 100px;
+  height: 6px;
+  background: #000;
+  border-radius: 10px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+
+.hud-bar-fill {
+  width: 65%;
+  height: 100%;
+  background: linear-gradient(90deg, #ffcc00, #ff6600);
+  border-radius: 10px;
+}
+
+/* DINERO */
+.hud-money {
+  font-weight: bold;
+  font-size: 16px;
+  color: #00ff88;
+  margin-left: 10px;
+}
+
+.game-msg {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  padding: 12px 20px;
+  border-radius: 7px;
+  font-weight: bold;
+  z-index: 200;
+  opacity: 0;
+  transition: 0.3s;
+  background: #222;
+  color: #fff;
+}
+
+.game-msg.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.game-msg.success {
+  background: linear-gradient(145deg, #00ff88, #00cc66);
+  color: #000;
+}
+
+.game-msg.error {
+  background: linear-gradient(145deg, #ff3b3b, #cc0000);
+}
+
+.hud-money.flash {
+  transform: scale(1.1);
+  text-shadow: 0 0 12px #00ff88;
+}
+
 @media (max-width: 768px) {
   .shop-popup {
     align-items: flex-start;
@@ -190,6 +298,14 @@
   }
   .arrow.right {
     right: 10px;
+  }
+
+  .popup-hud {
+    gap: 0;
+  }
+
+  .hud-info {
+    display: none;
   }
 }
 

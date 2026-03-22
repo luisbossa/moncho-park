@@ -127,6 +127,7 @@
 
 .deck-img:hover {
   transform: scale(1.04) rotate(1deg);
+  filter: brightness(1.1) contrast(1.1);
 }
 
 /* ===== RELATED SECTION ===== */
@@ -176,6 +177,7 @@
 }
 
 .related-card:hover img {
+  filter: brightness(1.1) contrast(1.1);
   transform: scale(1.04) rotate(1deg);
 }
 
