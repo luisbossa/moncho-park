@@ -173,7 +173,7 @@
   align-items: center;
   background: linear-gradient(145deg, #2b2b2b, #1a1a1a);
   border-radius: 40px;
-  padding: 10px 16px 10px 10px;
+  padding: 9px 16px 9px 10px;
   box-shadow:
   inset 0 0 0 2px rgba(255, 255, 255, 0.08),
   0 8px 20px rgba(0, 0, 0, 0.6);
@@ -181,7 +181,6 @@
   gap: 12px;
 }
 
-/* AVATAR */
 .hud-avatar {
   width: 42px;
   height: 42px;
@@ -196,7 +195,6 @@
   object-fit: cover;
 }
 
-/* INFO */
 .hud-info {
   display: flex;
   flex-direction: column;
@@ -215,7 +213,6 @@
   margin-top: 4px;
 }
 
-/* BARRA */
 .hud-bar {
   width: 100px;
   height: 6px;
@@ -232,7 +229,6 @@
   border-radius: 10px;
 }
 
-/* DINERO */
 .hud-money {
   font-weight: bold;
   font-size: 16px;
@@ -240,19 +236,26 @@
   margin-left: 10px;
 }
 
+.hud-money.flash {
+  transform: scale(1.1);
+  text-shadow: 0 0 12px #00ff88;
+}
+
 .game-msg {
+  width: 180px;
+  color: #fff;
   position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%) translateY(-20px);
-  padding: 12px 20px;
+  top: 15px;
+  left: 85%;
+  text-align: center;
+  padding: 12px 15px;
   border-radius: 7px;
   font-weight: bold;
   z-index: 200;
   opacity: 0;
   transition: 0.3s;
   background: #222;
-  color: #fff;
+  transform: translateX(-50%) translateY(-20px);
 }
 
 .game-msg.show {
@@ -267,11 +270,6 @@
 
 .game-msg.error {
   background: linear-gradient(145deg, #ff3b3b, #cc0000);
-}
-
-.hud-money.flash {
-  transform: scale(1.1);
-  text-shadow: 0 0 12px #00ff88;
 }
 
 @media (max-width: 768px) {
