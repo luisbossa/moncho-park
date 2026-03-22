@@ -9,7 +9,7 @@
   opacity: 0;
   pointer-events: none;
   transition: 0.4s ease;
-  padding: 1rem 0 3rem;
+  padding: 1rem 0 4rem;
   overflow-y: auto;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
@@ -108,7 +108,7 @@
 }
 
 .btn {
-  padding: 10px 22px;
+  padding: 1rem 1.8rem;
   border-radius: 25px;
   border: none;
   cursor: pointer;
@@ -180,6 +180,11 @@
     justify-content: center;
   }
 
+  .popup-close {
+    top: 13px;
+    right: 10px;
+  }
+
   .arrow.left {
     left: 10px;
   }
@@ -194,6 +199,6 @@
   }
 
   .popup-left {
-    height: 490px;
+    height: 480px;
   }
 }
