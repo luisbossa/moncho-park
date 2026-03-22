@@ -4,7 +4,7 @@ const relatedProducts = [
     price: "₡ 33,900",
     desc: "Diseñada para trucos urbanos.",
     img: "/images/shop/deck-18.png",
-    size: "8.25",
+    size: "8.7",
     stock: "Disponible",
   },
   {
@@ -12,7 +12,7 @@ const relatedProducts = [
     price: "₡ 32,500",
     desc: "Colores agresivos.",
     img: "/images/shop/deck-19.png",
-    size: "8.14",
+    size: "8.5",
     stock: "Últimas unidades",
   },
   {
@@ -20,7 +20,7 @@ const relatedProducts = [
     price: "₡ 29,000",
     desc: "Madera premium.",
     img: "/images/shop/deck-20.png",
-    size: "8.00",
+    size: "8.25",
     stock: "Disponible",
   },
   {
@@ -28,7 +28,7 @@ const relatedProducts = [
     price: "₡ 30,900",
     desc: "Dominio total.",
     img: "/images/shop/deck-22.png",
-    size: "8.15",
+    size: "8.0",
     stock: "Disponible",
   },
   {
@@ -36,7 +36,7 @@ const relatedProducts = [
     price: "₡ 32,900",
     desc: "Dominio total.",
     img: "/images/shop/deck-23.png",
-    size: "8.15",
+    size: "8.0",
     stock: "Últimas unidades",
   },
 ];

@@ -6,7 +6,6 @@ const title = document.querySelector(".popup-title");
 const price = document.querySelector(".popup-price");
 const desc = document.querySelector(".popup-desc");
 const sizeEl = document.getElementById("popupSize");
-const stockEl = document.getElementById("popupStock");
 
 let currentIndex = 0;
 let currentList = [];
@@ -17,7 +16,7 @@ const products = [
     price: "₡ 33,900",
     desc: "Diseñada para trucos urbanos. Resistencia brutal.",
     img: "/images/shop/deck-8.png",
-    size: "8.25",
+    size: "8.5",
     stock: "Disponible",
   },
   {
@@ -25,7 +24,7 @@ const products = [
     price: "₡ 27,500",
     desc: "Colores agresivos para riders avanzados.",
     img: "/images/slider/item-2.png",
-    size: "8.14",
+    size: "7.75",
     stock: "Últimas unidades",
   },
   {
@@ -33,7 +32,7 @@ const products = [
     price: "₡ 28,000",
     desc: "Estilo clásico con madera de alta calidad.",
     img: "/images/shop/deck-7.png",
-    size: "8.00",
+    size: "8.0",
     stock: "Disponible",
   },
   {
@@ -41,7 +40,7 @@ const products = [
     price: "₡ 29,900",
     desc: "Perfecta para dominar la calle sin límites.",
     img: "/images/shop/deck-14.png",
-    size: "8.15",
+    size: "8.0",
     stock: "Disponible",
   },
   {
@@ -49,7 +48,7 @@ const products = [
     price: "₡ 31,000",
     desc: "Edición limitada con diseño explosivo.",
     img: "/images/shop/deck-11.png",
-    size: "8.20",
+    size: "8.25",
     stock: "Últimas unidades",
   },
   {
@@ -57,7 +56,7 @@ const products = [
     price: "₡ 34,900",
     desc: "Nivel profesional. Máxima estabilidad y control.",
     img: "/images/shop/deck-17.png",
-    size: "8.24",
+    size: "8.25",
     stock: "Disponible",
   },
   {
@@ -65,7 +64,7 @@ const products = [
     price: "₡ 31,900",
     desc: "Diseño oscuro para riders agresivos.",
     img: "/images/shop/deck-9.png",
-    size: "8.21",
+    size: "8.25",
     stock: "Disponible",
   },
   {
@@ -73,7 +72,7 @@ const products = [
     price: "₡ 34,000",
     desc: "Impacto visual con alto rendimiento.",
     img: "/images/shop/deck-10.png",
-    size: "8.28",
+    size: "8.5",
     stock: "Últimas unidades",
   },
   {
@@ -81,7 +80,7 @@ const products = [
     price: "₡ 31,500",
     desc: "Inspirada en el skate old school.",
     img: "/images/shop/deck-15.png",
-    size: "8.05",
+    size: "8.5",
     stock: "Edición limitada",
   },
   {
@@ -89,7 +88,7 @@ const products = [
     price: "₡ 30,500",
     desc: "Hecha para conquistar cualquier spot urbano.",
     img: "/images/shop/deck-12.png",
-    size: "8.20",
+    size: "8.5",
     stock: "Disponible",
   },
   {
@@ -97,7 +96,7 @@ const products = [
     price: "₡ 32,000",
     desc: "Velocidad, control y estilo agresivo.",
     img: "/images/shop/deck-13.png",
-    size: "8.23",
+    size: "8.5",
     stock: "Disponible",
   },
   {
@@ -105,7 +104,7 @@ const products = [
     price: "₡ 33,900",
     desc: "Nivel élite Monchopark.",
     img: "/images/shop/deck-16.png",
-    size: "8.25",
+    size: "8.0",
     stock: "Agotado",
   },
 ];
@@ -124,7 +123,6 @@ function updatePopup(index) {
   price.textContent = product.price;
   desc.textContent = product.desc;
   sizeEl.textContent = "Tamaño: " + product.size;
-  stockEl.textContent = "Stock: " + product.stock;
 }
 
 // EXPONER GLOBAL PARA RELATED
