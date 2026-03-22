@@ -192,4 +192,8 @@
   .popup-wrapper {
     gap: 0;
   }
+
+  .popup-left {
+    height: 490px;
+  }
 }
