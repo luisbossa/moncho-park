@@ -5,16 +5,15 @@
   backdrop-filter: blur(6px);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   opacity: 0;
   pointer-events: none;
   transition: 0.4s ease;
-  z-index: 100;
-  padding-top: 7rem;
-  
-  overflow: auto;
+  padding: 7rem 0 1rem;
+  overflow-y: auto;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
+  z-index: 100;
 }
 
 .shop-popup.active {
