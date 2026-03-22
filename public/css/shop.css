@@ -159,8 +159,13 @@
 
 .related-div {
   width: fit-content;
+  margin: 0 auto;
   padding: 0 10px;
   cursor: pointer;
+}
+
+.related-img-div {
+  height: 380px;
 }
 
 .related-card img {
@@ -256,7 +261,7 @@
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
   }
-  
+
   .related-div {
     width: 100%;
   }

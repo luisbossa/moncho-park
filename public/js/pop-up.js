@@ -9,6 +9,7 @@ const sizeEl = document.getElementById("popupSize");
 const stockEl = document.getElementById("popupStock");
 
 let currentIndex = 0;
+let currentList = [];
 
 const products = [
   {
@@ -102,45 +103,43 @@ const products = [
   {
     name: "ZOO YORK",
     price: "₡36,900",
-    desc: "La mejor tabla de Monchopark. Nivel élite.",
+    desc: "Nivel élite Monchopark.",
     img: "/images/shop/deck-16.png",
     size: "8.25",
     stock: "Agotado",
   },
 ];
 
+window.products = products;
+window.popup = popup;
+
 // ===== UPDATE =====
 function updatePopup(index) {
-  const product = products[index];
+  const product = currentList[index];
+
+  if (!product) return;
 
   popupImage.src = product.img;
   title.textContent = product.name;
   price.textContent = product.price;
   desc.textContent = product.desc;
-
   sizeEl.textContent = "Tamaño: " + product.size;
   stockEl.textContent = "Stock: " + product.stock;
 }
 
-// ===== ABRIR =====
+// EXPONER GLOBAL PARA RELATED
+window.updatePopup = updatePopup;
+window.setCurrentList = (list) => (currentList = list);
+window.setCurrentIndex = (i) => (currentIndex = i);
+
+// ===== ABRIR DESDE SHOP =====
 decks.forEach((deck) => {
   deck.addEventListener("click", () => {
+    currentList = products;
     currentIndex = Number(deck.dataset.id);
 
     updatePopup(currentIndex);
     popup.classList.add("active");
-
-    document.addEventListener(
-      "touchmove",
-      (e) => {
-        if (popup.classList.contains("active")) {
-          if (!popup.contains(e.target)) {
-            e.preventDefault();
-          }
-        }
-      },
-      { passive: false },
-    );
   });
 });
 
@@ -148,24 +147,17 @@ decks.forEach((deck) => {
 document.querySelectorAll("#closePopup").forEach((btn) => {
   btn.onclick = () => {
     popup.classList.remove("active");
-    popup.addEventListener(
-      "touchmove",
-      (e) => {
-        e.stopPropagation();
-      },
-      { passive: false },
-    );
   };
 });
 
 // ===== NAVEGACIÓN =====
 document.getElementById("nextDeck").onclick = () => {
-  currentIndex = (currentIndex + 1) % products.length;
+  currentIndex = (currentIndex + 1) % currentList.length;
   updatePopup(currentIndex);
 };
 
 document.getElementById("prevDeck").onclick = () => {
-  currentIndex = (currentIndex - 1 + products.length) % products.length;
+  currentIndex = (currentIndex - 1 + currentList.length) % currentList.length;
   updatePopup(currentIndex);
 };
 
@@ -179,11 +171,8 @@ deckContainer.addEventListener("mousemove", (e) => {
   const x = e.clientX - rect.left;
   const y = e.clientY - rect.top;
 
-  const centerX = rect.width / 2;
-  const centerY = rect.height / 2;
-
-  const rotateY = ((x - centerX) / centerX) * 18;
-  const rotateX = ((centerY - y) / centerY) * 18;
+  const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 18;
+  const rotateX = ((rect.height / 2 - y) / (rect.height / 2)) * 18;
 
   deck3D.style.transform = `
     rotateY(${rotateY}deg)
@@ -192,7 +181,6 @@ deckContainer.addEventListener("mousemove", (e) => {
   `;
 });
 
-// RESET
 deckContainer.addEventListener("mouseleave", () => {
   deck3D.style.transform = "rotateY(0deg) rotateX(0deg)";
 });
