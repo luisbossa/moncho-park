@@ -9,7 +9,7 @@
   opacity: 0;
   pointer-events: none;
   transition: 0.4s ease;
-  padding: 6rem 0 2rem;
+  padding: 3rem;
   overflow-y: auto;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
@@ -85,7 +85,7 @@
 
 .popup-price {
   font-size: 22px;
-  color: #ffcc00;
+  color: #ffd83a;
   font-weight: bold;
 }
 
@@ -113,7 +113,7 @@
   border: none;
   cursor: pointer;
   font-weight: bold;
-
+  text-transform: uppercase;
   background: #2a2a2a;
   color: #fff;
 
@@ -125,8 +125,8 @@
 }
 
 .btn.yes {
-  background: linear-gradient(145deg, #ffd700, #ffb800);
-  color: #000;
+  background: #1b667f;
+  color: #fff;
 }
 
 .btn.no {
