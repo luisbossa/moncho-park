@@ -9,7 +9,7 @@
   opacity: 0;
   pointer-events: none;
   transition: 0.4s ease;
-  padding: 3rem;
+  padding: 1rem 0 3rem;
   overflow-y: auto;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
@@ -190,6 +190,6 @@
 
 @media (max-width: 550px) {
   .popup-wrapper {
-    gap: 30px;
+    gap: 0;
   }
 }
