@@ -1,0 +1,18 @@
+<%#
+    Botón animado .btn-23
+    Parámetros: text, href (si no hay, se renderiza <button>), className, type, external,
+    attrs (objeto con atributos extra, p. ej. { "data-plan": "1 persona" })
+%>
+<% const classes = ["btn-23", locals.className].filter(Boolean).join(" "); %>
+<% const attrs = Object.entries(locals.attrs || {}); %>
+<% if (locals.href) { %>
+<a href="<%= href %>" class="<%= classes %>"<% if (locals.external) { %> target="_blank" rel="noopener"<% } %><% attrs.forEach(([key, value]) => { %> <%= key %>="<%= value %>"<% }) %>>
+    <span class="text"><%= text %></span>
+    <span aria-hidden="true" class="marquee"><%= text %></span>
+</a>
+<% } else { %>
+<button type="<%= locals.type || 'button' %>" class="<%= classes %>"<% attrs.forEach(([key, value]) => { %> <%= key %>="<%= value %>"<% }) %>>
+    <span class="text"><%= text %></span>
+    <span aria-hidden="true" class="marquee"><%= text %></span>
+</button>
+<% } %>

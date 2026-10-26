@@ -1,32 +1,13 @@
-<section class="lessons-hero">
-
-    <%- include("partials/header") %>
-
-        <div class="lessons-container">
-            <div class="lessons-hero-content">
-
-                <h1 class="lessons-hero-title">
-                    Clases de Skate
-                </h1>
-
-            </div>
-        </div>
-
-</section>
-
+<%- include("partials/page-hero", { sectionClass: "lessons-hero", prefix: "lessons", heading: "Clases de Skate" }) %>
 
 <section class="lessons-section">
-
     <div class="hero-filler"></div>
 
     <div class="lessons-container">
 
         <!-- INTRO -->
-
         <div class="lessons-intro">
-
             <div class="lessons-intro-text">
-
                 <h2 class="lessons-title">Aprende en MonchoPark</h2>
 
                 <p class="lessons-lead">
@@ -44,125 +25,56 @@
 
                     <p>
                         Carlos Ocampo es instructor de skate con experiencia en formación de riders de todos los
-                        niveles.
-                        Su enfoque combina técnica, seguridad y estilo, ayudándote a progresar de forma real en el
-                        skatepark.
+                        niveles. Su enfoque combina técnica, seguridad y estilo, ayudándote a progresar de forma real
+                        en el skatepark.
                     </p>
 
                     <ul>
-                        <li>✔ Clases personalizadas</li>
-                        <li>✔ Corrección técnica en tiempo real</li>
-                        <li>✔ Progreso adaptado a tu nivel</li>
-                        <li>✔ Enfoque en confianza y control</li>
+                        <% coachPerks.forEach((perk) => { %>
+                        <li>✔ <%= perk %></li>
+                        <% }) %>
                     </ul>
                 </div>
-
             </div>
 
             <div class="lessons-intro-image">
                 <img src="/images/lessons/lessons-coach.png" alt="Carlos Ocampo - Instructor de skate">
             </div>
-
         </div>
 
-
         <!-- TARIFAS -->
-
         <div class="lessons-pricing">
-
             <h2 class="lessons-title-center">Tarifas</h2>
 
             <div class="lessons-pricing-grid">
-                <!-- 1 PERSONA -->
-                <div class="lessons-pricing-card">
-                    <h3>1 persona</h3>
-                    <p class="lessons-pricing-sub">Clase personalizada</p>
+                <% pricing.forEach((plan) => { %>
+                <div class="lessons-pricing-card<%= plan.featured ? ' featured' : '' %>" data-plan-card="<%= plan.title %>">
+                    <% if (plan.badge) { %>
+                    <div class="badge"><%= plan.badge %></div>
+                    <% } %>
+
+                    <h3><%= plan.title %></h3>
+                    <p class="lessons-pricing-sub"><%= plan.subtitle %></p>
 
                     <ul>
-                        <li><span>2 horas</span> <strong>₡24,000</strong></li>
-                        <li><span>1h 30min</span> <strong>₡17,000</strong></li>
-                        <li><span>1 hora</span> <strong>₡11,000</strong></li>
+                        <% plan.rates.forEach((rate) => { %>
+                        <li><span><%= rate.duration %></span> <strong><%= rate.price %></strong></li>
+                        <% }) %>
                     </ul>
                     <div class="go-bottom-div">
-                        <a href="#lessons-form" class="btn-23">
-                            <span class="text">Reservar</span>
-                            <span aria-hidden="true" class="marquee">Reservar</span>
-                        </a>
+                        <%- include("partials/ui/btn-marquee", { text: "Reservar", href: "#lessons-form", attrs: { "data-plan": plan.title, "aria-label": "Reservar clase para " + plan.title } }) %>
                     </div>
                 </div>
-
-                <!-- 2 PERSONAS (RECOMENDADO) -->
-                <div class="lessons-pricing-card featured">
-                    <div class="badge">Más popular</div>
-
-                    <h3>2 personas</h3>
-                    <p class="lessons-pricing-sub">Aprende acompañado</p>
-
-                    <ul>
-                        <li><span>2 horas</span> <strong>₡19,000 c/u</strong></li>
-                        <li><span>1h 30min</span> <strong>₡14,000 c/u</strong></li>
-                        <li><span>1 hora</span> <strong>₡9,000 c/u</strong></li>
-                    </ul>
-                    <div class="go-bottom-div">
-                        <a href="#lessons-form" class="btn-23">
-                            <span class="text">Reservar</span>
-                            <span aria-hidden="true" class="marquee">Reservar</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 3 PERSONAS -->
-                <div class="lessons-pricing-card">
-                    <h3>3 personas</h3>
-                    <p class="lessons-pricing-sub">Grupo dinámico</p>
-
-                    <ul>
-                        <li><span>2 horas</span> <strong>₡16,000 c/u</strong></li>
-                        <li><span>1h 30min</span> <strong>₡12,000 c/u</strong></li>
-                        <li><span>1 hora</span> <strong>₡8,000 c/u</strong></li>
-                    </ul>
-                    <div class="go-bottom-div">
-                        <a href="#lessons-form" class="btn-23">
-                            <span class="text">Reservar</span>
-                            <span aria-hidden="true" class="marquee">Reservar</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 4 PERSONAS -->
-                <div class="lessons-pricing-card">
-                    <h3>4 personas</h3>
-                    <p class="lessons-pricing-sub">Clase grupal</p>
-
-                    <ul>
-                        <li><span>2 horas</span> <strong>₡14,000 c/u</strong></li>
-                        <li><span>1h 30min</span> <strong>₡10,000 c/u</strong></li>
-                        <li><span>1 hora</span> <strong>₡7,000 c/u</strong></li>
-                    </ul>
-                    <div class="go-bottom-div">
-                        <a href="#lessons-form" class="btn-23">
-                            <span class="text">Reservar</span>
-                            <span aria-hidden="true" class="marquee">Reservar</span>
-                        </a>
-                    </div>
-                </div>
+                <% }) %>
             </div>
-
         </div>
 
-
         <!-- EXTRA -->
-
         <div class="lessons-extra">
-
             <h2 class="lessons-title-center">Alquiler de Equipo</h2>
 
             <div class="lessons-extra-grid">
-
-                <!-- EQUIPO -->
-
                 <div class="lessons-extra-card">
-
                     <div class="lessons-extra-header">
                         <i data-lucide="package"></i>
                         <h3>Equipo disponible</h3>
@@ -174,42 +86,21 @@
                     </p>
 
                     <ul class="lessons-extra-list">
-                        <ul class="lessons-extra-list">
-
-                            <li>
-                                <span class="item">
-                                    <img src="/images/icons/helmet.png" alt="Casco">
-                                    Casco
-                                </span>
-                                <strong>₡2,000</strong>
-                            </li>
-
-                            <li>
-                                <span class="item">
-                                    <img src="/images/icons/skateboard.png" alt="Tabla">
-                                    Tabla
-                                </span>
-                                <strong>₡4,000</strong>
-                            </li>
-
-                            <li>
-                                <span class="item">
-                                    <img src="/images/icons/helmet.png" alt="Casco">
-                                    <img src="/images/icons/skateboard.png" alt="Tabla">
-                                    Combo completo
-                                </span>
-                                <strong>₡6,000</strong>
-                            </li>
-
-                        </ul>
+                        <% rental.forEach((item) => { %>
+                        <li>
+                            <span class="item">
+                                <% item.icons.forEach((icon) => { %>
+                                <img src="<%= icon.src %>" alt="<%= icon.alt %>">
+                                <% }) %>
+                                <%= item.label %>
+                            </span>
+                            <strong><%= item.price %></strong>
+                        </li>
+                        <% }) %>
                     </ul>
-
                 </div>
 
-                <!-- CONDICIONES -->
-
                 <div class="lessons-extra-card">
-
                     <div class="lessons-extra-header">
                         <i data-lucide="shield-check"></i>
                         <h3>Condiciones y seguridad</h3>
@@ -221,131 +112,74 @@
                     </p>
 
                     <ul class="lessons-extra-list">
-                        <li>Uso de casco obligatorio</li>
-                        <li>Supervisión durante la práctica</li>
-                        <li>Equipo higienizado</li>
-                        <li>Asistencia para principiantes</li>
+                        <% conditions.forEach((condition) => { %>
+                        <li><%= condition %></li>
+                        <% }) %>
                     </ul>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 </section>
 
-
 <section class="lessons-values">
-
     <div class="lessons-overlay"></div>
 
     <div class="lessons-container">
-
         <h2 class="lessons-contact-title lessons-color">Nuestra Filosofía</h2>
 
         <div class="lessons-values-grid">
-
+            <% values.forEach((value) => { %>
             <div class="lessons-value-card">
-                <i data-lucide="shield"></i>
-                <h4>Seguridad ante todo</h4>
-                <p>
-                    Cada sesión está diseñada para minimizar riesgos y maximizar aprendizaje.
-                    Utilizamos equipo adecuado y supervisión constante para que progreses con confianza.
-                </p>
+                <i data-lucide="<%= value.icon %>"></i>
+                <h4><%= value.title %></h4>
+                <p><%= value.text %></p>
             </div>
-
-            <div class="lessons-value-card">
-                <i data-lucide="smile"></i>
-                <h4>Aprender disfrutando</h4>
-                <p>
-                    El skate no es solo técnica, es actitud. Buscamos que cada clase sea una experiencia
-                    divertida que te motive a seguir avanzando.
-                </p>
-            </div>
-
-            <div class="lessons-value-card">
-                <i data-lucide="users"></i>
-                <h4>Comunidad real</h4>
-                <p>
-                    Fomentamos el respeto, el apoyo entre riders y una cultura positiva dentro del skatepark.
-                    Aquí todos crecen juntos.
-                </p>
-            </div>
-
-            <div class="lessons-value-card">
-                <i data-lucide="trending-up"></i>
-                <h4>Progreso constante</h4>
-                <p>
-                    Adaptamos cada clase a tu nivel para que avances de forma progresiva,
-                    desde lo básico hasta trucos más avanzados.
-                </p>
-            </div>
-
+            <% }) %>
         </div>
-
     </div>
-
 </section>
 
 <section class="lessons-contact" id="lessons-form">
-
     <div class="lessons-container">
-
         <div class="lessons-contact-grid">
-
-            <!-- LEFT -->
-
             <div class="lessons-contact-left">
                 <h2 class="lessons-contact-title">
                     Contacta<br>con nosotros
                 </h2>
             </div>
 
-
-            <!-- RIGHT -->
-
             <div class="lessons-contact-right">
+                <form class="lessons-form" novalidate>
+                    <div class="lessons-form-plan" aria-live="polite">
+                        <span>Plan seleccionado: <strong></strong></span>
+                        <button type="button" aria-label="Quitar plan seleccionado">✕</button>
+                    </div>
+                    <input type="hidden" name="plan">
 
-                <form class="lessons-form">
-                    <input type="text" placeholder="Nombre">
-                    <input type="email" placeholder="Correo electrónico">
-                    <input type="tel" placeholder="Teléfono">
-                    <textarea placeholder="Mensaje"></textarea>
+                    <input type="text" name="name" placeholder="Nombre" aria-label="Nombre" autocomplete="name">
+                    <input type="email" name="email" placeholder="Correo electrónico" aria-label="Correo electrónico" autocomplete="email" inputmode="email">
+                    <input type="tel" name="phone" placeholder="Teléfono" aria-label="Teléfono" autocomplete="tel" inputmode="tel">
+                    <textarea name="message" placeholder="Mensaje" aria-label="Mensaje"></textarea>
 
                     <div class="lessons-checkbox-group">
                         <p>¿Qué tipo de clases te interesan?</p>
 
+                        <% classTypes.forEach((type) => { %>
                         <label>
-                            <input type="checkbox">
-                            <span>Clases personalizadas</span>
+                            <input type="checkbox" name="classTypes" value="<%= type %>">
+                            <span><%= type %></span>
                         </label>
-
-                        <label>
-                            <input type="checkbox">
-                            <span>Clases grupales</span>
-                        </label>
-
-                        <label>
-                            <input type="checkbox">
-                            <span>Sesión en Skatepark</span>
-                        </label>
+                        <% }) %>
                     </div>
 
-                    <button type="submit" class="btn-23">
-                        <span class="text">Enviar</span>
-                        <span aria-hidden="true" class="marquee">Enviar</span>
-                    </button>
+                    <%- include("partials/ui/btn-marquee", { text: "Enviar", type: "submit" }) %>
+
+                    <template class="sent-template">
+                        ¡Enviado! <img class="checked-icon" src="/images/icons/checked.webp" alt="" />
+                    </template>
                 </form>
-
             </div>
-
         </div>
-
     </div>
-
 </section>
-
-<script src="/js/lessons.js" defer></script>

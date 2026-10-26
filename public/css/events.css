@@ -73,13 +73,24 @@
 /* CARD */
 
 .event-card {
+  display: flex;
+  flex-direction: column;
   background: white;
   border: 1px solid #eee;
-  transition: transform 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .event-card:hover {
   transform: translateY(-5px);
+  border-color: #1b667f;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.08);
+}
+
+.event-card:hover .event-image img {
+  transform: scale(1.05);
 }
 
 .event-image {
@@ -92,6 +103,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.6s ease;
 }
 
 /* CONTENT */
@@ -106,7 +118,10 @@
 }
 
 .event-date {
-  display: block;
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid #1b667f;
+  border-radius: 99rem;
   font-size: 13px;
   color: #1b667f;
   font-weight: 600;
@@ -138,6 +153,14 @@
   }
 
   .events-hero {
-    padding: 140px 0 80px;
+    padding: 160px 0 100px;
+  }
+
+  .events-header h2 {
+    font-size: 26px;
+  }
+
+  .event-image {
+    height: 210px;
   }
 }

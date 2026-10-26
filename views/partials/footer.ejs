@@ -1,0 +1,72 @@
+<footer id="footer" class="footer-section">
+    <div class="footer-filler"></div>
+    <div class="footer-container">
+        <div class="footer-logo-div">
+            <figure class="footer-logo">
+                <img width="500" height="500" src="/images/footer-logo.png" alt="Monchopark Logo" loading="lazy" />
+            </figure>
+        </div>
+        <div class="footer-block">
+            <div class="footer-contact">
+                <div class="footer-contact-div">
+                    <h2>Detalles de contacto</h2>
+
+                    <div class="footer-info-wrapper">
+                        <div class="footer-info-div">
+                            <div class="footer-content">
+                                <a class="footer-details" href="<%= site.contact.mapsUrl %>" target="_blank"
+                                    rel="noopener">
+                                    <%= site.contact.address %>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-info-wrapper">
+                    <div class="footer-info-div">
+                        <div class="footer-content">
+                            <a class="footer-details" href="mailto:<%= site.contact.email %>">
+                                <%= site.contact.email %>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-wrapper">
+                <nav class="footer-nav-wrapper">
+                    <% site.footerNav.forEach((group) => { %>
+                    <div>
+                        <h2><%= group.title %></h2>
+                        <ul class="footer-list">
+                            <% group.links.forEach((link) => { %>
+                            <li><a class="footer-link" href="<%= link.href %>"><%= link.label %></a></li>
+                            <% }) %>
+                        </ul>
+                    </div>
+                    <% }) %>
+                </nav>
+
+                <div class="footer-social-wrapper">
+                    <h2>Síguenos</h2>
+                    <ul class="footer-social-ul">
+                        <% site.social.forEach((item) => { %>
+                        <li class="footer-social">
+                            <a href="<%= item.href %>" class="social-icon-wrapper">
+                                <img src="<%= item.icon %>" alt="<%= item.alt %>">
+                                <span><%= item.label %></span>
+                            </a>
+                        </li>
+                        <% }) %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© <%= new Date().getFullYear() %> <strong><%= site.name %></strong> · Hecho con pasión en San Ramón.</span>
+            <span class="footer-badge">Skatepark público y gratuito</span>
+        </div>
+    </div>
+</footer>

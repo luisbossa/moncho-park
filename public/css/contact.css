@@ -63,19 +63,6 @@
   background-size: cover;
 }
 
-.hero-filler {
-  width: 100%;
-  height: 66px;
-  display: block;
-  position: absolute;
-  left: 0;
-  top: -4rem;
-  background-image: url(/images/white-filler.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: 5;
-}
-
 .contact-content {
   display: flex;
   justify-content: space-between;
@@ -181,7 +168,7 @@
 }
 
 textarea {
-  resize: none;
+  resize: vertical;
   min-height: 160px;
 }
 
@@ -220,11 +207,32 @@ textarea {
   opacity: 0;
 }
 
-/* transición en inputs */
+/* transición y foco en inputs */
 .form-group input,
 .form-group textarea {
   transition:
     border-color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--blue);
+  background-color: rgba(27, 102, 127, 0.05);
+}
+
+.form-group input:focus-visible,
+.form-group textarea:focus-visible {
+  outline: none;
+}
+
+.form-group label {
+  cursor: pointer;
+}
+
+.char-count.is-near-limit {
+  color: var(--orange);
+  font-weight: 600;
 }
 
 @media (max-width: 1024px) {
@@ -250,7 +258,22 @@ textarea {
 
 @media (max-width: 768px) {
   .contact-hero {
-    padding: 120px 0;
+    padding: 160px 0 100px;
+  }
+
+  .contact-title {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  /* 16px evita el zoom automático de iOS al enfocar */
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px;
+  }
+
+  .contact-form .custome-btn {
+    width: 100%;
   }
 
   .contact-details {

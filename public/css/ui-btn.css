@@ -32,10 +32,6 @@
   white-space: nowrap;
 }
 
-.btn-23:disabled {
-  cursor: default;
-}
-
 .btn-23:-moz-focusring {
   outline: auto;
 }
@@ -85,14 +81,44 @@
   line-height: 1;
 }
 
-.btn-23:hover .marquee {
-  -webkit-animation-play-state: running;
+@media (hover: hover) {
+  .btn-23:hover .marquee {
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+    opacity: 1;
+  }
+
+  .btn-23:hover .text {
+    opacity: 0;
+  }
+}
+
+.btn-23:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+.btn-23:focus-visible .marquee {
   animation-play-state: running;
   opacity: 1;
 }
 
-.btn-23:hover .text {
+.btn-23:focus-visible .text {
   opacity: 0;
+}
+
+.btn-23 {
+  transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+.btn-23:active {
+  transform: scale(0.96);
+}
+
+.btn-23:disabled,
+.btn-23[aria-disabled="true"] {
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 @-webkit-keyframes marquee {

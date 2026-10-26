@@ -125,9 +125,29 @@
   cursor: pointer;
 }
 
-.deck-img:hover {
+.deck-img:focus-visible {
+  outline-offset: 6px;
+  border-radius: 40px;
+}
+
+.deck-img:hover,
+.deck-img:focus-visible {
   transform: scale(1.04) rotate(1deg);
   filter: brightness(1.1) contrast(1.1);
+}
+
+.shop-hint {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 99rem;
+  background: rgba(21, 21, 21, 0.75);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-family: ui-sans-serif, system-ui, -apple-system;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 /* ===== RELATED SECTION ===== */
@@ -144,7 +164,12 @@
   font-weight: 700;
   line-height: 1.2;
   text-transform: uppercase;
-  margin-bottom: 6rem;
+  margin-bottom: 0.6rem;
+}
+
+.related-hint {
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 5rem;
 }
 
 .related-grid {
@@ -176,6 +201,18 @@
   transition: transform 0.3s;
 }
 
+.related-card {
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.related-card:hover,
+.related-card:focus-visible {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.related-card:focus-visible img,
 .related-card:hover img {
   filter: brightness(1.1) contrast(1.1);
   transform: scale(1.04) rotate(1deg);
@@ -238,8 +275,21 @@
     height: 1600px;
   }
 
-  .related-title {
+  .related-title,
+  .related-hint {
     text-align: center;
+  }
+
+  .related-hint {
+    margin-bottom: 3rem;
+  }
+
+  .related-img-div {
+    height: 300px;
+  }
+
+  .shop-hint {
+    align-self: center;
   }
 
   .shop-wall {

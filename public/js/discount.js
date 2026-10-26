@@ -1,30 +1,28 @@
-document.addEventListener("DOMContentLoaded", () => {
+(() => {
   const form = document.querySelector(".discount-form");
-  const input = document.querySelector("#email");
-  const formGroup = document.querySelector(".discount-form-group");
-  const errorMessage = document.querySelector(".error-message");
-  const button = document.querySelector(".btn-text");
+  if (!form) return;
+
+  const input = form.querySelector("#email");
+  const formGroup = form.querySelector(".discount-form-group");
+  const errorMessage = form.querySelector(".error-message");
+  const button = form.querySelector(".btn-text");
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const email = input.value.trim();
-    const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
     formGroup.classList.remove("error", "success");
 
-    if (!validEmail.test(email)) {
+    if (!EMAIL_RE.test(input.value.trim())) {
       formGroup.classList.add("error");
       errorMessage.textContent = "Correo inválido";
-
-      changeButton("Error", "#ffffff");
+      button.textContent = "Error";
       return;
     }
 
     formGroup.classList.add("success");
-
-    changeButton("Enviado !", "#ffffff");
-
+    errorMessage.textContent = "";
+    button.textContent = "Enviado !";
     input.value = "";
 
     setTimeout(() => {
@@ -32,9 +30,4 @@ document.addEventListener("DOMContentLoaded", () => {
       formGroup.classList.remove("success");
     }, 2500);
   });
-
-  function changeButton(text, color) {
-    button.textContent = text;
-    button.style.color = color;
-  }
-});
+})();

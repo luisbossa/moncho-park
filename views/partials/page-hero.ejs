@@ -1,0 +1,13 @@
+<%#
+    Hero de páginas internas con el header incluido.
+    Parámetros: sectionClass, prefix (prefijo de clases CSS), heading
+%>
+<section class="<%= sectionClass %>">
+    <%- include("header") %>
+
+    <div class="<%= prefix %>-container">
+        <div class="<%= prefix %>-hero-content">
+            <h1 class="<%= prefix %>-hero-title"><%= heading %></h1>
+        </div>
+    </div>
+</section>

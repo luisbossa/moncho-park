@@ -29,3 +29,7 @@
   transform: scale(0.95);
 }
 
+
+.custome-a:hover {
+  background: var(--blue-light);
+}

@@ -58,6 +58,10 @@
   transition: border-color 0.3s ease;
 }
 
+.discount-form input:focus {
+  border-color: var(--blue);
+}
+
 .discount-form input::placeholder {
   color: #1b667f;
   opacity: 0.8;
@@ -121,6 +125,15 @@
 
 .custome-btn:active {
   transform: scale(0.95);
+}
+
+.custome-btn:hover {
+  background: var(--blue-light);
+}
+
+.custome-btn:disabled {
+  opacity: 0.7;
+  cursor: wait;
 }
 
 .custome-btn span {

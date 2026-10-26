@@ -117,8 +117,8 @@
   position: relative;
 }
 
-.footer-wrapper > *:nth-child(1)::after,
-.footer-wrapper > *:nth-child(2)::after {
+/* Sólo una línea divisoria entre el menú y las redes; la línea final la pone .footer-bottom */
+.footer-wrapper > *:nth-child(1)::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -199,6 +199,53 @@ img {
   vertical-align: middle;
 }
 
+.footer-bottom {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-top: 0.5rem;
+  padding-top: 1.8rem;
+  border-top: 2px solid rgba(224, 224, 224, 0.12);
+  color: rgba(211, 221, 226, 0.75);
+  font-size: 0.95rem;
+}
+
+.footer-bottom strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.footer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border: 2px solid var(--orange);
+  border-radius: 99rem;
+  color: var(--orange);
+  font-family: ui-sans-serif, system-ui, -apple-system;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.footer-badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.footer-link,
+.footer-details {
+  transition: color 0.2s ease;
+}
+
 .spin-on-scroll {
   animation: spin 1.5s ease-in-out forwards;
 }
@@ -256,6 +303,18 @@ img {
 
   .footer-block {
     flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-section {
+    padding: 4rem 0 calc(5.5rem + env(safe-area-inset-bottom));
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
   }
 }
 

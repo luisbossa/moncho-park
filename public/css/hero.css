@@ -1,6 +1,7 @@
 .hero-section {
   position: relative;
   height: 100vh;
+  height: 100svh;
   min-height: 600px;
   background-color: #ffffff;
 }
@@ -71,7 +72,7 @@
 
 .audio-btn {
   position: absolute;
-  bottom: 50px;
+  bottom: calc(50px + env(safe-area-inset-bottom));
   right: 20px;
   z-index: 10;
 
@@ -94,6 +95,58 @@
 
 .audio-btn:hover {
   background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.06);
+}
+
+.audio-btn img {
+  width: 22px;
+  height: 22px;
+}
+
+/* Indicador para invitar a hacer scroll */
+.hero-scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 90px;
+  z-index: 8;
+  width: 30px;
+  height: 48px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  transform: translateX(-50%);
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.hero-scroll::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 4px;
+  height: 9px;
+  border-radius: 2px;
+  background: #fff;
+  transform: translateX(-50%);
+  animation: heroScroll 1.6s ease-in-out infinite;
+}
+
+.hero-scroll:hover {
+  opacity: 1;
+}
+
+@keyframes heroScroll {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0);
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 14px);
+  }
 }
 
 .audio-btn svg {
@@ -143,8 +196,19 @@
   }
 }
 
+@media (max-width: 850px) {
+  .hero-scroll {
+    display: none;
+  }
+}
+
 @media (max-width: 480px) {
   .hero-title {
     font-size: 50px;
+  }
+
+  .audio-btn {
+    bottom: calc(24px + env(safe-area-inset-bottom));
+    right: 14px;
   }
 }

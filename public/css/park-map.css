@@ -1,40 +1,201 @@
+/* ===== SECCIÓN PARQUE ===== */
+
 .park-section {
   width: 100%;
-  height: auto;
   position: relative;
-  padding: 8rem 0;
+  padding: 8rem 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background-image: url(/images/bg-texture.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.park-title-wrapper {
+.park-header {
   width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  margin-bottom: 4rem;
+}
+
+.park-title-wrapper {
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+.park-intro {
+  max-width: 620px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.6;
   margin-bottom: 3rem;
 }
 
-.skatepark-hours {
-  font-size: 1.1rem;
-  line-height: 1.5;
-  text-align: center;
-  margin-top: 1rem;
+/* Tarjetas de información */
+.park-info {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  list-style: none;
+  text-align: left;
+}
+
+.park-info-card {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 22px;
+  background: #fff;
+  border: 2px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--ink);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.park-info-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--blue);
+}
+
+.park-info-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 2px solid var(--ink);
+}
+
+.park-info-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.park-info-label {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 2px;
+  color: var(--blue);
+  font-family: ui-sans-serif, system-ui, -apple-system;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.park-info-card strong {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+/* Estado abierto / cerrado */
+.park-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px;
+  border-radius: 99rem;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--ink);
+  background: #e7e7e7;
+}
+
+.park-status::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.park-status.is-open {
+  background: rgba(0, 200, 110, 0.15);
+  color: #008a4c;
+}
+
+.park-status.is-open::before {
+  animation: parkPulse 1.6s ease-in-out infinite;
+}
+
+.park-status.is-closed {
+  background: rgba(255, 139, 43, 0.18);
+  color: #c25a00;
+}
+
+@keyframes parkPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 200, 110, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(0, 200, 110, 0);
+  }
+}
+
+/* Marco del mapa */
+.park-map-frame {
+  width: 100%;
+  max-width: 1200px;
+  background: #fff;
+  border: 2px solid var(--ink);
+  box-shadow: 12px 12px 0 var(--ink);
+}
+
+.park-map-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 18px;
+  background: var(--ink);
+  color: #fff;
+  font-family: ui-sans-serif, system-ui, -apple-system;
+  font-size: 13px;
+}
+
+.park-map-tag {
+  padding: 4px 12px;
+  border-radius: 99rem;
+  background: var(--orange);
+  color: var(--ink);
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.park-map-hint {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.park-map-hint-mobile {
+  display: none;
 }
 
 .park-map-wrapper {
-  width: auto;
-  max-width: 1200px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
+  background: var(--ink);
 }
 
 .park-map-wrapper > div {
@@ -48,51 +209,145 @@
 .park-map-image {
   display: none;
   width: 100%;
-  max-width: 400px;
-  margin-top: 1.5rem;
-  border: 2px solid #202020;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-@media (max-width: 1600px) {
-  .general-title {
-    font-size: 12vw;
+/* Zonas */
+.park-zones {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.park-zones-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "anton", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.park-zones-title span {
+  min-width: 34px;
+  padding: 2px 8px;
+  border-radius: 99rem;
+  background: var(--blue);
+  border: 2px solid var(--ink);
+  color: #fff;
+  font-family: ui-sans-serif, system-ui, -apple-system;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.park-zones-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.park-zones-list li {
+  padding: 8px 16px;
+  border: 2px solid var(--ink);
+  border-radius: 99rem;
+  background: #fff;
+  font-family: ui-sans-serif, system-ui, -apple-system;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.park-zones-list li:hover {
+  background: var(--blue);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .park-section {
+    padding: 6rem 30px;
+  }
+
+  .park-info {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .park-info-card:last-child {
+    grid-column: 1 / -1;
   }
 }
 
-@media (max-width: 1200px) {
-  .general-title {
-    font-size: 10vw;
+@media (max-width: 768px) {
+  .park-section {
+    padding: 4rem 15px 5rem;
+  }
+
+  .park-header {
+    margin-bottom: 3rem;
+  }
+
+  .park-intro {
+    font-size: 15px;
+    margin-bottom: 2rem;
+  }
+
+  .park-info {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .park-info-card {
+    padding: 16px;
+    box-shadow: 5px 5px 0 var(--ink);
+  }
+
+  .park-map-frame {
+    box-shadow: 7px 7px 0 var(--ink);
+  }
+
+  .park-zones {
+    margin-top: 3rem;
+  }
+
+  .park-zones-list li {
+    padding: 7px 12px;
+    font-size: 12px;
   }
 }
 
 @media (max-width: 500px) {
-  .park-section {
-    padding-top: 3rem;
-  }
-
   .park-map-wrapper {
     display: none;
   }
 
   .park-map-image {
     display: block;
-    border: 0;
   }
 
-  .park-title-wrapper {
-    margin-bottom: 2rem;
-    padding: 0 17px;
-    scroll-margin-top: 1rem;
+  .park-map-hint-desktop {
+    display: none;
+  }
+
+  .park-map-hint-mobile {
+    display: inline;
   }
 
   .general-title {
     font-size: 2.5rem;
     margin-bottom: 1.8rem;
-  }
-
-  .skatepark-hours {
-    font-size: 15px;
   }
 }
 

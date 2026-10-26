@@ -151,6 +151,18 @@
   color: #1b667f;
 }
 
+.history-image {
+  overflow: hidden;
+}
+
+.history-image img {
+  transition: transform 1.2s ease;
+}
+
+.history-image:hover img {
+  transform: scale(1.03);
+}
+
 @media (max-width: 1200px) {
   .history-header {
     grid-template-columns: 1fr;
@@ -174,8 +186,29 @@
 }
 
 @media (max-width: 768px) {
+  .history-hero {
+    padding: 160px 0 100px;
+  }
+
   .history-container {
     gap: 70px;
+  }
+
+  /* El justificado deja huecos grandes en pantallas angostas */
+  .history-description p {
+    text-align: left;
+  }
+
+  .history-split {
+    text-align: left;
+  }
+
+  .history-feature h3 {
+    font-size: 20px;
+  }
+
+  .history-split-content h3 {
+    font-size: 24px;
   }
 
   .history-title h2 {

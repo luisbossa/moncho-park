@@ -22,6 +22,11 @@
   max-height: 550px;
   object-fit: contain;
   filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.3));
+  transition: transform 0.4s ease;
+}
+
+.product-item:hover img {
+  transform: translateY(-8px) rotate(-2deg);
 }
 
 .product-info h3 {

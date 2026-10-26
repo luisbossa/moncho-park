@@ -55,3 +55,26 @@ Clone the repository:
 ```bash
 git clone https://github.com/luisbossa/moncho-park 
 ```
+
+---
+
+## Estructura del proyecto
+
+```
+app.js                  # Configuración de Express (vistas, estáticos, rutas, 404)
+server.js               # Arranque local
+api/index.js            # Entrada para Vercel
+routes/indexRoute.js    # Rutas → controlador
+controllers/            # Define vista, título, datos y scripts de cada página
+data/                   # Contenido del sitio (productos, eventos, clases, navegación…)
+views/
+  layouts/layout.ejs    # Layout base (head, footer, scripts por página)
+  partials/             # header, footer, heroes, botones e íconos reutilizables
+  *.ejs                 # Páginas
+public/
+  css/                  # Estilos
+  js/                   # Interacción del cliente (no genera HTML; lee data-* renderizados por EJS)
+  js/vendor/            # Librerías de terceros (Elementor, Image Map Pro)
+```
+
+Para agregar o modificar productos, eventos, tarifas o enlaces, edita el archivo correspondiente en `data/`.

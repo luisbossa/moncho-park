@@ -1,25 +1,23 @@
-<section class="contact-hero">
-
-    <%- include("partials/header") %>
-
-        <div class="contact-container">
-            <div class="contact-hero-content">
-                <h1 class="contact-hero-title">
-                    Contáctanos
-                </h1>
-            </div>
-        </div>
-</section>
+<%
+    const fieldRows = [
+        [
+            { id: "first-name", label: "Nombre", type: "text", autocomplete: "given-name" },
+            { id: "last-name", label: "Apellido", type: "text", autocomplete: "family-name" },
+        ],
+        [
+            { id: "email", label: "Email", type: "email", autocomplete: "email" },
+            { id: "confirm-email", label: "Confirmar Email", type: "email", autocomplete: "off" },
+        ],
+    ];
+%>
+<%- include("partials/page-hero", { sectionClass: "contact-hero", prefix: "contact", heading: "Contáctanos" }) %>
 
 <section class="contact-section">
     <div class="hero-filler"></div>
     <div class="contact-container">
         <div class="contact-content">
             <div class="contact-info">
-
-                <h2 class="contact-title">
-                    Información de contacto
-                </h2>
+                <h2 class="contact-title">Información de contacto</h2>
 
                 <p class="contact-description">
                     Si no encuentras la información que buscas en nuestro sitio web,
@@ -28,83 +26,50 @@
                 </p>
 
                 <div class="contact-details">
+                    <% details.forEach((item) => { %>
                     <div class="contact-item">
-                        <h4>Acceso</h4>
-                        <p>El skatepark es de acceso público y gratuito para toda la comunidad.</p>
+                        <h4><%= item.title %></h4>
+                        <p><% (item.lines || [item.text]).forEach((line, i) => { %><% if (i) { %><br><% } %><%= line %><% }) %></p>
                     </div>
-
-                    <div class="contact-item">
-                        <h4>Recomendación</h4>
-                        <p>Se recomienda el uso de casco y equipo de protección al patinar.</p>
-                    </div>
-
-                    <div class="contact-item">
-                        <h4>Ubicación</h4>
-                        <p>Calle 1, Barrio San Juan, San Ramón, Alajuela, Costa Rica</p>
-                    </div>
-
-                    <div class="contact-item">
-                        <h4>Horario</h4>
-                        <p>Lunes - Domingo<br>7:00 AM - 7:30 PM</p>
-                    </div>
+                    <% }) %>
                 </div>
             </div>
 
-
-            <!-- FORM -->
-
             <div class="contact-form-wrapper">
-                <form class="contact-form" id="contact-form">
+                <form class="contact-form" id="contact-form" novalidate>
+                    <% fieldRows.forEach((row) => { %>
                     <div class="form-row">
+                        <% row.forEach((field) => { %>
                         <div class="form-group">
-                            <label>Nombre</label>
-                            <input type="text" id="first-name" required>
-                            <small class="error-message"></small>
+                            <label for="<%= field.id %>"><%= field.label %></label>
+                            <input type="<%= field.type %>" id="<%= field.id %>" name="<%= field.id %>"
+                                data-label="<%= field.label %>" autocomplete="<%= field.autocomplete %>" required>
+                            <small class="error-message" aria-live="polite"></small>
                         </div>
-
-                        <div class="form-group">
-                            <label>Apellido</label>
-                            <input type="text" id="last-name" required>
-                            <small class="error-message"></small>
-                        </div>
+                        <% }) %>
                     </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" id="email" required>
-                            <small class="error-message"></small>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Confirmar Email</label>
-                            <input type="email" id="confirm-email" required>
-                            <small class="error-message"></small>
-                        </div>
-                    </div>
+                    <% }) %>
 
                     <div class="text-area-div">
                         <div class="form-group">
-                            <label>Mensaje</label>
-                            <textarea id="message" maxlength="600" required></textarea>
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" maxlength="600" required></textarea>
                             <small class="error-message"></small>
                             <span class="char-count">0 / 600</span>
                         </div>
                     </div>
 
-                    <button class="custome-btn">
+                    <button type="submit" class="custome-btn">
                         <span>Enviar mensaje</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" height="34" width="34">
-                            <circle stroke-width="4" stroke="white" r="35.5" cy="37" cx="37"></circle>
-                            <path fill="white" stroke="white" stroke-width="3"
-                                d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z">
-                            </path>
-                        </svg>
+                        <%- include("partials/ui/arrow-icon") %>
                     </button>
+
+                    <template class="sent-template">
+                        ¡Enviado! <img src="/images/icons/checked.webp" alt=""
+                            style="width:20px; vertical-align:middle; margin-left:5px;" />
+                    </template>
                 </form>
             </div>
         </div>
     </div>
 </section>
-
-<script src="/js/contact.js"></script>

@@ -1,44 +1,17 @@
 const express = require("express");
+const page = require("../controllers/indexController");
+
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.render("index");
-});
-
-router.get("/contact", (req, res) => {
-  res.render("contact");
-});
-
-router.get("/history", (req, res) => {
-  res.render("history");
-});
-
-router.get("/lessons", (req, res) => {
-  res.render("lessons");
-});
-
-router.get("/privacy-policy", (req, res) => {
-  res.render("privacy-policy");
-});
-
-router.get("/refund-policy", (req, res) => {
-  res.render("refund-policy");
-});
-
-router.get("/shipping-policy", (req, res) => {
-  res.render("shipping-policy");
-});
-
-router.get("/donate", (req, res) => {
-  res.render("donate");
-});
-
-router.get("/events", (req, res) => {
-  res.render("events");
-});
-
-router.get("/shop", (req, res) => {
-  res.render("shop");
-});
+router.get("/", page.home);
+router.get("/shop", page.shop);
+router.get("/lessons", page.lessons);
+router.get("/events", page.events);
+router.get("/contact", page.contact);
+router.get("/donate", page.donate);
+router.get("/history", page.history);
+router.get("/privacy-policy", page.privacyPolicy);
+router.get("/refund-policy", page.refundPolicy);
+router.get("/shipping-policy", page.shippingPolicy);
 
 module.exports = router;

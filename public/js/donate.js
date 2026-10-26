@@ -1,70 +1,77 @@
-document.addEventListener("DOMContentLoaded", () => {
+(() => {
   const typeButtons = document.querySelectorAll(".donate-type-btn");
   const amountButtons = document.querySelectorAll(".donate-amount-btn");
-  const input = document.querySelector(".donate-custom input");
-  const donateBtn = document.querySelector(".btn-23");
+  const customBox = document.querySelector(".donate-custom");
+  const input = customBox.querySelector("input");
+  const donateBtn = document.querySelector(".donate-btn");
   const message = document.querySelector(".donate-message");
+  const MAX = Number(input.max) || Infinity;
 
-  let selectedAmount = null;
+  let selectedAmount = 0;
   let donationType = "once";
+  let messageTimer;
+
+  function setPressed(buttons, active) {
+    buttons.forEach((b) => {
+      b.classList.toggle("active", b === active);
+      b.setAttribute("aria-pressed", b === active);
+    });
+  }
+
+  setPressed(typeButtons, document.querySelector(".donate-type-btn.active"));
+  setPressed(amountButtons, null);
 
   typeButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
-      typeButtons.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      donationType = btn.textContent.toLowerCase();
+      setPressed(typeButtons, btn);
+      donationType = btn.dataset.type;
     });
   });
 
   amountButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
-      amountButtons.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-
+      setPressed(amountButtons, btn);
+      customBox.classList.remove("error");
       input.value = "";
-      selectedAmount = btn.textContent.replace(/[₡,]/g, "");
+      selectedAmount = Number(btn.dataset.amount);
     });
   });
 
   input.addEventListener("input", () => {
-    amountButtons.forEach((b) => b.classList.remove("active"));
-    selectedAmount = input.value;
+    setPressed(amountButtons, null);
+    customBox.classList.remove("error");
+    selectedAmount = Number(input.value);
   });
+
+  function showMessage(text, color) {
+    message.textContent = text;
+    message.style.color = color;
+    message.classList.add("show");
+
+    clearTimeout(messageTimer);
+    messageTimer = setTimeout(() => message.classList.remove("show"), 3000);
+  }
+
+  function showError(text) {
+    customBox.classList.remove("error");
+    void customBox.offsetWidth;
+    customBox.classList.add("error");
+    showMessage(text, "#ff8b2b");
+  }
 
   donateBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    message.classList.remove("show");
+    if (!(selectedAmount > 0)) return showError("Elige o ingresa una cantidad válida");
+    if (selectedAmount > MAX) return showError(`El monto máximo es ₡${MAX.toLocaleString("en-US")}`);
 
-    if (!selectedAmount || selectedAmount <= 0) {
-      message.textContent = "Ingresa una cantidad válida";
-      message.style.color = "#ff8b2b";
-      showMessage();
-      return;
-    }
-
-    message.textContent = `Gracias por tu aporte de ₡${Number(selectedAmount).toLocaleString()} !`;
-    message.style.color = "#1b667f";
-
-    showMessage();
-
-    setTimeout(resetForm, 2000);
-  });
-
-  function showMessage() {
-    message.classList.add("show");
+    const suffix = donationType === "monthly" ? " mensual" : "";
+    showMessage(`Gracias por tu aporte${suffix} de ₡${selectedAmount.toLocaleString("en-US")} !`, "#1b667f");
 
     setTimeout(() => {
-      message.classList.remove("show");
-    }, 3000);
-  }
-
-  function resetForm() {
-    amountButtons.forEach((b) => b.classList.remove("active"));
-
-    input.value = "";
-
-    selectedAmount = null;
-  }
-});
+      setPressed(amountButtons, null);
+      input.value = "";
+      selectedAmount = 0;
+    }, 2000);
+  });
+})();

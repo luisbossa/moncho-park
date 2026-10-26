@@ -1,100 +1,92 @@
+<%
+    const ROW_SIZE = 6;
+    const rows = [];
+    for (let i = 0; i < products.length; i += ROW_SIZE) rows.push(products.slice(i, i + ROW_SIZE));
+    const first = products[0];
+%>
 <section class="shop-detail-section">
     <%- include("partials/header") %>
 
-        <div class="shop-wall">
-            <div class="deck-row">
-                <img src="/images/shop/deck-8.png" class="deck-img" data-id="0">
-                <img src="/images/slider/item-2.png" class="deck-img" data-id="1">
-                <img src="/images/shop/deck-7.png" class="deck-img" data-id="2">
-                <img src="/images/shop/deck-14.png" class="deck-img" data-id="3">
-                <img src="/images/shop/deck-11.png" class="deck-img" data-id="4">
-                <img src="/images/shop/deck-17.png" class="deck-img" data-id="5">
-            </div>
-
-            <div class="deck-row">
-                <img src="/images/shop/deck-9.png" class="deck-img" data-id="6">
-                <img src="/images/shop/deck-10.png" class="deck-img" data-id="7">
-                <img src="/images/shop/deck-15.png" class="deck-img" data-id="8">
-                <img src="/images/shop/deck-12.png" class="deck-img" data-id="9">
-                <img src="/images/shop/deck-13.png" class="deck-img" data-id="10">
-                <img src="/images/shop/deck-16.png" class="deck-img" data-id="11">
-            </div>
+    <div class="shop-wall">
+        <p class="shop-hint">Elige una tabla para verla de cerca</p>
+        <% rows.forEach((row) => { %>
+        <div class="deck-row">
+            <% row.forEach((product) => { %>
+            <img src="<%= product.img %>" class="deck-img" alt="<%= product.name %>" data-list="products"
+                <%- include("partials/shop/deck-data", { product }) %>>
+            <% }) %>
         </div>
-        <div class="gradient-filler"></div>
+        <% }) %>
+    </div>
+    <div class="gradient-filler"></div>
 
-        <div class="shop-popup" id="shopPopup">
-            <button class="popup-close" id="closePopup">✕</button>
+    <div class="shop-popup" id="shopPopup" role="dialog" aria-modal="true" aria-labelledby="popupTitle" aria-hidden="true">
+        <button class="popup-close" type="button" data-close-popup aria-label="Cerrar">✕</button>
 
-            <div class="popup-hud">
-                <div class="hud-avatar">
-                    <img src="/images/logo.png" alt="Logo user">
-                </div>
-
-                <div class="hud-info">
-                    <span class="hud-name">SkateMoncho</span>
-                    <span class="hud-level">Nivel 8</span>
-
-                    <div class="hud-bar">
-                        <div class="hud-bar-fill"></div>
-                    </div>
-                </div>
-
-                <div class="hud-money">₡ 120,000</div>
+        <div class="popup-hud">
+            <div class="hud-avatar">
+                <img src="/images/logo.png" alt="">
             </div>
 
-            <div class="popup-wrapper">
-                <!-- TABLA -->
-                <div class="popup-left">
+            <div class="hud-info">
+                <span class="hud-name">SkateMoncho</span>
+                <span class="hud-level">Nivel 8</span>
 
-                    <button class="arrow left" id="prevDeck">‹</button>
+                <div class="hud-bar">
+                    <div class="hud-bar-fill"></div>
+                </div>
+            </div>
 
-                    <div class="popup-deck">
-                        <img id="popupImage" src="" alt="">
-                    </div>
+            <div class="hud-money" data-money="<%= startingMoney %>"><%= formatCRC(startingMoney) %></div>
+        </div>
 
-                    <button class="arrow right" id="nextDeck">›</button>
+        <div class="popup-wrapper">
+            <div class="popup-left">
+                <button class="arrow left" type="button" id="prevDeck" aria-label="Producto anterior">‹</button>
 
+                <div class="popup-deck">
+                    <img id="popupImage" src="<%= first.img %>" alt="<%= first.name %>">
                 </div>
 
-                <!-- DERECHA (INFO) -->
-                <div class="popup-right">
+                <button class="arrow right" type="button" id="nextDeck" aria-label="Producto siguiente">›</button>
+            </div>
 
-                    <h2 class="popup-title">DECK PRO</h2>
+            <div class="popup-right">
+                <h2 class="popup-title" id="popupTitle"><%= first.name %></h2>
+                <p class="popup-price"><%= formatCRC(first.price) %></p>
+                <p class="popup-desc"><%= first.desc %></p>
 
-                    <p class="popup-price">₡ 24,900</p>
+                <div class="popup-options">
+                    <span class="popup-chip" id="popupSize">Tamaño: <%= first.size %></span>
+                    <span class="popup-chip popup-stock" id="popupStock" data-stock="<%= first.stock %>"><%= first.stock %></span>
+                </div>
 
-                    <p class="popup-desc">
-                        Tabla profesional diseñada para street skating y diseño exclusivo.
-                    </p>
-
-                    <div class="popup-options">
-                        <span id="popupSize"></span>
-                    </div>
-
-                    <div class="">
-                        <h2 class="popup-title"></h2>
-                        <p class="popup-price"></p>
-                        <p class="popup-desc"></p>
-
-                        <div class="popup-actions">
-                            <button class="btn yes">Comprar</button>
-                            <button class="btn no" id="closePopup">Cancelar</button>
-                        </div>
-                    </div>
-
+                <div class="popup-actions">
+                    <button class="btn yes" type="button">Comprar</button>
+                    <button class="btn no" type="button" data-close-popup>Cancelar</button>
                 </div>
             </div>
         </div>
+    </div>
 </section>
 
-
-<!-- RELATED ITEMS -->
 <section class="related-section">
     <h2 class="related-title">Otros productos</h2>
+    <p class="related-hint">Toca una tabla para ver sus detalles.</p>
 
-    <div class="related-grid" id="relatedGrid"></div>
+    <div class="related-grid" id="relatedGrid">
+        <% related.forEach((product) => { %>
+        <div class="related-card" data-list="related" <%- include("partials/shop/deck-data", { product }) %>>
+            <div class="related-div">
+                <div class="related-img-div">
+                    <img src="<%= product.img %>" alt="<%= product.name %>" loading="lazy">
+                </div>
+                <h3><%= product.name %></h3>
+                <p class="price"><%= formatCRC(product.price) %></p>
+            </div>
+        </div>
+        <% }) %>
+    </div>
 </section>
 
-<script src="/js/pop-up.js"></script>
-<script src="/js/related.js"></script>
-<script src="/js/hud.js"></script>
+<div class="game-msg" role="status" aria-live="polite"></div>
