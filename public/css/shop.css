@@ -4,64 +4,41 @@
   background-size: cover;
 }
 
-.shop-teaser-container {
-  width: 63%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  background-image: url(/images/magazine/bg-fly.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center right;
-  padding: 3rem 0 0 3rem;
-}
-
-.shop-teaser-content {
-  flex: 1 1 10%;
-  max-width: 522px;
-}
-
-.shop-title-wrapper {
-  position: relative;
-  margin-bottom: 2rem;
-  display: block;
-  line-height: 1;
-}
-
-.shop-teaser-content p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  font-weight: 300;
-  margin: 0 0 1.5rem 0;
-}
-
-.empty-div {
-  height: 400px;
-}
-
-.shop-teaser-image img {
-  max-width: 100%;
-  position: relative;
-  flex: 1 1 55%;
-}
-
-.skater {
-  width: 55%;
-  top: -29rem;
-  left: 10rem;
-  z-index: 2;
-}
-
 /*--- SHOP DETAIL SECTION ---*/
 
+/* Medidas de shop-bg.webp (1536 x 841):
+   - pared libre: del 11.7% (pilar de piedra) al 73% (estante) en x -> centro en 42.3%, ancho 61.3%
+   - el mostrador empieza en el 80% del alto */
 .shop-detail-section {
-  width: 100%;
-  min-height: 110vh;
-  background-image: url("/images/shop/shop-bg.webp");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  --bg-ratio: 1.826;
+  --wall-center: 0.423;
+
   position: relative;
+  width: 100%;
+  min-height: 100svh;
+  background: #151515 url("/images/shop/shop-bg.webp") no-repeat 42.3% top / cover;
+}
+
+/* Escritorio: la imagen se escala según la altura de la sección (--h) y se desplaza
+   para que el centro de la pared quede en el centro de la pantalla. Así la zona de
+   tablas (.shop-wall) puede calcularse exactamente sobre la pared libre. */
+@media (min-width: 901px) {
+  .shop-detail-section {
+    --h: clamp(760px, 125vh, 1250px);
+
+    height: var(--h);
+    min-height: 0;
+    /* Viñeta en los bordes: integra las franjas que la imagen no cubre en pantallas muy anchas */
+    background-image:
+      linear-gradient(90deg, #151515 0%, rgba(21, 21, 21, 0) 9%, rgba(21, 21, 21, 0) 91%, #151515 100%),
+      url("/images/shop/shop-bg.webp");
+    background-size:
+      100% 100%,
+      auto 100%;
+    background-position:
+      0 0,
+      calc(50% + (0.5 - var(--wall-center)) * var(--bg-ratio) * var(--h)) top;
+  }
 }
 
 .gradient-filler {
@@ -79,242 +56,4 @@
   );
   pointer-events: none;
   z-index: 50;
-}
-
-.shop-wall {
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 7.2rem;
-  padding-left: clamp(3rem, 14vw, 19%);
-  gap: 20px;
-}
-
-.deck-row {
-  width: fit-content;
-  max-width: calc(5 * clamp(55px, 5vw, 70px) + 4 * clamp(20px, 3vw, 60px));
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  gap: clamp(20px, 4vw, 90px);
-}
-
-.deck {
-  width: clamp(55px, 5vw, 70px);
-  height: clamp(160px, 18vw, 220px);
-  border-radius: 40px;
-  background: linear-gradient(180deg, #ffcc00, #ff6600);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.deck:hover {
-  transform: scale(1.1) rotate(2deg);
-}
-
-.deck-img {
-  display: block;
-  width: clamp(78px, 10vw, 105px);
-  height: auto;
-  max-width: 105px;
-  object-fit: contain;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.deck-img:focus-visible {
-  outline-offset: 6px;
-  border-radius: 40px;
-}
-
-.deck-img:hover,
-.deck-img:focus-visible {
-  transform: scale(1.04) rotate(1deg);
-  filter: brightness(1.1) contrast(1.1);
-}
-
-.shop-hint {
-  display: inline-block;
-  padding: 8px 18px;
-  border-radius: 99rem;
-  background: rgba(21, 21, 21, 0.75);
-  backdrop-filter: blur(4px);
-  color: #fff;
-  font-family: ui-sans-serif, system-ui, -apple-system;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-/* ===== RELATED SECTION ===== */
-
-.related-section {
-  padding: 7rem 5% 3rem;
-  background: var(--black);
-}
-
-.related-title {
-  font-family: "anton";
-  color: #fff;
-  font-size: clamp(28px, 4vw, 40px);
-  font-weight: 700;
-  line-height: 1.2;
-  text-transform: uppercase;
-  margin-bottom: 0.6rem;
-}
-
-.related-hint {
-  color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 5rem;
-}
-
-.related-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 30px;
-}
-
-.related-card {
-  padding: 20px;
-  text-align: center;
-}
-
-.related-div {
-  width: fit-content;
-  margin: 0 auto;
-  padding: 0 10px;
-  cursor: pointer;
-}
-
-.related-img-div {
-  height: 380px;
-}
-
-.related-card img {
-  width: 100%;
-  max-width: 110px;
-  margin-bottom: 25px;
-  transition: transform 0.3s;
-}
-
-.related-card {
-  cursor: pointer;
-  border-radius: 12px;
-  transition: background-color 0.3s ease;
-}
-
-.related-card:hover,
-.related-card:focus-visible {
-  background-color: rgba(255, 255, 255, 0.04);
-}
-
-.related-card:focus-visible img,
-.related-card:hover img {
-  filter: brightness(1.1) contrast(1.1);
-  transform: scale(1.04) rotate(1deg);
-}
-
-.related-card h3 {
-  color: #fff;
-  font-size: 16px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-
-.price {
-  color: #fff;
-  font-weight: bold;
-}
-
-@media (max-width: 992px) {
-  .shop-teaser-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 40px 20px 0 20px;
-    gap: 8rem;
-  }
-
-  .shop-teaser-content {
-    order: -1;
-    max-width: 100%;
-  }
-
-  .empty-div {
-    height: 100%;
-  }
-
-  .skater {
-    width: 60%;
-    top: -16rem;
-    left: 6rem;
-  }
-
-  .general-title-fg {
-    position: static;
-  }
-
-  .shop-teaser-image {
-    height: auto;
-  }
-
-  .shop-wall {
-    padding-left: 8%;
-  }
-}
-
-@media (max-width: 600px) {
-  .shop-detail-section {
-    height: 1600px;
-  }
-
-  .related-title,
-  .related-hint {
-    text-align: center;
-  }
-
-  .related-hint {
-    margin-bottom: 3rem;
-  }
-
-  .related-img-div {
-    height: 300px;
-  }
-
-  .shop-hint {
-    align-self: center;
-  }
-
-  .shop-wall {
-    justify-content: start;
-    padding-top: 8.8rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .shop-teaser-content {
-    text-align: center;
-  }
-
-  .shop-teaser-content p {
-    font-size: 15px;
-  }
-
-  .deck-row {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
-  }
-
-  .related-div {
-    width: 100%;
-  }
 }

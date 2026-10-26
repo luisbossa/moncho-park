@@ -211,71 +211,6 @@
   width: 100%;
 }
 
-/* Zonas */
-.park-zones {
-  width: 100%;
-  max-width: 1200px;
-  margin-top: 4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1.5rem;
-}
-
-.park-zones-title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: "anton", sans-serif;
-  font-size: 1.8rem;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-
-.park-zones-title span {
-  min-width: 34px;
-  padding: 2px 8px;
-  border-radius: 99rem;
-  background: var(--blue);
-  border: 2px solid var(--ink);
-  color: #fff;
-  font-family: ui-sans-serif, system-ui, -apple-system;
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.park-zones-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  list-style: none;
-  margin-bottom: 1rem;
-}
-
-.park-zones-list li {
-  padding: 8px 16px;
-  border: 2px solid var(--ink);
-  border-radius: 99rem;
-  background: #fff;
-  font-family: ui-sans-serif, system-ui, -apple-system;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.park-zones-list li:hover {
-  background: var(--blue);
-  color: #fff;
-  transform: translateY(-2px);
-}
-
 @media (max-width: 1024px) {
   .park-section {
     padding: 6rem 30px;
@@ -318,14 +253,7 @@
     box-shadow: 7px 7px 0 var(--ink);
   }
 
-  .park-zones {
-    margin-top: 3rem;
-  }
 
-  .park-zones-list li {
-    padding: 7px 12px;
-    font-size: 12px;
-  }
 }
 
 @media (max-width: 500px) {
@@ -1238,4 +1166,151 @@ body.imp-fullscreen-mode {
 
 #spot-1991 .fa-eject {
   transform: scaleY(-1);
+}
+
+/* =========================================================
+   TOOLTIPS DEL MAPA (sobrescribe los estilos en línea del plugin)
+   ========================================================= */
+
+.imp-tooltips-container .imp-tooltip {
+  width: 250px !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background: var(--ink) !important;
+  border: 2px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--ink) !important;
+  font-family: "catamaran", sans-serif;
+  overflow: visible;
+}
+
+.imp-tooltips-container .imp-tooltip.imp-tooltip-visible {
+  background-color: var(--ink) !important;
+  animation: impTooltipIn 0.25s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* Se usa "translate" porque el plugin bloquea "transform" con !important */
+@keyframes impTooltipIn {
+  from {
+    translate: 0 8px;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+
+.imp-tooltip .squares-container {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+.imp-tooltip .squares-element {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+/* Contenedores internos que el plugin genera con padding en línea */
+.imp-tooltip .squares-element > :not(h1, h2, h3),
+.imp-tooltip .squares-container > :not(h1, h2, h3) {
+  padding: 0 !important;
+  margin: 0 !important;
+  max-width: none !important;
+}
+
+.imp-tooltip .squares-element a {
+  display: block;
+}
+
+/* Título: barra negra como la del marco del mapa */
+.imp-tooltip h1,
+.imp-tooltip h2,
+.imp-tooltip h3 {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  margin: 0 !important;
+  padding: 10px 14px !important;
+  background: var(--ink);
+  color: #fff !important;
+  font-family: "obviously", sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0.5px !important;
+  text-align: left !important;
+  text-transform: uppercase;
+}
+
+.imp-tooltip h1::before,
+.imp-tooltip h2::before,
+.imp-tooltip h3::before {
+  content: "";
+  flex-shrink: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 0 3px rgba(255, 139, 43, 0.25);
+}
+
+/* Foto de la zona */
+.imp-tooltip img {
+  display: block;
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+  /* Se muestra la foto completa con su proporción original (sin recortes) */
+  max-height: 260px;
+  object-fit: contain;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: #e9e9e9;
+}
+
+/* Flecha que apunta al punto del mapa */
+.imp-tooltip .hs-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 9px solid transparent !important;
+  pointer-events: none;
+}
+
+.imp-tooltip .hs-arrow-top {
+  bottom: 100%;
+  left: 50%;
+  margin-bottom: 2px;
+  transform: translateX(-50%);
+  border-bottom-color: var(--ink) !important;
+}
+
+.imp-tooltip .hs-arrow-bottom {
+  top: 100%;
+  left: 50%;
+  margin-top: 2px;
+  transform: translateX(-50%);
+  border-top-color: var(--ink) !important;
+}
+
+.imp-tooltip .hs-arrow-left {
+  right: 100%;
+  top: 50%;
+  margin-right: 2px;
+  transform: translateY(-50%);
+  border-right-color: var(--ink) !important;
+}
+
+.imp-tooltip .hs-arrow-right {
+  left: 100%;
+  top: 50%;
+  margin-left: 2px;
+  transform: translateY(-50%);
+  border-left-color: var(--ink) !important;
+}
+
+/* Puntos del mapa: brillo naranja al pasar el cursor (sin tocar transform, que usa el plugin) */
+.imp-shape-spot:hover {
+  filter: drop-shadow(0 0 6px rgba(255, 139, 43, 0.95));
 }

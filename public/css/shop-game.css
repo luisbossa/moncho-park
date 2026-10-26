@@ -1,0 +1,596 @@
+/* =========================================================
+   TIENDA — estilo menú de tienda de videojuego (THPS / PS2)
+   Comparte colores con el HUD del popup: amarillo #ffcc00 y verde #00ff88.
+   1. UI de juego compartida  2. Pared de tablas  3. Otros productos
+   ========================================================= */
+
+:root {
+  --game-yellow: #ffcc00;
+  --game-green: #00ff88;
+}
+
+/* ===== 1. UI DE JUEGO COMPARTIDA ===== */
+
+.game-tag {
+  padding: 6px 16px;
+  border-radius: 40px;
+  background: linear-gradient(145deg, #2b2b2b, #1a1a1a);
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 255, 255, 0.08),
+    0 6px 16px rgba(0, 0, 0, 0.5);
+  color: var(--game-yellow);
+  font-family: ui-sans-serif, system-ui, -apple-system;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Botones estilo control de PS2 */
+.game-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: ui-sans-serif, system-ui, -apple-system;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.game-controls span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ps-btn {
+  width: 26px;
+  height: 26px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #3a3a3a, #1c1c1c);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-family: inherit;
+  font-size: 10px;
+}
+
+.ps-cross {
+  color: #7fb4ff;
+  font-size: 13px;
+}
+
+.game-hint {
+  display: none;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* En pantallas táctiles no hay teclado: se muestra una indicación simple */
+@media (hover: none) {
+  .game-controls {
+    display: none;
+  }
+
+  .game-hint {
+    display: block;
+  }
+}
+
+@keyframes gameBlink {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* ===== 2. PARED DE TABLAS ===== */
+
+.shop-wall {
+  --gap: clamp(14px, 3vw, 28px);
+  --deck-w: clamp(70px, 17vw, 120px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+  padding: 7rem 20px 210px;
+}
+
+/* Barra HUD superior */
+.shop-hud {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  padding: 8px 10px 8px 8px;
+  border-radius: 40px;
+  background: linear-gradient(145deg, rgba(43, 43, 43, 0.92), rgba(26, 26, 26, 0.92));
+  backdrop-filter: blur(6px);
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 255, 255, 0.08),
+    0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.shop-hud .game-tag {
+  box-shadow: inset 0 0 0 2px rgba(255, 204, 0, 0.35);
+}
+
+.shop-hud-title {
+  color: #fff;
+  font-family: ui-sans-serif, system-ui, -apple-system;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.shop-hud .game-controls {
+  gap: 6px 14px;
+  font-size: 11px;
+}
+
+.shop-hud .ps-btn {
+  width: 22px;
+  height: 22px;
+}
+
+.shop-hud-money {
+  padding: 4px 12px;
+  border-radius: 40px;
+  background: rgba(0, 0, 0, 0.45);
+  color: var(--game-green);
+  font-family: ui-sans-serif, system-ui, -apple-system;
+  font-size: 14px;
+  font-weight: 800;
+  transition:
+    transform 0.2s ease,
+    text-shadow 0.2s ease;
+}
+
+.shop-hud-money.flash {
+  transform: scale(1.1);
+  text-shadow: 0 0 12px var(--game-green);
+}
+
+/* Tablet y móvil: una sola cuadrícula (las filas de 6 sólo existen en escritorio) */
+.deck-grid {
+  width: 100%;
+  max-width: 760px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: 40px var(--gap);
+}
+
+.deck-row {
+  display: contents;
+}
+
+.deck-slot {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.deck-img {
+  display: block;
+  width: var(--deck-w);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(6px 10px 8px rgba(0, 0, 0, 0.45));
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1.2),
+    filter 0.35s ease;
+}
+
+/* Cursor ▼ sobre la tabla elegida */
+.deck-cursor {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-bottom: 4px;
+  color: var(--game-yellow);
+  font-size: 14px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transform: translate(-50%, 6px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Etiqueta con nombre y precio */
+.deck-tag {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-top: 6px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #2b2b2b, #1a1a1a);
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 204, 0, 0.35),
+    0 8px 18px rgba(0, 0, 0, 0.55);
+  font-family: ui-sans-serif, system-ui, -apple-system;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -6px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.deck-tag strong {
+  color: #fff;
+  font-size: 11px;
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.deck-tag span {
+  color: var(--game-yellow);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* Selección (hover o teclado) */
+.deck-slot:hover .deck-img,
+.deck-slot:focus-visible .deck-img {
+  transform: translateY(-10px) rotate(-3deg) scale(1.06);
+  filter: drop-shadow(0 0 16px rgba(255, 204, 0, 0.55)) brightness(1.08);
+}
+
+.deck-slot:hover .deck-cursor,
+.deck-slot:focus-visible .deck-cursor {
+  opacity: 1;
+  transform: translate(-50%, -6px);
+  animation: gameBlink 0.8s steps(2, start) infinite;
+}
+
+.deck-slot:hover .deck-tag,
+.deck-slot:focus-visible .deck-tag {
+  opacity: 1;
+  transform: translate(-50%, -10px);
+}
+
+.deck-slot:active .deck-img {
+  transform: translateY(-4px) rotate(-1deg) scale(0.98);
+}
+
+/* Las demás tablas se oscurecen para resaltar la elegida */
+.shop-wall:has(.deck-slot:hover, .deck-slot:focus-visible)
+  .deck-slot:not(:hover, :focus-visible)
+  .deck-img {
+  filter: drop-shadow(6px 10px 8px rgba(0, 0, 0, 0.45)) brightness(0.7) saturate(0.85);
+}
+
+/* ----- Escritorio: la zona de tablas se ubica exactamente sobre la pared libre -----
+   (ver medidas en shop.css). La pared mide 61.3% del ancho de la imagen y llega
+   hasta el 80% del alto. Las tablas se dimensionan para llenar esa pared:
+   - por alto: 2 filas en el alto visible de la pared (hasta el 80% o el alto de la pantalla,
+     lo que sea menor) menos 240px de HUD, márgenes y espacios; ancho de tabla = alto / 3.32
+   - por ancho: 6 tablas + 5 espacios mínimos en el ancho de la pared
+   - el espacio entre tablas crece para repartirlas en ~82% del ancho de la pared */
+@media (min-width: 901px) {
+  .shop-wall {
+    --wall-w: min(0.613 * var(--bg-ratio) * var(--h), 100vw - 60px);
+    --wall-h: min(0.8 * var(--h), 100vh);
+    --deck-w: min(
+      (var(--wall-h) - 240px) / 6.64,
+      (var(--wall-w) - 5 * 22px) / 6,
+      150px
+    );
+    --gap: clamp(22px, (var(--wall-w) * 0.82 - 6 * var(--deck-w)) / 5, 96px);
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: var(--wall-w);
+    height: var(--wall-h);
+    padding: 112px 0 12px;
+    justify-content: center;
+    transform: translateX(-50%);
+  }
+
+  .deck-grid {
+    max-width: none;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .deck-row {
+    display: flex;
+    gap: var(--gap);
+  }
+}
+
+/* ----- Móvil ----- */
+@media (max-width: 600px) {
+  .shop-wall {
+    --deck-w: min(26vw, 110px);
+
+    padding: 6.5rem 14px 200px;
+  }
+
+  .shop-hud {
+    border-radius: 20px;
+  }
+
+  .deck-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px 8px;
+  }
+
+  /* En táctil la etiqueta no aporta: al tocar se abre el popup */
+  .deck-tag,
+  .deck-cursor {
+    display: none;
+  }
+}
+
+/* ===== 3. OTROS PRODUCTOS ===== */
+
+.related-section {
+  position: relative;
+  padding: 7rem 5% 5rem;
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.018) 0 14px,
+      transparent 14px 28px
+    ),
+    var(--black);
+  overflow: hidden;
+}
+
+.related-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 4.5rem;
+}
+
+.related-header .game-tag {
+  margin-bottom: 1rem;
+}
+
+.related-title {
+  font-family: "anton", sans-serif;
+  font-size: clamp(34px, 5vw, 56px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1;
+  color: #fff;
+  text-transform: uppercase;
+  transform: skewX(-8deg);
+  text-shadow: 4px 4px 0 var(--orange);
+  margin-bottom: 1.4rem;
+}
+
+/* Grilla */
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 30px 20px;
+}
+
+.related-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* La tabla flota en reposo, escalonada como en un menú de selección */
+.related-deck {
+  position: relative;
+  height: 340px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 26px;
+  animation: relatedIdle 4s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * -0.6s);
+}
+
+@keyframes relatedIdle {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -8px;
+  }
+}
+
+.related-deck img {
+  position: relative;
+  z-index: 1;
+  max-height: 100%;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1.2),
+    filter 0.35s ease;
+}
+
+/* Sombra en el piso */
+.related-floor {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  width: 120px;
+  height: 16px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(0, 0, 0, 0.75), transparent);
+  transform: translateX(-50%);
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease;
+}
+
+/* ===== INFO ===== */
+
+.related-info {
+  margin-top: 1rem;
+}
+
+.related-card h3 {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  font-family: ui-sans-serif, system-ui, -apple-system;
+  font-size: 15px;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  transition: color 0.2s ease;
+}
+
+.related-cursor {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  margin-right: 8px;
+  color: var(--game-yellow);
+  font-size: 12px;
+  font-style: normal;
+  opacity: 0;
+  transform: translate(-6px, -50%);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.related-price {
+  color: var(--game-yellow);
+  font-family: ui-sans-serif, system-ui, -apple-system;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.related-meta {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 13px;
+}
+
+.related-stock {
+  color: #00ff88;
+}
+
+.related-stock[data-stock="Últimas unidades"],
+.related-stock[data-stock="Edición limitada"] {
+  color: var(--game-yellow);
+}
+
+.related-stock[data-stock="Agotado"] {
+  color: #ff5b5b;
+}
+
+/* ===== SELECCIÓN (hover o teclado): sin caja, todo pasa en la tabla ===== */
+
+.related-card:hover .related-deck img,
+.related-card:focus-visible .related-deck img {
+  transform: translateY(-16px) rotate(-4deg) scale(1.05);
+  filter: drop-shadow(0 0 18px rgba(255, 204, 0, 0.45)) brightness(1.08);
+}
+
+.related-card:hover .related-floor,
+.related-card:focus-visible .related-floor {
+  transform: translateX(-50%) scale(0.75);
+  background: radial-gradient(closest-side, rgba(255, 204, 0, 0.35), transparent);
+}
+
+.related-card:hover h3,
+.related-card:focus-visible h3 {
+  color: var(--game-yellow);
+}
+
+.related-card:hover .related-cursor,
+.related-card:focus-visible .related-cursor {
+  opacity: 1;
+  transform: translate(0, -50%);
+  animation: gameBlink 0.8s steps(2, start) infinite;
+}
+
+.related-card:active .related-deck img {
+  transform: translateY(-8px) rotate(-2deg) scale(0.98);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 600px) {
+  .related-section {
+    padding: 5rem 15px 4rem;
+  }
+
+  .related-header {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .related-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 10px;
+  }
+
+  /* Si queda una tabla sola en la última fila, se centra */
+  .related-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
+  .related-deck {
+    height: 250px;
+  }
+
+  .related-deck img {
+    max-width: 90px;
+  }
+
+  .related-floor {
+    width: 90px;
+  }
+
+  .related-card h3 {
+    font-size: 13px;
+  }
+
+  .related-price {
+    font-size: 16px;
+  }
+}

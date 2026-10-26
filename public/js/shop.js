@@ -11,9 +11,17 @@
   const moneyEl = popup.querySelector(".hud-money");
   const deckContainer = popup.querySelector(".popup-deck");
   const toast = document.querySelector(".game-msg");
+  const buyLabel = buyBtn.querySelector(".btn-label");
+  const listTag = document.getElementById("popupList");
+  const counter = document.getElementById("popupCounter");
+  const balance = document.getElementById("popupBalance");
+  const balanceLabel = balance.querySelector(".popup-balance-label");
+  const balanceValue = balance.querySelector(".popup-balance-value");
   const SOLD_OUT = "Agotado";
+  const LIST_NAMES = { products: "Pared de tablas", related: "Otros productos" };
 
   const formatCRC = (amount) => "₡ " + Number(amount).toLocaleString("en-US");
+  const pad = (n) => String(n).padStart(2, "0");
 
   // Los productos vienen renderizados desde EJS en data-attributes
   const lists = {};
@@ -35,9 +43,30 @@
   });
 
   let currentList = [];
+  let currentListName = "products";
   let currentIndex = 0;
   let lastTrigger = null;
   let money = Number(moneyEl.dataset.money);
+
+  // "Saldo después de comprar", como en la tienda de un juego
+  function renderBalance(product) {
+    const soldOut = product.stock === SOLD_OUT;
+    const remaining = money - product.price;
+
+    balance.classList.toggle("is-unavailable", soldOut);
+    balance.classList.toggle("is-short", !soldOut && remaining < 0);
+
+    if (soldOut) {
+      balanceLabel.textContent = "Tabla agotada";
+      balanceValue.textContent = "No disponible";
+    } else if (remaining < 0) {
+      balanceLabel.textContent = "Te faltan";
+      balanceValue.textContent = formatCRC(-remaining);
+    } else {
+      balanceLabel.textContent = "Saldo después de comprar";
+      balanceValue.textContent = formatCRC(remaining);
+    }
+  }
 
   function render() {
     const product = currentList[currentIndex];
@@ -51,10 +80,13 @@
     size.textContent = "Tamaño: " + product.size;
     stock.textContent = product.stock;
     stock.dataset.stock = product.stock;
+    listTag.textContent = LIST_NAMES[currentListName] || "Tienda";
+    counter.textContent = `${pad(currentIndex + 1)} / ${pad(currentList.length)}`;
+    renderBalance(product);
 
     const soldOut = product.stock === SOLD_OUT;
     buyBtn.disabled = soldOut;
-    buyBtn.textContent = soldOut ? SOLD_OUT : "Comprar";
+    buyLabel.textContent = soldOut ? SOLD_OUT : "Comprar";
 
     // Re-dispara la animación de entrada de la tabla
     deckContainer.classList.remove("is-changing");
@@ -64,6 +96,7 @@
 
   function openPopup(listName, index, trigger) {
     currentList = lists[listName];
+    currentListName = listName;
     currentIndex = index;
     lastTrigger = trigger;
     render();
@@ -117,6 +150,24 @@
     }
   });
 
+  // Flechas para elegir tabla, como en el menú de un juego.
+  // En la pared ▲▼ saltan de fila (las columnas cambian según el ancho de pantalla);
+  // en "Otros productos" avanzan de a una.
+  const columnsIn = (items) => items.filter((el) => el.offsetTop === items[0].offsetTop).length || 1;
+
+  ["products", "related"].forEach((listName) => {
+    const items = [...document.querySelectorAll(`[data-list="${listName}"]`)];
+    items.forEach((item, index) =>
+      item.addEventListener("keydown", (e) => {
+        const cols = listName === "products" ? columnsIn(items) : 1;
+        const delta = { ArrowRight: 1, ArrowLeft: -1, ArrowDown: cols, ArrowUp: -cols }[e.key];
+        if (!delta) return;
+        e.preventDefault();
+        items[(index + delta + items.length) % items.length].focus();
+      })
+    );
+  });
+
   // Swipe sobre la tabla para cambiar de producto
   let touchX = null;
 
@@ -143,10 +194,15 @@
     toastTimer = setTimeout(() => toast.classList.remove("show"), 2000);
   }
 
+  // El dinero se muestra en el HUD del popup y en el de la pared
+  const moneyDisplays = [moneyEl, ...document.querySelectorAll("[data-money-display]")];
+
   function updateMoney() {
-    moneyEl.textContent = formatCRC(money);
-    moneyEl.classList.add("flash");
-    setTimeout(() => moneyEl.classList.remove("flash"), 300);
+    moneyDisplays.forEach((el) => {
+      el.textContent = formatCRC(money);
+      el.classList.add("flash");
+      setTimeout(() => el.classList.remove("flash"), 300);
+    });
   }
 
   buyBtn.addEventListener("click", () => {
@@ -156,6 +212,7 @@
     if (money >= product.price) {
       money -= product.price;
       updateMoney();
+      renderBalance(product);
       showToast("Compra exitosa !", "success");
     } else {
       showToast("Fondos insuficientes", "error");

@@ -8,15 +8,32 @@
     <%- include("partials/header") %>
 
     <div class="shop-wall">
-        <p class="shop-hint">Elige una tabla para verla de cerca</p>
-        <% rows.forEach((row) => { %>
-        <div class="deck-row">
-            <% row.forEach((product) => { %>
-            <img src="<%= product.img %>" class="deck-img" alt="<%= product.name %>" data-list="products"
-                <%- include("partials/shop/deck-data", { product }) %>>
+        <div class="shop-hud">
+            <span class="game-tag">Modo tienda</span>
+            <span class="shop-hud-title">Elige una tabla</span>
+            <div class="game-controls" aria-hidden="true">
+                <span><kbd class="ps-btn ps-cross">✕</kbd> Ver</span>
+                <span><kbd class="ps-btn">◀</kbd><kbd class="ps-btn">▶</kbd> Elegir</span>
+            </div>
+            <span class="shop-hud-money" data-money-display aria-label="Tu dinero"><%= formatCRC(startingMoney) %></span>
+        </div>
+
+        <div class="deck-grid">
+            <% rows.forEach((row) => { %>
+            <div class="deck-row">
+                <% row.forEach((product) => { %>
+                <div class="deck-slot" data-list="products" <%- include("partials/shop/deck-data", { product }) %>>
+                    <span class="deck-cursor" aria-hidden="true">▼</span>
+                    <img src="<%= product.img %>" class="deck-img" alt="">
+                    <span class="deck-tag" aria-hidden="true">
+                        <strong><%= product.name %></strong>
+                        <span><%= formatCRC(product.price) %></span>
+                    </span>
+                </div>
+                <% }) %>
+            </div>
             <% }) %>
         </div>
-        <% }) %>
     </div>
     <div class="gradient-filler"></div>
 
@@ -42,16 +59,23 @@
 
         <div class="popup-wrapper">
             <div class="popup-left">
-                <button class="arrow left" type="button" id="prevDeck" aria-label="Producto anterior">‹</button>
-
-                <div class="popup-deck">
-                    <img id="popupImage" src="<%= first.img %>" alt="<%= first.name %>">
+                <div class="popup-stage">
+                    <span class="popup-spotlight" aria-hidden="true"></span>
+                    <div class="popup-deck">
+                        <img id="popupImage" src="<%= first.img %>" alt="<%= first.name %>">
+                    </div>
+                    <span class="popup-floor" aria-hidden="true"></span>
                 </div>
 
-                <button class="arrow right" type="button" id="nextDeck" aria-label="Producto siguiente">›</button>
+                <div class="popup-nav">
+                    <button class="popup-arrow" type="button" id="prevDeck" aria-label="Producto anterior">◀</button>
+                    <span class="popup-counter" id="popupCounter" aria-live="polite">01 / <%= String(products.length).padStart(2, "0") %></span>
+                    <button class="popup-arrow" type="button" id="nextDeck" aria-label="Producto siguiente">▶</button>
+                </div>
             </div>
 
             <div class="popup-right">
+                <span class="game-tag" id="popupList">Pared de tablas</span>
                 <h2 class="popup-title" id="popupTitle"><%= first.name %></h2>
                 <p class="popup-price"><%= formatCRC(first.price) %></p>
                 <p class="popup-desc"><%= first.desc %></p>
@@ -61,28 +85,58 @@
                     <span class="popup-chip popup-stock" id="popupStock" data-stock="<%= first.stock %>"><%= first.stock %></span>
                 </div>
 
+                <div class="popup-balance" id="popupBalance" aria-live="polite">
+                    <span class="popup-balance-label">Saldo después de comprar</span>
+                    <strong class="popup-balance-value"><%= formatCRC(startingMoney - first.price) %></strong>
+                </div>
+
                 <div class="popup-actions">
-                    <button class="btn yes" type="button">Comprar</button>
-                    <button class="btn no" type="button" data-close-popup>Cancelar</button>
+                    <button class="btn yes" type="button">
+                        <kbd class="ps-btn ps-cross" aria-hidden="true">✕</kbd>
+                        <span class="btn-label">Comprar</span>
+                    </button>
+                    <button class="btn no" type="button" data-close-popup>
+                        <kbd class="ps-btn ps-circle" aria-hidden="true">○</kbd>
+                        <span>Salir</span>
+                    </button>
                 </div>
             </div>
+        </div>
+
+        <div class="popup-controls game-controls" aria-hidden="true">
+            <span><kbd class="ps-btn">◀</kbd><kbd class="ps-btn">▶</kbd> Cambiar tabla</span>
+            <span><kbd class="ps-btn ps-key">Esc</kbd> Salir</span>
         </div>
     </div>
 </section>
 
 <section class="related-section">
-    <h2 class="related-title">Otros productos</h2>
-    <p class="related-hint">Toca una tabla para ver sus detalles.</p>
+    <div class="related-header">
+        <span class="game-tag">Modo tienda</span>
+        <h2 class="related-title">Otros productos</h2>
+
+        <div class="game-controls" aria-hidden="true">
+            <span><kbd class="ps-btn ps-cross">✕</kbd> Ver tabla</span>
+            <span><kbd class="ps-btn">◀</kbd><kbd class="ps-btn">▶</kbd> Elegir</span>
+        </div>
+        <p class="game-hint">Toca una tabla para ver sus detalles</p>
+    </div>
 
     <div class="related-grid" id="relatedGrid">
-        <% related.forEach((product) => { %>
-        <div class="related-card" data-list="related" <%- include("partials/shop/deck-data", { product }) %>>
-            <div class="related-div">
-                <div class="related-img-div">
-                    <img src="<%= product.img %>" alt="<%= product.name %>" loading="lazy">
-                </div>
-                <h3><%= product.name %></h3>
-                <p class="price"><%= formatCRC(product.price) %></p>
+        <% related.forEach((product, i) => { %>
+        <div class="related-card" style="--i: <%= i %>" data-list="related" <%- include("partials/shop/deck-data", { product }) %>>
+            <div class="related-deck">
+                <img src="<%= product.img %>" alt="<%= product.name %>" loading="lazy">
+                <span class="related-floor" aria-hidden="true"></span>
+            </div>
+
+            <div class="related-info">
+                <h3><span class="related-cursor" aria-hidden="true">▶</span><%= product.name %></h3>
+                <p class="related-price"><%= formatCRC(product.price) %></p>
+                <p class="related-meta">
+                    <span>Talla <%= product.size %>"</span>
+                    <span class="related-stock" data-stock="<%= product.stock %>"><%= product.stock %></span>
+                </p>
             </div>
         </div>
         <% }) %>

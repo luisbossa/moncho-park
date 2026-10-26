@@ -1,0 +1,295 @@
+/* ===== SKATE MONCHO MAGAZINE ===== */
+
+.magazine {
+  --cover-w: clamp(300px, 30vw, 430px);
+
+  position: relative;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 8rem clamp(20px, 6vw, 80px) 6rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: clamp(40px, 6vw, 110px);
+}
+
+/* ===== TEXTO ===== */
+
+.magazine-content {
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.magazine-eyebrow {
+  padding: 6px 14px;
+  margin-bottom: 1.5rem;
+  border: 2px solid var(--ink);
+  border-radius: 99rem;
+  background: var(--orange);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.magazine .shop-title-wrapper {
+  line-height: 1;
+  margin-bottom: 1.6rem;
+}
+
+.magazine-text {
+  font-size: 1.15rem;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 1.8rem;
+}
+
+.magazine-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 2.2rem;
+  list-style: none;
+}
+
+.magazine-features li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 2px solid var(--ink);
+  border-radius: 99rem;
+  background: #fff;
+  font-family: ui-sans-serif, system-ui, -apple-system;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.magazine-features svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.magazine-cta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+}
+
+.magazine-note {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ===== PORTADA ===== */
+
+.magazine-cover {
+  position: relative;
+  width: var(--cover-w);
+  aspect-ratio: 611 / 978;
+  display: block;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  background: url(/images/magazine/bg-fly.png) center / cover no-repeat;
+  box-shadow: 14px 14px 0 var(--ink);
+  color: #fff;
+  text-decoration: none;
+  transform: rotate(2deg);
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.magazine-cover:hover,
+.magazine-cover:focus-visible {
+  transform: rotate(0deg) translate(-4px, -4px);
+  box-shadow: 20px 20px 0 var(--blue);
+}
+
+/* Degradado para que el texto de la portada se lea sobre el cielo */
+.magazine-cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 30, 45, 0.55) 0%,
+    rgba(10, 30, 45, 0) 35%,
+    rgba(10, 30, 45, 0) 75%,
+    rgba(10, 30, 45, 0.6) 100%
+  );
+}
+
+.magazine-cover > span {
+  position: absolute;
+  z-index: 1;
+}
+
+.magazine-cover-masthead {
+  top: 18px;
+  left: 18px;
+  right: 18px;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9;
+}
+
+.magazine-cover-kicker {
+  font-family: "anton", sans-serif;
+  font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.magazine-cover-title {
+  font-family: "obviously", sans-serif;
+  font-size: clamp(2.4rem, 4.2vw, 3.6rem);
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  color: var(--blue);
+  -webkit-text-stroke: 2px #fff;
+}
+
+/* En el cielo, a la izquierda bajo el título: fuera del alcance del skater */
+.magazine-cover-issue {
+  top: 22%;
+  left: 16px;
+  width: 74px;
+  height: 74px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--orange);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+  transform: rotate(12deg);
+}
+
+.magazine-cover-issue strong {
+  font-family: "obviously", sans-serif;
+  font-size: 26px;
+}
+
+.magazine-cover-footer {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 12px 18px;
+  background: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ===== SKATER SOBRE EL TANQUE =====
+   Medidas tomadas de las imágenes:
+   - bg-fly.png (611x978): el tanque está centrado en x = 51.2% y su borde superior en y = 70.8%.
+   - skater.png (600x600): la tabla está centrada en x = 43.5% y las ruedas llegan a y = 70%.
+   La portada tiene la misma proporción que bg-fly.png, así que esos porcentajes se mantienen
+   en cualquier tamaño. Con el skater del ancho de la portada (W):
+   - left = 51.2% - 43.5% = 7.7% de W
+   - top  = (borde del tanque 70.8% x 978/611 = 1.133 W) - (ruedas 0.70 W) - (aire 0.15 W) = 0.283 W
+*/
+
+.magazine-visual {
+  position: relative;
+  width: var(--cover-w);
+}
+
+.magazine-skater {
+  position: absolute;
+  z-index: 3;
+  left: calc(var(--cover-w) * 0.077);
+  top: calc(var(--cover-w) * 0.283);
+  width: var(--cover-w);
+  pointer-events: none;
+}
+
+.magazine-skater .skater {
+  display: block;
+  width: 100%;
+  max-width: none;
+  filter: drop-shadow(10px 26px 14px rgba(0, 0, 0, 0.35));
+  animation: skaterAir 3.2s ease-in-out infinite;
+}
+
+/* Pequeña flotación en el aire sobre el tanque */
+@keyframes skaterAir {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-1.5deg);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 992px) {
+  .magazine {
+    --cover-w: min(72vw, 360px);
+
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding-top: 5rem;
+    gap: 3.5rem;
+  }
+
+  .magazine-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .magazine-features,
+  .magazine-cta {
+    justify-content: center;
+  }
+
+
+  .magazine-cover-issue {
+    width: 62px;
+    height: 62px;
+  }
+
+  .magazine-cover-issue strong {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 576px) {
+  .magazine {
+    padding: 4rem 15px 4rem;
+  }
+
+  .magazine-text {
+    font-size: 15px;
+  }
+
+  .magazine-features li {
+    font-size: 12px;
+    padding: 7px 12px;
+  }
+
+  .magazine-cover {
+    box-shadow: 9px 9px 0 var(--ink);
+  }
+}

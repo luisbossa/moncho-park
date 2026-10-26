@@ -20,11 +20,6 @@ module.exports = {
     location: "Polideportivo, San Ramón de Alajuela",
     hours: { label: "Todos los días · 7:00 AM – 7:30 PM", open: "07:00", close: "19:30" },
     access: "Público y gratuito",
-    zones: [
-      "Entrada", "Halfpipe", "Quarter pipes", "Bank", "Banked rampa", "Rampa 1", "Rampa 2", "Pirámide",
-      "Riel central", "Riel volcán", "Baranda grande", "Drop riel", "Drop ledge 1", "Drop ledge 2",
-      "Zona plana", "Zona libre",
-    ],
   },
 
   bestSellers: [
